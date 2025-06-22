@@ -1,101 +1,105 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Police moderne pour le corps du texte */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: #2a2a2a; /* Fond sombre typique des jeux */
-    color: #f0f0f0;
+    background: #1e1e1e; /* Fond sombre */
+    color: #d4d4d4; /* Texte clair */
 }
 
 header {
-    background: #333;
+    background: #252525;
     color: #fff;
-    padding: 1rem 0;
+    padding: 2rem 0;
     text-align: center;
-    border-bottom: 3px solid #6a05ad; /* Couleur d'accentuation */
+    border-bottom: 3px solid #64b5f6; /* Bleu moderne */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 main {
-    padding: 20px;
+    padding: 2rem;
     max-width: 900px;
-    margin: 20px auto;
-    background: #3a3a3a; /* Fond du contenu */
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 2rem auto;
+    background: #2c2c2c; /* Fond légèrement plus clair */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ombre plus prononcée */
 }
 
 h1, h2, h3 {
-    color: #6a05ad; /* Couleur d'accentuation pour les titres */
+    color: #64b5f6; /* Bleu pour les titres */
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif; /* Police plus audacieuse pour les titres */
 }
 
 section {
-    margin-bottom: 40px;
-    padding: 20px;
-    background: #4a4a4a; /* Fond des sections */
-    border-radius: 5px;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #333333; /* Fond des sections */
+    border-radius: 8px;
 }
 
 /* Styles pour les timers */
 #timers-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.5rem;
     justify-content: center;
 }
 
 .event-timer {
-    background: #5a5a5a;
-    padding: 15px 20px;
-    border-radius: 5px;
+    background: #3a3a3a;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
     text-align: center;
-    min-width: 250px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    min-width: 280px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 .event-timer h4 {
     margin-top: 0;
-    color: #ffcc00; /* Jaune pour les noms d'événements */
+    color: #ffca28; /* Jaune pour les événements */
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .event-timer p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
-    color: #00ff00; /* Vert vif pour le compte à rebours */
+    color: #a5d6a7; /* Vert clair pour le temps */
 }
 
 .note {
-    font-size: 0.8em;
-    color: #bbb;
+    font-size: 0.85em;
+    color: #8a8a8a;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 1.5rem;
 }
 
 /* Styles pour les guides */
 .guide-category {
-    margin-bottom: 20px;
-    border: 1px solid #5a5a5a;
-    border-radius: 5px;
-    overflow: hidden; /* Pour cacher le contenu par défaut */
+    margin-bottom: 1.5rem;
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .guide-category h3 {
     margin: 0;
-    background: #5a5a5a;
-    padding: 10px 15px;
+    background: #4a4a4a;
+    padding: 1rem 1.5rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #ffcc00;
+    color: #ffca28;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .guide-toggle {
     background: none;
     border: none;
-    color: #ffcc00;
-    font-size: 1.2em;
+    color: #ffca28;
+    font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
     width: 100%;
@@ -104,49 +108,49 @@ section {
 }
 
 .guide-toggle::after {
-    content: '▼'; /* Flèche vers le bas */
+    content: '▼';
     float: right;
     transition: transform 0.3s ease;
 }
 
 .guide-toggle.open::after {
-    content: '▲'; /* Flèche vers le haut */
+    content: '▲';
     transform: rotate(180deg);
 }
 
 .guide-content {
-    padding: 15px;
-    display: none; /* Caché par défaut */
-    border-top: 1px solid #6a05ad;
-    background: #444;
+    padding: 1rem;
+    display: none;
+    border-top: 1px solid #64b5f6;
+    background: #333333;
 }
 
 .guide-content.open {
-    display: block; /* Affiché quand la classe 'open' est ajoutée par JS */
+    display: block;
 }
 
 .guide-content p, .guide-content ul {
-    margin-bottom: 10px;
+    margin-bottom: 0.8rem;
 }
 
 .guide-content ul {
-    padding-left: 20px;
+    padding-left: 2rem;
 }
 
 .guide-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 15px auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 footer {
     text-align: center;
     padding: 1rem 0;
-    color: #bbb;
+    color: #8a8a8a;
     font-size: 0.9em;
-    margin-top: 30px;
-    border-top: 1px solid #5a5a5a;
+    margin-top: 2rem;
+    border-top: 1px solid #4a4a4a;
 }
