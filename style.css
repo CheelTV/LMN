@@ -1,20 +1,20 @@
-/* Variables for easy color changes */
+/* Variables pour les couleurs, plus facile à maintenir */
 :root {
-    --color-black: #121212; /* Deeper black */
-    --color-dark-grey: #1e1e1e;
-    --color-medium-grey: #2a2a2a;
-    --color-light-grey-text: #e0e0e0;
-    --color-dark-grey-text: #b0b0b0;
-    --color-purple: #8e2de2; /* Main accent color */
-    --color-dark-purple: #4a00e0;
-    --color-blue: #00bcd4; /* Secondary accent color (cyan-blue) */
-    --color-cta-hover: #a766f7;
-    --color-sidebar-bg: #1a1a1a;
-    --color-sidebar-link-hover: #333333;
-    --color-card-border: rgba(255, 255, 255, 0.08);
+    --color-black: #121212; /* Noir profond pour le fond */
+    --color-dark-grey: #1e1e1e; /* Gris foncé pour les éléments de fond */
+    --color-medium-grey: #2a2a2a; /* Gris moyen pour les cartes et bordures */
+    --color-light-grey-text: #e0e0e0; /* Texte clair pour les titres et éléments importants */
+    --color-dark-grey-text: #b0b0b0; /* Texte plus sombre pour le corps du texte */
+    --color-purple: #8e2de2; /* Couleur d'accent principale (violet vibrant) */
+    --color-dark-purple: #4a00e0; /* Variation plus foncée du violet */
+    --color-blue: #00bcd4; /* Couleur d'accent secondaire (bleu-cyan) */
+    --color-cta-hover: #a766f7; /* Couleur de survol pour les CTA */
+    --color-sidebar-bg: #1a1a1a; /* Fond de la barre latérale */
+    --color-sidebar-link-hover: #333333; /* Fond au survol des liens de la barre latérale */
+    --color-card-border: rgba(255, 255, 255, 0.08); /* Bordure subtile des cartes */
 }
 
-/* Base styles */
+/* Styles de base */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -22,7 +22,7 @@ body {
     background-color: var(--color-black);
     color: var(--color-dark-grey-text);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Empêche le défilement horizontal non désiré */
 }
 
 h1, h2, h3 {
@@ -41,7 +41,7 @@ a:hover {
     color: var(--color-purple);
 }
 
-/* Layout - Header and Sidebar */
+/* Mise en page - En-tête supérieur */
 .top-header {
     background-color: var(--color-dark-grey);
     padding: 15px 25px;
@@ -51,7 +51,7 @@ a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: sticky;
     top: 0;
-    z-index: 100; /* Ensure header stays on top */
+    z-index: 100; /* L'en-tête reste toujours au-dessus */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -65,7 +65,7 @@ a:hover {
     font-size: 1.6em;
     font-weight: 700;
     color: var(--color-light-grey-text);
-    white-space: nowrap; /* Prevent wrapping on smaller screens */
+    white-space: nowrap; /* Empêche le retour à la ligne du texte sur les petits écrans */
 }
 
 .menu-toggle {
@@ -74,12 +74,12 @@ a:hover {
     color: var(--color-light-grey-text);
     font-size: 1.5em;
     cursor: pointer;
-    display: none; /* Hidden by default on desktop, shown on mobile */
+    display: none; /* Caché par défaut sur grand écran, affiché sur mobile */
 }
 
 .search-bar {
     display: flex;
-    flex-grow: 1;
+    flex-grow: 1; /* Prend l'espace disponible */
     max-width: 500px;
     margin: 0 30px;
 }
@@ -133,10 +133,11 @@ a:hover {
     color: var(--color-blue);
 }
 
+/* Mise en page principale (barre latérale + contenu) */
 .main-layout {
     display: grid;
-    grid-template-columns: 250px 1fr; /* Sidebar width and main content */
-    min-height: calc(100vh - 70px); /* Adjust based on header height */
+    grid-template-columns: 250px 1fr; /* 250px pour la barre latérale, le reste pour le contenu */
+    min-height: calc(100vh - 70px); /* Ajuste la hauteur pour remplir la vue (70px hauteur header) */
 }
 
 .sidebar {
@@ -144,14 +145,25 @@ a:hover {
     padding-top: 20px;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
     transition: transform 0.3s ease;
+    /* Pour mobile, la sidebar est initialement masquée */
+    transform: translateX(0); /* Par défaut visible sur desktop */
 }
 
-/* Mobile sidebar hidden state */
-.sidebar.hidden-mobile {
-    transform: translateX(-100%);
-    position: fixed;
-    height: 100%;
-    z-index: 99;
+/* État masqué sur mobile (sera géré par JS avec la classe 'active') */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 60px; /* Commence sous l'en-tête mobile */
+        left: 0;
+        width: 250px;
+        height: calc(100% - 60px);
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+        z-index: 90;
+        transform: translateX(-100%); /* Initialement masquée */
+    }
+    .sidebar.active {
+        transform: translateX(0); /* Affichée quand active */
+    }
 }
 
 .sidebar-nav ul {
@@ -186,7 +198,7 @@ a:hover {
     font-weight: 600;
 }
 
-/* Dropdown menu for characters */
+/* Menu déroulant pour les personnages */
 .dropdown-toggle {
     display: flex;
     justify-content: space-between;
@@ -194,12 +206,12 @@ a:hover {
 }
 
 .dropdown-icon {
-    margin-left: auto; /* Push icon to the right */
+    margin-left: auto; /* Pousse l'icône à droite */
     transition: transform 0.3s ease;
 }
 
 .dropdown-toggle.active .dropdown-icon {
-    transform: rotate(180deg);
+    transform: rotate(180deg); /* Fait pivoter la flèche quand le menu est ouvert */
 }
 
 .dropdown-menu {
@@ -213,12 +225,12 @@ a:hover {
 }
 
 .dropdown-menu.visible {
-    max-height: 500px; /* Adjust based on content */
+    max-height: 500px; /* Hauteur max pour afficher tous les éléments */
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .dropdown-menu li a {
-    padding: 10px 25px 10px 55px; /* Indent sub-items */
+    padding: 10px 25px 10px 55px; /* Indentation pour les sous-éléments */
     font-size: 1em;
     color: var(--color-dark-grey-text);
 }
@@ -228,17 +240,18 @@ a:hover {
     color: var(--color-light-grey-text);
 }
 
-/* Main Content Wrapper */
+/* Wrapper du contenu principal */
 .content-wrapper {
-    padding: 0; /* Sections handle their own padding */
+    padding: 0; /* Les sections gèrent leur propre padding */
 }
 
 .content-section {
     padding: 40px 20px;
-    max-width: 1000px; /* Max width for content within sections */
+    max-width: 1000px; /* Largeur maximale pour le contenu à l'intérieur des sections */
     margin: 0 auto;
 }
 
+/* Section héroïque (bannière principale) */
 .hero-section {
     background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-black) 100%);
     padding: 80px 20px;
@@ -300,7 +313,7 @@ a:hover {
     margin-left: 10px;
 }
 
-/* Card Styling */
+/* Style des cartes génériques */
 .card {
     background-color: var(--color-medium-grey);
     padding: 30px;
@@ -324,7 +337,7 @@ a:hover {
     text-align: center;
 }
 
-/* Guide Sections */
+/* Sections de guide (accordéon) */
 .guide-category h3 {
     margin-top: 0;
     margin-bottom: 20px;
@@ -345,7 +358,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px; /* Space between toggles */
+    margin-bottom: 15px;
 }
 
 .guide-toggle:hover {
@@ -354,19 +367,19 @@ a:hover {
 }
 
 .guide-content {
-    max-height: 0;
+    max-height: 0; /* Par défaut, contenu masqué */
     overflow: hidden;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
     background-color: var(--color-dark-grey);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0 20px;
+    padding: 0 20px; /* Padding initial à 0 */
     border-radius: 0 0 10px 10px;
-    margin-top: -15px; /* Overlap with button for smooth transition */
+    margin-top: -15px; /* Pour un chevauchement esthétique avec le bouton */
 }
 
 .guide-content.visible {
-    max-height: 1000px; /* A value larger than the expected content height */
-    padding: 20px;
+    max-height: 1000px; /* Hauteur suffisante pour afficher le contenu */
+    padding: 20px; /* Le padding s'applique quand la section est visible */
 }
 
 .guide-content img {
@@ -400,10 +413,10 @@ a:hover {
     color: var(--color-purple);
 }
 
-/* Characters Grid */
+/* Grille des personnages */
 .character-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes adaptatives */
     gap: 30px;
     margin-top: 30px;
 }
@@ -448,7 +461,7 @@ a:hover {
 .character-description {
     font-size: 0.95em;
     color: var(--color-dark-grey-text);
-    flex-grow: 1; /* Make description take available space */
+    flex-grow: 1; /* Permet à la description de prendre l'espace disponible */
 }
 
 .view-details-button {
@@ -465,13 +478,13 @@ a:hover {
     background-color: var(--color-cta-hover);
 }
 
-/* About Section */
+/* Section "À Propos" */
 .about-card {
     text-align: center;
     font-size: 1.1em;
 }
 
-/* Contact Section */
+/* Section "Contact" */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -496,15 +509,14 @@ a:hover {
 }
 
 .contact-form textarea {
-    resize: vertical;
+    resize: vertical; /* Permet de redimensionner verticalement */
 }
 
 .contact-form .cta-button {
-    align-self: flex-start; /* Align button to the left */
+    align-self: flex-start; /* Aligne le bouton à gauche */
 }
 
-
-/* Footer */
+/* Pied de page */
 footer {
     background-color: var(--color-dark-grey);
     color: var(--color-dark-grey-text);
@@ -525,9 +537,9 @@ footer {
     color: var(--color-blue);
 }
 
-/* Back to Top Button */
+/* Bouton "Retour en haut" */
 #back-to-top {
-    display: none;
+    display: none; /* Caché par défaut */
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -549,10 +561,10 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Responsive Design */
+/* Design Responsif */
 @media (max-width: 1024px) {
     .main-layout {
-        grid-template-columns: 200px 1fr; /* Slightly smaller sidebar for tablets */
+        grid-template-columns: 200px 1fr; /* Barre latérale légèrement plus petite sur tablettes */
     }
 
     .sidebar-nav li a {
@@ -574,44 +586,29 @@ footer {
     }
 
     .menu-toggle {
-        display: block; /* Show hamburger menu on mobile */
+        display: block; /* Affiche le bouton hamburger sur mobile */
         position: absolute;
         left: 15px;
         top: 15px;
     }
 
     .search-bar {
-        order: 3; /* Move search bar to bottom on mobile header */
+        order: 3; /* Déplace la barre de recherche en bas de l'en-tête sur mobile */
         margin: 10px 0 0 0;
         width: 100%;
         max-width: none;
     }
 
     .user-actions {
-        display: none; /* Hide user actions on smaller screens */
+        display: none; /* Cache les actions utilisateur sur mobile */
     }
 
     .main-layout {
-        grid-template-columns: 1fr; /* Stack sidebar and content */
-    }
-
-    .sidebar {
-        position: fixed;
-        top: 60px; /* Adjust based on header height */
-        left: 0;
-        width: 250px;
-        height: calc(100% - 60px);
-        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
-        z-index: 90;
-        transform: translateX(-100%); /* Start hidden */
+        grid-template-columns: 1fr; /* Empile la barre latérale et le contenu */
     }
 
     .sidebar.active {
-        transform: translateX(0); /* Show when active */
-    }
-
-    .content-wrapper {
-        margin-left: 0;
+        transform: translateX(0); /* Affiche la barre latérale quand 'active' */
     }
 
     .hero-section h1 {
