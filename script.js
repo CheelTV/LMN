@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Localization (i18n) Data with ALL Translations ---
+    // (Cette partie reste identique à la version précédente avec toutes les traductions)
     const translations = {
         fr: {
             // General elements
@@ -1032,7 +1033,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // This is key for buttons like "Découvrir les guides" on home.html
         document.querySelectorAll('#main-content-area [data-page]').forEach(dynamicLink => {
             // Only attach if it's not a direct external link (like Discord button)
-            if (!dynamicLink.classList.contains('discord-button')) { // Exclude Discord button
+            // AND if it doesn't already have an internal href for a different purpose (like anchor links for characters)
+            if (!dynamicLink.classList.contains('discord-button') && !dynamicLink.href.includes('#')) {
                 dynamicLink.removeEventListener('click', handleDynamicPageLinkClick); // Prevent duplicates
                 dynamicLink.addEventListener('click', handleDynamicPageLinkClick);
             }
@@ -1051,7 +1053,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /** Handle clicks on dynamically loaded links with data-page attribute. */
     function handleDynamicPageLinkClick(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent default link behavior
         const page = e.currentTarget.dataset.page;
         const subPage = e.currentTarget.dataset.subPage || null;
         loadPage(page, subPage);
