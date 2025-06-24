@@ -1,77 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    </head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Guide de La Main Noire</title>
+    <title>Le Guide de La Main Noire - Votre Ressource Ultime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXhtM9d-a9cAI5ziYTWXh_DFiV_GoKTWjtQ&s"> </head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyXhtM9d-a9cAI5ziYTWXh_DFiV_GoKTWjtQ&s">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
     <header>
-        <h1>Bienvenue sur Le Guide de La Main Noire</h1>
-        <p>Votre ressource pour progresser dans le jeu !</p>
+        <nav>
+            <div class="logo">
+                <a href="#">Le Guide de La Main Noire ⚔️</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#event-timers">⏱️ Timers</a></li>
+                <li><a href="#guides">📚 Guides</a></li>
+                <li><a href="#about">ℹ️ À Propos</a></li>
+            </ul>
+        </nav>
+        <div class="hero-section">
+            <h1>Bienvenue sur Le Guide de La Main Noire</h1>
+            <p>Votre ressource ultime pour dominer le jeu et progresser efficacement !</p>
+            <a href="#guides" class="cta-button">Découvrir les Guides <i class="fas fa-arrow-down"></i></a>
+        </div>
     </header>
 
     <main>
-        <section id="event-timers">
+        <section id="event-timers" class="container">
             <h2>⏱️ Timers d'Événements</h2>
-            <div id="timers-container">
+            <div id="timers-container" class="card">
                 <p>Chargement des timers...</p>
-            </div>
+                </div>
             <p class="note">* Tous les horaires sont affichés dans votre fuseau horaire local.</p>
         </section>
-        
-        <section id="guides">
+
+        <section id="guides" class="container">
             <h2>📚 Guides Stratégiques</h2>
-            <div class="guide-category">
-                <h3><button class="guide-toggle" data-target="guide-debut">Début de Jeu</button></h3>
-                <div id="guide-debut" class="guide-content">
-                    <img src="https://via.placeholder.com/300x150?text=Image+Debut+Jeu" alt="Début de Jeu" class="guide-image">
-                    <p><strong>1. Concentrez-vous sur le QG (Quartier Général) :</strong> Améliorez-le dès que possible pour débloquer de nouvelles fonctionnalités et bâtiments. C'est la clé de votre progression.</p>
-                    <p><strong>2. Protégez vos ressources :</strong> Gardez vos ressources (nourriture, bois, pétrole, métal) sous le seuil de protection de votre entrepôt pour ne pas les perdre en cas d'attaque.</p>
-                    <p><strong>3. Ne gaspillez pas vos accélérateurs :</strong> Gardez-les pour les constructions et recherches de haut niveau. Utilisez l'aide de l'alliance au maximum.</p>
-                    <p><strong>4. Rejoignez une alliance active :</strong> C'est primordial pour recevoir de l'aide, participer à des événements, et être protégé.</p>
-                    <p><strong>5. Montez vos héros d'exploration :</strong> Rusty, Miho, Sarge sont de bons choix pour l'exploration de la carte et les chasses aux infectés.</p>
-                </div>
-            </div>
 
-            <div class="guide-category">
-                <h3><button class="guide-toggle" data-target="guide-heros">Héros et Compétences</button></h3>
-                <div id="guide-heros" class="guide-content">
-                    <img src="https://via.placeholder.com/300x150?text=Image+Heros" alt="Héros et Compétences" class="guide-image">
-                    <p><strong>1. Types de Héros :</strong></p>
+            <div class="guide-category card">
+                <h3><button class="guide-toggle" data-target="guide-debut">Début de Jeu 🚀</button></h3>
+                <div id="guide-debut" class="guide-content hidden">
+                    <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Début+de+Jeu" alt="Début de Jeu" class="guide-image">
                     <ul>
-                        <li><strong>Exploration/Combat (Rallye) :</strong> Pour les chasses, les rallyes, et les attaques (ex: Rusty, Miho, Sarge).</li>
-                        <li><strong>Développement (Intendance) :</strong> Pour les bonus de construction, recherche, production de ressources (ex: Ghost, Travis, Eva).</li>
+                        <li><strong>Concentrez-vous sur le QG (Quartier Général) :</strong> Améliorez-le dès que possible pour débloquer de nouvelles fonctionnalités et bâtiments. C'est la clé de votre progression.</li>
+                        <li><strong>Protégez vos ressources :</strong> Gardez vos ressources (nourriture, bois, pétrole, métal) sous le seuil de protection de votre entrepôt pour ne pas les perdre en cas d'attaque.</li>
+                        <li><strong>Ne gaspillez pas vos accélérateurs :</strong> Gardez-les pour les constructions et recherches de haut niveau. Utilisez l'aide de l'alliance au maximum.</li>
+                        <li><strong>Rejoignez une alliance active :</strong> C'est primordial pour recevoir de l'aide, participer à des événements, et être protégé.</li>
+                        <li><strong>Montez vos héros d'exploration :</strong> Rusty, Miho, Sarge sont de bons choix pour l'exploration de la carte et les chasses aux infectés.</li>
                     </ul>
-                    <p><strong>2. Focus sur quelques-uns :</strong> Au début, concentrez-vous sur 3-5 héros principaux pour l'exploration et les rallyes. Ne dispersez pas vos ressources.</p>
-                    <p><strong>3. Éveil des Héros :</strong> Collectez des fragments de héros pour les éveiller et débloquer de puissantes compétences.</p>
-                    <p><strong>4. Formation de Héro :</strong> Utilisez la formation pour gagner de l'expérience et des fragments.</p>
                 </div>
             </div>
 
-            <div class="guide-category">
-                <h3><button class="guide-toggle" data-target="guide-ressources">Gestion des Ressources</button></h3>
-                <div id="guide-ressources" class="guide-content">
-                    <img src="https://via.placeholder.com/300x150?text=Image+Ressources" alt="Gestion des Ressources" class="guide-image">
-                    <p><strong>1. Collecte sur la carte :</strong> Envoyez vos troupes collecter de la nourriture, du bois, du pétrole, et du métal. Le niveau de la ressource influe sur la quantité.</p>
-                    <p><strong>2. Bâtiments de production :</strong> Améliorez vos fermes, scieries, raffineries et fonderies. C'est une production passive mais essentielle.</p>
-                    <p><strong>3. Entrepôt :</strong> Améliorez votre entrepôt pour augmenter le seuil de protection des ressources.</p>
-                    <p><strong>4. Missions et événements :</strong> Participez aux événements quotidiens, hebdomadaires et aux missions de l'histoire pour gagner de grandes quantités de ressources.</p>
-                    <p><strong>5. Utilisation judicieuse :</strong> Ne produisez pas un surplus de ressources au-delà de ce dont vous avez besoin pour vos prochaines constructions/recherches majeures, surtout si vous n'êtes pas bien protégé.</p>
+            <div class="guide-category card">
+                <h3><button class="guide-toggle" data-target="guide-heros">Héros et Compétences 💪</button></h3>
+                <div id="guide-heros" class="guide-content hidden">
+                    <img src="https://via.placeholder.com/600x300/8e2de2/ffffff?text=Héros+et+Compétences" alt="Héros et Compétences" class="guide-image">
+                    <ul>
+                        <li><strong>Types de Héros :</strong>
+                            <ul>
+                                <li><strong>Exploration/Combat (Rallye) :</strong> Pour les chasses, les rallyes, et les attaques (ex: Rusty, Miho, Sarge).</li>
+                                <li><strong>Développement (Intendance) :</strong> Pour les bonus de construction, recherche, production de ressources (ex: Ghost, Travis, Eva).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Focus sur quelques-uns :</strong> Au début, concentrez-vous sur 3-5 héros principaux pour l'exploration et les rallyes. Ne dispersez pas vos ressources.</li>
+                        <li><strong>Éveil des Héros :</strong> Collectez des fragments de héros pour les éveiller et débloquer de puissantes compétences.</li>
+                        <li><strong>Formation de Héro :</strong> Utilisez la formation pour gagner de l'expérience et des fragments.</li>
+                    </ul>
                 </div>
             </div>
 
-            </section>
+            <div class="guide-category card">
+                <h3><button class="guide-toggle" data-target="guide-ressources">Gestion des Ressources 💰</button></h3>
+                <div id="guide-ressources" class="guide-content hidden">
+                    <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Gestion+des+Ressources" alt="Gestion des Ressources" class="guide-image">
+                    <ul>
+                        <li><strong>Collecte sur la carte :</strong> Envoyez vos troupes collecter de la nourriture, du bois, du pétrole, et du métal. Le niveau de la ressource influe sur la quantité.</li>
+                        <li><strong>Bâtiments de production :</strong> Améliorez vos fermes, scieries, raffineries et fonderies. C'est une production passive mais essentielle.</li>
+                        <li><strong>Entrepôt :</strong> Améliorez votre entrepôt pour augmenter le seuil de protection des ressources.</li>
+                        <li><strong>Missions et événements :</strong> Participez aux événements quotidiens, hebdomadaires et aux missions de l'histoire pour gagner de grandes quantités de ressources.</li>
+                        <li><strong>Utilisation judicieuse :</strong> Ne produisez pas un surplus de ressources au-delà de ce dont vous avez besoin pour vos prochaines constructions/recherches majeures, surtout si vous n'êtes pas bien protégé.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container">
+            <h2>ℹ️ À Propos de Nous</h2>
+            <div class="card about-card">
+                <p>Bienvenue sur Le Guide de La Main Noire, la communauté dédiée aux joueurs cherchant à optimiser leur progression et maîtriser toutes les facettes du jeu. Notre mission est de vous fournir des guides clairs, des astuces à jour et des informations précieuses pour vous aider à devenir un joueur d'élite.</p>
+                <p>Que vous soyez un débutant cherchant ses marques ou un vétéran souhaitant affiner ses stratégies, vous trouverez ici les ressources nécessaires pour atteindre vos objectifs. Rejoignez notre communauté et commencez votre ascension vers la victoire !</p>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Guide SoS. Tous droits réservés.</p>
+        <p>&copy; 2025 Le Guide de La Main Noire. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        </div>
     </footer>
+
+    <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
