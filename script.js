@@ -91,7 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: 'Début dans',
             timers_special_event: 'Événement Spécial',
             timers_state_championship: 'Championnat des États',
-            timers_end_in: 'Fin dans'
+            timers_end_in: 'Fin dans',
+            timers_ended: 'Terminé !'
         },
         en: {
             home_link: 'Home',
@@ -182,7 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: 'Starts in',
             timers_special_event: 'Special Event',
             timers_state_championship: 'State Championship',
-            timers_end_in: 'Ends in'
+            timers_end_in: 'Ends in',
+            timers_ended: 'Finished!'
         },
         ko: { // Korean
             home_link: '홈',
@@ -273,7 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: '시작',
             timers_special_event: '특별 이벤트',
             timers_state_championship: '주 챔피언십',
-            timers_end_in: '종료'
+            timers_end_in: '종료',
+            timers_ended: '완료!'
         },
         it: { // Italian
             home_link: 'Home',
@@ -364,7 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: 'Inizia in',
             timers_special_event: 'Evento Speciale',
             timers_state_championship: 'Campionato di Stato',
-            timers_end_in: 'Termina in'
+            timers_end_in: 'Termina in',
+            timers_ended: 'Finito!'
         },
         es: { // Spanish
             home_link: 'Inicio',
@@ -455,7 +459,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: 'Comienza en',
             timers_special_event: 'Evento Especial',
             timers_state_championship: 'Campeonato de Estado',
-            timers_end_in: 'Termina en'
+            timers_end_in: 'Termina en',
+            timers_ended: '¡Terminado!'
         },
         ru: { // Russian
             home_link: 'Главная',
@@ -546,7 +551,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: 'Начало через',
             timers_special_event: 'Специальное событие',
             timers_state_championship: 'Чемпионат штата',
-            timers_end_in: 'Заканчивается через'
+            timers_end_in: 'Заканчивается через',
+            timers_ended: 'Завершено!'
         },
         zh: { // Chinese
             home_link: '主页',
@@ -587,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroes_tip4_text: '使用训练来获得经验和碎片。',
             guide_resources_title: '资源管理 💰',
             resources_tip1_strong: '地图收集：',
-            tip1_text: '派遣您的部队收集食物、木材、石油和金属。资源等级会影响数量。',
+            resources_tip1_text: '派遣您的部队收集食物、木材、石油和金属。资源等级会影响数量。',
             resources_tip2_strong: '生产建筑：',
             resources_tip2_text: '升级您的农场、伐木场、炼油厂和铸造厂。这是被动但必不可少的生产。',
             resources_tip3_strong: '仓库：',
@@ -637,7 +643,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: '开始于：',
             timers_special_event: '特殊活动',
             timers_state_championship: '州冠军赛',
-            timers_end_in: '结束于：'
+            timers_end_in: '结束于：',
+            timers_ended: '已完成！'
         },
         ja: { // Japanese
             home_link: 'ホーム',
@@ -728,7 +735,8 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: '開始まで',
             timers_special_event: 'スペシャルイベント',
             timers_state_championship: '州チャンピオンシップ',
-            timers_end_in: '終了まで'
+            timers_end_in: '終了まで',
+            timers_ended: '完了！'
         },
         el: { // Greek
             home_link: 'Αρχική',
@@ -819,9 +827,11 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_start_in: 'Έναρξη σε',
             timers_special_event: 'Ειδική Εκδήλωση',
             timers_state_championship: 'Πρωτάθλημα Πολιτείας',
-            timers_end_in: 'Τέλος σε'
+            timers_end_in: 'Τέλος σε',
+            timers_ended: 'Ολοκληρώθηκε!'
         }
-        // Add more languages here as needed
+        // Add more languages here as needed, following the same structure.
+        // REMINDER: Fill in all translations for each language.
     };
 
     // Flags for the language menu (matching data-lang attributes)
@@ -863,11 +873,13 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = lang;
         localStorage.setItem('lang', lang); // Save preference
 
-        currentLangFlag.textContent = languageFlags[lang]; // Update flag in button
+        // Update current language flag in the button, fallback to empty if flag not found
+        currentLangFlag.textContent = languageFlags[lang] || '';
 
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.dataset.key;
-            const translation = translations[lang][key];
+            // Use optional chaining with fallback to handle cases where translation might be missing
+            const translation = translations[lang]?.[key];
 
             if (translation !== undefined) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
@@ -878,46 +890,52 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Specific updates for hardcoded elements or dynamic content
+        // Specific updates for hardcoded elements or dynamically loaded content placeholders
         const searchInput = document.querySelector('.search-bar input');
         if (searchInput) {
-            searchInput.placeholder = translations[lang].search_placeholder;
+            searchInput.placeholder = translations[lang]?.search_placeholder || 'Search for a guide or character...';
         }
 
-        // Update settings menu text
-        if (themeDayModeButton) themeDayModeButton.textContent = translations[lang].day_mode;
-        if (themeNightModeButton) themeNightModeButton.textContent = translations[lang].night_mode;
+        // Update settings menu button texts
+        if (themeDayModeButton) themeDayModeButton.textContent = translations[lang]?.day_mode || '☀️ Day Mode';
+        if (themeNightModeButton) themeNightModeButton.textContent = translations[lang]?.night_mode || '🌙 Night Mode';
 
-        // Re-initialize dynamic content if present (like timers)
+        // Re-initialize dynamic content if already loaded to apply new translations
         // This is crucial if dynamic content includes translatable strings
-        if (mainContentArea.innerHTML.includes('timers-container')) {
-             loadTimersContent();
+        // Check content of main content area to decide what needs re-initializing
+        // For simplicity, we trigger loadTimersContent if timers are likely present.
+        // For other dynamic content (guides, characters), init functions are called in loadPage itself.
+        if (mainContentArea.querySelector('#timers-container')) {
+             loadTimersContent(); // Reloads timers with new language
         }
     }
 
     /**
-     * Loads content for a specific page dynamically.
+     * Loads content for a specific page dynamically via Fetch API.
      * @param {string} pageName - The name of the page to load (e.g., 'home', 'guides').
-     * @param {string} [subPageName] - Optional. Specific sub-page/character if applicable.
+     * @param {string} [subPageName] - Optional. Specific sub-page/character ID if applicable (e.g., 'rusty').
      */
     async function loadPage(pageName, subPageName = null) {
         let contentHtml = '';
-        let pageTitleKey = '';
 
-        // Remove active class from previous sidebar link
+        // Update active class for sidebar links
         document.querySelectorAll('.sidebar-nav ul li a').forEach(link => {
             link.classList.remove('active');
-            if (link.dataset.page === pageName && !subPageName) { // Activate main page link
-                link.classList.add('active');
-            } else if (link.dataset.subPage === subPageName && link.dataset.page === pageName) { // Activate sub-page link
-                 link.classList.add('active');
-                 // Also activate parent 'characters' link if a sub-page is selected
-                 const parentLink = document.querySelector(`.sidebar-nav a[data-page="${pageName}"]:not([data-sub-page])`);
-                 if (parentLink) parentLink.classList.add('active');
-            }
         });
-
-        // Set active class for logo if navigating to home
+        const currentActiveLink = document.querySelector(`.sidebar-nav a[data-page="${pageName}"]${subPageName ? `[data-sub-page="${subPageName}"]` : ':not([data-sub-page])'}`);
+        if (currentActiveLink) {
+            currentActiveLink.classList.add('active');
+            // If it's a sub-page, ensure its parent dropdown is also active/expanded
+            const parentDropdown = currentActiveLink.closest('.dropdown');
+            if (parentDropdown) {
+                const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
+                if (parentToggle) {
+                    parentToggle.classList.add('active');
+                    parentDropdown.querySelector('.dropdown-menu').classList.add('visible');
+                }
+            }
+        }
+         // Handle logo link active state
         if (pageName === 'home') {
             document.querySelector('.top-header .logo a').classList.add('active');
         } else {
@@ -925,28 +943,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
 
-        // Load content based on pageName
+        // Fetch content based on pageName
         try {
-            const response = await fetch(`${pageName}.html`); // Assume separate HTML files for each page
+            // Fetch the HTML snippet for the chosen page
+            const response = await fetch(`${pageName}.html`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             contentHtml = await response.text();
         } catch (error) {
             console.error(`Could not load page ${pageName}.html:`, error);
-            mainContentArea.innerHTML = `<section class="container content-section"><h2>Page non trouvée</h2><p>Désolé, la page que vous recherchez n'a pas pu être chargée.</p></section>`;
-            setLanguage(currentLang); // Re-apply language to error message
+            // Display a user-friendly error message, translated
+            mainContentArea.innerHTML = `<section class="container content-section"><h2>${translations[currentLang]?.page_not_found_title || 'Page Not Found'}</h2><p>${translations[currentLang]?.page_not_found_message || 'Sorry, the page you are looking for could not be loaded.'}</p></section>`;
+            setLanguage(currentLang); // Ensure error message is translated
             return;
         }
 
+        // Inject content and apply translations
         mainContentArea.innerHTML = contentHtml;
         setLanguage(currentLang); // Apply translations to the newly loaded content
 
-        // Specific actions after content is loaded
+        // Post-load initialization for specific page types
         if (pageName === 'timers') {
-            loadTimersContent();
+            loadTimersContent(); // Activate timer logic
         } else if (pageName === 'guides') {
-            initGuideAccordions(); // Re-initialize accordion for guides
+            initGuideAccordions(); // Initialize accordion functionality
         } else if (pageName === 'characters') {
             // Scroll to specific character if subPageName is provided
             if (subPageName) {
@@ -956,7 +977,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        // Update URL
+
+        // Update URL for navigation history (allows back/forward buttons)
         const newUrl = subPageName ? `?page=${pageName}#${subPageName}` : `?page=${pageName}`;
         history.pushState({ page: pageName, subPage: subPageName }, '', newUrl);
 
@@ -968,22 +990,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Initializes accordion functionality for guide sections.
-     * Call this whenever guides.html content is loaded.
+     * Needs to be called whenever guides.html content is loaded.
      */
     function initGuideAccordions() {
         document.querySelectorAll('.guide-toggle').forEach(button => {
-            button.removeEventListener('click', handleGuideToggleClick); // Prevent duplicate listeners
+            // Ensure no duplicate event listeners
+            button.removeEventListener('click', handleGuideToggleClick);
             button.addEventListener('click', handleGuideToggleClick);
         });
     }
 
+    /** Handles clicks on guide accordion buttons. */
     function handleGuideToggleClick() {
         const targetId = this.dataset.target;
         const targetContent = document.getElementById(targetId);
 
         if (targetContent) {
+            // Close other open guide sections to make it an accordion
             document.querySelectorAll('.guide-content.visible').forEach(openContent => {
-                if (openContent.id !== targetId) {
+                if (openContent.id !== targetId) { // If it's not the currently clicked section
                     openContent.classList.remove('visible');
                     const correspondingButton = document.querySelector(`.guide-toggle[data-target="${openContent.id}"]`);
                     if (correspondingButton) {
@@ -992,55 +1017,65 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            // Toggle visibility of the clicked section
             targetContent.classList.toggle('visible');
+            // Update aria-expanded for accessibility
             const isVisible = targetContent.classList.contains('visible');
             this.setAttribute('aria-expanded', isVisible);
         }
     }
 
     /**
-     * Loads dynamic timer content into the timers container.
+     * Loads dynamic timer content into the timers container and starts countdowns.
      * Should be called when timers.html is loaded.
      */
     function loadTimersContent() {
         const timersContainer = document.getElementById('timers-container');
         if (timersContainer) {
-            // Clear previous timers if any
-            timersContainer.innerHTML = `<p data-key="timers_loading">${translations[currentLang].timers_loading}</p>`;
+            // Clear previous timers if any, display loading message
+            timersContainer.innerHTML = `<p data-key="timers_loading">${translations[currentLang]?.timers_loading || 'Loading timers...'}</p>`;
 
+            // Simulate loading with a small delay
             setTimeout(() => {
                 timersContainer.innerHTML = `
                     <div class="timer-item card">
-                        <h4>⏰ ${translations[currentLang].timers_daily_event || 'Événement Quotidien'} : ${translations[currentLang].timers_infected_hunt || 'Chasse aux Infectés'}</h4>
-                        <p>${translations[currentLang].timers_next_in || 'Prochainement dans'} : <span class="countdown" data-time="2025-06-24T18:00:00">Chargement...</span></p>
+                        <h4>⏰ ${translations[currentLang]?.timers_daily_event || 'Daily Event'} : ${translations[currentLang]?.timers_infected_hunt || 'Infected Hunt'}</h4>
+                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-24T18:00:00">Chargement...</span></p>
                     </div>
                     <div class="timer-item card">
-                        <h4>🌟 ${translations[currentLang].timers_weekly_event || 'Événement Hebdomadaire'} : ${translations[currentLang].timers_alliance_war || 'Guerre d\'Alliance'}</h4>
-                        <p>${translations[currentLang].timers_start_in || 'Début dans'} : <span class="countdown" data-time="2025-06-26T10:00:00">Chargement...</span></p>
+                        <h4>🌟 ${translations[currentLang]?.timers_weekly_event || 'Weekly Event'} : ${translations[currentLang]?.timers_alliance_war || 'Alliance War'}</h4>
+                        <p>${translations[currentLang]?.timers_start_in || 'Starts in'} : <span class="countdown" data-time="2025-06-26T10:00:00">Chargement...</span></p>
                     </div>
                     <div class="timer-item card">
-                        <h4>🏆 ${translations[currentLang].timers_special_event || 'Événement Spécial'} : ${translations[currentLang].timers_state_championship || 'Championnat des États'}</h4>
-                        <p>${translations[currentLang].timers_end_in || 'Fin dans'} : <span class="countdown" data-time="2025-06-25T23:59:59">Chargement...</span></p>
+                        <h4>🏆 ${translations[currentLang]?.timers_special_event || 'Special Event'} : ${translations[currentLang]?.timers_state_championship || 'State Championship'}</h4>
+                        <p>${translations[currentLang]?.timers_end_in || 'Ends in'} : <span class="countdown" data-time="2025-06-25T23:59:59">Chargement...</span></p>
                     </div>
                 `;
-                updateCountdowns();
+                updateCountdowns(); // Initial update
                 // Ensure interval is only set once to avoid multiple timers
-                if (!window.countdownInterval) {
-                    window.countdownInterval = setInterval(updateCountdowns, 1000);
+                if (window.countdownInterval) { // Clear existing interval if present
+                    clearInterval(window.countdownInterval);
                 }
-            }, 500); // Shorter timeout for faster testing
+                window.countdownInterval = setInterval(updateCountdowns, 1000); // Start new interval
+            }, 500);
+        } else {
+            // If timersContainer does not exist (e.g., navigated away from timers page)
+            if (window.countdownInterval) {
+                clearInterval(window.countdownInterval); // Stop the interval
+                window.countdownInterval = null;
+            }
         }
     }
 
-    // Function to update countdowns (remains largely the same)
+    // Function to update countdowns (defined globally to be accessible after dynamic content load)
     function updateCountdowns() {
         document.querySelectorAll('.countdown').forEach(countdownElement => {
             const targetTime = new Date(countdownElement.dataset.time).getTime();
-            const now = new Date().getTime();
+            const now = new Date().getTime(); // Current client time
             const distance = targetTime - now;
 
             if (distance < 0) {
-                countdownElement.textContent = translations[currentLang].timers_ended || 'Terminé !';
+                countdownElement.textContent = translations[currentLang]?.timers_ended || 'Terminé !';
                 return;
             }
 
@@ -1078,29 +1113,30 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(currentTheme);
 
     // Initial page load based on URL or default to 'home'
-    const initialPage = new URLSearchParams(window.location.search).get('page') || 'home';
+    const params = new URLSearchParams(window.location.search);
+    const initialPage = params.get('page') || 'home';
     const initialSubPage = window.location.hash ? window.location.hash.substring(1) : null;
     loadPage(initialPage, initialSubPage);
 
-    // Sidebar navigation click handler
-    document.querySelectorAll('.sidebar-nav a[data-page]').forEach(link => {
+    // Sidebar navigation click handler for main pages
+    document.querySelectorAll('.sidebar-nav > ul > li > a[data-page]:not([data-sub-page])').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const page = e.currentTarget.dataset.page;
-            const subPage = e.currentTarget.dataset.subPage || null;
-            loadPage(page, subPage);
-
-            // Remove active class from all sidebar links
-            document.querySelectorAll('.sidebar-nav ul li a').forEach(l => l.classList.remove('active'));
-            // Add active class to the clicked link
-            e.currentTarget.classList.add('active');
-            // If it's a sub-page link, also activate its parent dropdown toggle
-            if (e.currentTarget.closest('.dropdown-menu')) {
-                const parentToggle = e.currentTarget.closest('.dropdown').querySelector('.dropdown-toggle');
-                if (parentToggle) parentToggle.classList.add('active');
-            }
+            loadPage(page);
         });
     });
+
+    // Sidebar navigation click handler for character sub-pages
+    document.querySelectorAll('.sidebar-nav ul li ul.dropdown-menu li a[data-page][data-sub-page]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = e.currentTarget.dataset.page;
+            const subPage = e.currentTarget.dataset.subPage;
+            loadPage(page, subPage);
+        });
+    });
+
 
     // Logo click handler (navigates to home page)
     document.querySelector('.top-header .logo a').addEventListener('click', (e) => {
@@ -1150,12 +1186,14 @@ document.addEventListener('DOMContentLoaded', () => {
         settingsToggle.setAttribute('aria-expanded', 'false');
     });
 
-    // Close all menus when clicking outside
+    // Close all dropdown menus (language, settings) and sidebar when clicking anywhere else on the document
     document.addEventListener('click', (e) => {
+        // Close language menu
         if (!langMenu.contains(e.target) && !langToggleButton.contains(e.target)) {
             langMenu.classList.remove('visible');
             langToggleButton.setAttribute('aria-expanded', 'false');
         }
+        // Close settings menu
         if (!settingsMenu.contains(e.target) && !settingsToggle.contains(e.target)) {
             settingsMenu.classList.remove('visible');
             settingsToggle.setAttribute('aria-expanded', 'false');
@@ -1164,46 +1202,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 768 && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
             sidebar.classList.remove('active');
         }
+        // Close characters dropdown if open
+        const charactersDropdownMenu = document.getElementById('characters-dropdown-menu');
+        const charactersDropdownToggle = document.getElementById('characters-dropdown-toggle');
+        if (charactersDropdownMenu && charactersDropdownToggle && charactersDropdownMenu.classList.contains('visible')) {
+            if (!charactersDropdownMenu.contains(e.target) && !charactersDropdownToggle.contains(e.target)) {
+                charactersDropdownMenu.classList.remove('visible');
+                charactersDropdownToggle.classList.remove('active');
+                charactersDropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
     });
+
 
     // Back to top button (already in previous script, ensure it's still there)
     // Hamburger menu toggle (already in previous script)
     // Characters dropdown toggle (already in previous script)
 
-    // Handle browser history (back/forward buttons)
+    // Handle browser history (back/forward buttons) for SPA behavior
     window.addEventListener('popstate', (event) => {
         const page = event.state ? event.state.page : 'home';
         const subPage = event.state ? event.state.subPage : null;
         loadPage(page, subPage);
     });
 });
-
-// Function to update countdowns (defined globally to be accessible after dynamic content load)
-function updateCountdowns() {
-    document.querySelectorAll('.countdown').forEach(countdownElement => {
-        const targetTime = new Date(countdownElement.dataset.time).getTime();
-        const now = new Date().getTime();
-        const distance = targetTime - now;
-        const currentLang = localStorage.getItem('lang') || 'fr'; // Ensure currentLang is available
-
-        if (distance < 0) {
-            // Access translations object directly from script.js scope
-            // This assumes translations object is defined in a way that is accessible here,
-            // or we pass it, or make it global (less ideal). For simplicity now, let's assume global access or re-define
-            // A more robust solution would pass translations object or have it in global scope
-            const translations = { /* ... (define translations object again or make it accessible) ... */ }; // Placeholder
-            countdownElement.textContent = translations[currentLang]?.timers_ended || 'Terminé !'; // Fallback
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        let countdownText = '';
-        if (days > 0) countdownText += `${days}j `;
-        countdownText += `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-        countdownElement.textContent = countdownText.trim();
-    });
-}
