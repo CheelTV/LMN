@@ -14,28 +14,28 @@
 <body>
     <header class="top-header">
         <div class="logo">
-            <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
             <a href="#">Le Guide de La Main Noire ⚔️</a>
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="Rechercher un guide ou un personnage...">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <input type="text" placeholder="Rechercher un guide ou un personnage..." aria-label="Search through site content">
+            <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
         </div>
         <div class="user-actions">
-            <button class="icon-button"><i class="fas fa-bell"></i></button>
-            <button class="icon-button"><i class="fas fa-cog"></i></button>
+            <button class="icon-button" aria-label="Notifications"><i class="fas fa-bell"></i></button>
+            <button class="icon-button" aria-label="Settings"><i class="fas fa-cog"></i></button>
         </div>
     </header>
 
     <div class="main-layout">
         <aside class="sidebar" id="sidebar">
-            <nav class="sidebar-nav">
+            <nav class="sidebar-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="#" class="active"><i class="fas fa-home"></i> Accueil</a></li>
                     <li><a href="#event-timers"><i class="fas fa-hourglass-half"></i> Timers d'Événements</a></li>
                     <li><a href="#guides"><i class="fas fa-book"></i> Guides Stratégiques</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" id="characters-dropdown-toggle"><i class="fas fa-users"></i> Personnages <i class="fas fa-caret-down dropdown-icon"></i></a>
+                        <a href="#" class="dropdown-toggle" id="characters-dropdown-toggle" aria-expanded="false"><i class="fas fa-users"></i> Personnages <i class="fas fa-caret-down dropdown-icon"></i></a>
                         <ul class="dropdown-menu" id="characters-dropdown-menu">
                             <li><a href="#character-rusty">Rusty</a></li>
                             <li><a href="#character-miho">Miho</a></li>
@@ -70,8 +70,8 @@
                 <h2>📚 Guides Stratégiques</h2>
 
                 <div class="guide-category card">
-                    <h3><button class="guide-toggle" data-target="guide-debut">Début de Jeu 🚀</button></h3>
-                    <div id="guide-debut" class="guide-content hidden">
+                    <h3><button class="guide-toggle" data-target="guide-debut" aria-expanded="false">Début de Jeu 🚀</button></h3>
+                    <div id="guide-debut" class="guide-content">
                         <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Début+de+Jeu" alt="Début de Jeu" class="guide-image">
                         <ul>
                             <li><strong>Concentrez-vous sur le QG (Quartier Général) :</strong> Améliorez-le dès que possible pour débloquer de nouvelles fonctionnalités et bâtiments. C'est la clé de votre progression.</li>
@@ -84,8 +84,8 @@
                 </div>
 
                 <div class="guide-category card">
-                    <h3><button class="guide-toggle" data-target="guide-heros">Héros et Compétences 💪</button></h3>
-                    <div id="guide-heros" class="guide-content hidden">
+                    <h3><button class="guide-toggle" data-target="guide-heros" aria-expanded="false">Héros et Compétences 💪</button></h3>
+                    <div id="guide-heros" class="guide-content">
                         <img src="https://via.placeholder.com/600x300/8e2de2/ffffff?text=Héros+et+Compétences" alt="Héros et Compétences" class="guide-image">
                         <ul>
                             <li><strong>Types de Héros :</strong>
@@ -102,8 +102,8 @@
                 </div>
 
                 <div class="guide-category card">
-                    <h3><button class="guide-toggle" data-target="guide-ressources">Gestion des Ressources 💰</button></h3>
-                    <div id="guide-ressources" class="guide-content hidden">
+                    <h3><button class="guide-toggle" data-target="guide-ressources" aria-expanded="false">Gestion des Ressources 💰</button></h3>
+                    <div id="guide-ressources" class="guide-content">
                         <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Gestion+des+Ressources" alt="Gestion des Ressources" class="guide-image">
                         <ul>
                             <li><strong>Collecte sur la carte :</strong> Envoyez vos troupes collecter de la nourriture, du bois, du pétrole, et du métal. Le niveau de la ressource influe sur la quantité.</li>
@@ -124,42 +124,42 @@
                         <h3>Rusty</h3>
                         <p class="character-role">Exploration & Combat</p>
                         <p class="character-description">Un héros de combat polyvalent, excellent pour les expéditions et les rallyes contre les infectés. Ses compétences augmentent les dégâts des troupes.</p>
-                        <a href="#" class="view-details-button">Voir les détails</a>
+                        <a href="#" class="view-details-button" aria-label="View details for Rusty">Voir les détails</a>
                     </div>
                     <div class="character-card card" id="character-miho">
                         <img src="https://via.placeholder.com/150x150/8e2de2/ffffff?text=Miho" alt="Miho" class="character-avatar">
                         <h3>Miho</h3>
                         <p class="character-role">Exploration & PvP</p>
                         <p class="character-description">Spécialisée dans les attaques à distance et le PvP. Ses compétences améliorent la précision et la puissance de feu de vos unités.</p>
-                        <a href="#" class="view-details-button">Voir les détails</a>
+                        <a href="#" class="view-details-button" aria-label="View details for Miho">Voir les détails</a>
                     </div>
                     <div class="character-card card" id="character-sarge">
                         <img src="https://via.placeholder.com/150x150/4a00e0/ffffff?text=Sarge" alt="Sarge" class="character-avatar">
                         <h3>Sarge</h3>
                         <p class="character-role">Défense & Tank</p>
                         <p class="character-description">Le tank de l'équipe, excellent pour la défense de votre base. Il réduit les dégâts subis et renforce la durabilité des troupes.</p>
-                        <a href="#" class="view-details-button">Voir les détails</a>
+                        <a href="#" class="view-details-button" aria-label="View details for Sarge">Voir les détails</a>
                     </div>
                     <div class="character-card card" id="character-ghost">
                         <img src="https://via.placeholder.com/150x150/00bcd4/ffffff?text=Ghost" alt="Ghost" class="character-avatar">
                         <h3>Ghost</h3>
                         <p class="character-role">Développement & Collecte</p>
                         <p class="character-description">Un héros d'intendance qui accélère la production de ressources et les constructions. Idéal pour optimiser votre économie.</p>
-                        <a href="#" class="view-details-button">Voir les détails</a>
+                        <a href="#" class="view-details-button" aria-label="View details for Ghost">Voir les détails</a>
                     </div>
                     <div class="character-card card" id="character-travis">
                         <img src="https://via.placeholder.com/150x150/8e2de2/ffffff?text=Travis" alt="Travis" class="character-avatar">
                         <h3>Travis</h3>
                         <p class="character-role">Recherche & Entraînement</p>
                         <p class="character-description">Spécialiste de la recherche et de l'entraînement des troupes. Il réduit les coûts et les temps nécessaires pour les avancées technologiques.</p>
-                        <a href="#" class="view-details-button">Voir les détails</a>
+                        <a href="#" class="view-details-button" aria-label="View details for Travis">Voir les détails</a>
                     </div>
                     <div class="character-card card" id="character-eva">
                         <img src="https://via.placeholder.com/150x150/4a00e0/ffffff?text=Eva" alt="Eva" class="character-avatar">
                         <h3>Eva</h3>
                         <p class="character-role">Soins & Soutien</p>
                         <p class="character-description">Une unité de soutien essentielle qui peut soigner les troupes blessées et améliorer leur survie au combat.</p>
-                        <a href="#" class="view-details-button">Voir les détails</a>
+                        <a href="#" class="view-details-button" aria-label="View details for Eva">Voir les détails</a>
                     </div>
                     </div>
             </section>
@@ -177,9 +177,9 @@
                 <div class="card contact-card">
                     <p>Des questions, des suggestions, ou besoin d'aide ? N'hésitez pas à nous contacter !</p>
                     <form class="contact-form">
-                        <input type="text" placeholder="Votre Nom" required>
-                        <input type="email" placeholder="Votre Email" required>
-                        <textarea placeholder="Votre Message" rows="5" required></textarea>
+                        <input type="text" placeholder="Votre Nom" required aria-label="Your Name">
+                        <input type="email" placeholder="Votre Email" required aria-label="Your Email">
+                        <textarea placeholder="Votre Message" rows="5" required aria-label="Your Message"></textarea>
                         <button type="submit" class="cta-button">Envoyer le Message</button>
                     </form>
                 </div>
@@ -196,7 +196,7 @@
         </div>
     </footer>
 
-    <button id="back-to-top" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+    <button id="back-to-top" title="Retour en haut" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
