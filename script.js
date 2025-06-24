@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Localization (i18n) Data with ALL Translations ---
-    // (Cette partie reste identique à la version précédente avec toutes les traductions)
     const translations = {
         fr: {
             // General elements
@@ -70,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'Eva',
             character_eva_role: 'Soins & Soutien',
             character_eva_desc: 'Une unité de soutien essentielle qui peut soigner les troupes blessées et améliorer leur survie au combat.',
+            character_lucky_name: 'Lucky',
+            character_lucky_role: 'Chance & Collecte',
+            character_lucky_desc: 'Un héros axé sur la chance et la collecte de ressources, idéal pour optimiser les gains sur la carte.',
             view_details_button: 'Voir les détails',
             about_section_title: 'ℹ️ À Propos de Nous',
             about_paragraph1: 'Bienvenue sur Le Guide de La Main Noire, la communauté dédiée aux joueurs cherchant à optimiser leur progression et maîtriser toutes les facettes du jeu. Notre mission est de vous fournir des guides clairs, des astuces à jour et des informations précieuses pour vous aider à devenir un joueur d\'élite.',
@@ -98,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: 'Désolé, la page que vous recherchez n\'a pas pu être chargée.',
             discord_invite_title: '🎉 Rejoignez notre Communauté Discord !',
             discord_invite_text: 'Ne manquez aucune discussion, astuce ou annonce ! Rejoignez notre serveur Discord pour échanger avec d\'autres passionnés et obtenir de l\'aide en direct.',
-            discord_join_button: 'Rejoindre le Discord'
+            discord_join_button: 'Rejoindre le Discord',
+            timers_influencer_trap: 'Piège à influenceurs'
         },
         en: {
             home_link: 'Home',
@@ -167,6 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'Eva',
             character_eva_role: 'Healing & Support',
             character_eva_desc: 'An essential support unit that can heal wounded troops and improve their survival in combat.',
+            character_lucky_name: 'Lucky',
+            character_lucky_role: 'Luck & Gathering',
+            character_lucky_desc: 'A hero focused on luck and resource gathering, ideal for optimizing gains on the map.',
             view_details_button: 'View details',
             about_section_title: 'ℹ️ About Us',
             about_paragraph1: 'Welcome to The Black Hand Guide, the community dedicated to players looking to optimize their progression and master all aspects of the game. Our mission is to provide you with clear guides, up-to-date tips, and valuable information to help you become an elite player.',
@@ -195,7 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: 'Sorry, the page you are looking for could not be loaded.',
             discord_invite_title: '🎉 Join our Discord Community!',
             discord_invite_text: 'Don\'t miss any discussions, tips, or announcements! Join our Discord server to chat with other enthusiasts and get live help.',
-            discord_join_button: 'Join Discord'
+            discord_join_button: 'Join Discord',
+            timers_influencer_trap: 'Influencer Trap'
         },
         ko: { // Korean
             home_link: '홈',
@@ -264,6 +271,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: '에바',
             character_eva_role: '치유 및 지원',
             character_eva_desc: '부상당한 병력을 치유하고 전투에서의 생존을 향상시킬 수 있는 필수 지원 유닛입니다.',
+            character_lucky_name: '럭키',
+            character_lucky_role: '운 및 수집',
+            character_lucky_desc: '지도에서 이득을 최적화하는 데 이상적인 운과 자원 수집에 중점을 둔 영웅입니다.',
             view_details_button: '세부 정보 보기',
             about_section_title: 'ℹ️ 우리 소개',
             about_paragraph1: '블랙 핸드 가이드에 오신 것을 환영합니다. 이 커뮤니티는 게임 진행을 최적화하고 게임의 모든 측면을 마스터하려는 플레이어를 위해 헌정되었습니다. 우리의 임무는 명확한 가이드, 최신 팁 및 귀중한 정보를 제공하여 엘리트 플레이어가 될 수 있도록 돕는 것입니다.',
@@ -292,7 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: '죄송합니다. 찾으시는 페이지를 로드할 수 없습니다.',
             discord_invite_title: '🎉 저희 디스코드 커뮤니티에 참여하세요!',
             discord_invite_text: '어떤 토론, 팁, 공지도 놓치지 마세요! 저희 디스코드 서버에 참여하여 다른 열정적인 사람들과 교류하고 실시간으로 도움을 받으세요.',
-            discord_join_button: '디스코드 참여'
+            discord_join_button: '디스코드 참여',
+            timers_influencer_trap: '인플루언서 트랩'
         },
         it: { // Italian
             home_link: 'Home',
@@ -361,6 +372,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'Eva',
             character_eva_role: 'Cura e Supporto',
             character_eva_desc: 'Un\'unità di supporto essenziale che può curare le truppe ferite e migliorare la loro sopravvivenza in combattimento.',
+            character_lucky_name: 'Lucky',
+            character_lucky_role: 'Fortuna e Raccolta',
+            character_lucky_desc: 'Un eroe focalizzato sulla fortuna e sulla raccolta di risorse, ideale per ottimizzare i guadagni sulla mappa.',
             view_details_button: 'Vedi dettagli',
             about_section_title: 'ℹ️ Chi Siamo',
             about_paragraph1: 'Benvenuti nella Guida della Mano Nera, la community dedicata ai giocatori che desiderano ottimizzare la loro progressione e padroneggiare ogni aspetto del gioco. La nostra missione è fornirvi guide chiare, suggerimenti aggiornati e informazioni preziose per aiutarvi a diventare un giocatore d\'élite.',
@@ -389,7 +403,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: 'Spiacenti, la pagina che stai cercando non è stata caricata.',
             discord_invite_title: '🎉 Unisciti alla nostra Comunità Discord!',
             discord_invite_text: 'Non perdere nessuna discussione, suggerimento o annuncio! Unisciti al nostro server Discord per chattare con altri appassionati e ottenere aiuto dal vivo.',
-            discord_join_button: 'Unisciti a Discord'
+            discord_join_button: 'Unisciti a Discord',
+            timers_influencer_trap: 'Trappola per Influencer'
         },
         es: { // Spanish
             home_link: 'Inicio',
@@ -458,6 +473,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'Eva',
             character_eva_role: 'Curación y Apoyo',
             character_eva_desc: 'Una unidad de apoyo esencial que puede curar tropas heridas y mejorar su supervivencia en combate.',
+            character_lucky_name: 'Lucky',
+            character_lucky_role: 'Suerte y Recolección',
+            character_lucky_desc: 'Un héroe enfocado en la suerte y la recolección de recursos, ideal para optimizar las ganancias en el mapa.',
             view_details_button: 'Ver detalles',
             about_section_title: 'ℹ️ Acerca de Nosotros',
             about_paragraph1: 'Bienvenido a la Guía de la Mano Negra, la comunidad dedicada a los jugadores que buscan optimizar su progresión y dominar todas las facetas del juego. Nuestra misión es proporcionarte guías claras, consejos actualizados e información valiosa para ayudarte a convertirte en un jugador de élite.',
@@ -486,7 +504,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: 'Lo sentimos, la página que buscas no pudo ser cargada.',
             discord_invite_title: '🎉 ¡Únete a nuestra Comunidad de Discord!',
             discord_invite_text: '¡No te pierdas ninguna discusión, consejo o anuncio! Únete a nuestro servidor de Discord para chatear con otros entusiastas y obtener ayuda en vivo.',
-            discord_join_button: 'Unirse a Discord'
+            discord_join_button: 'Unirse a Discord',
+            timers_influencer_trap: 'Trampa de Influencers'
         },
         ru: { // Russian
             home_link: 'Главная',
@@ -555,6 +574,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'Ева',
             character_eva_role: 'Исцеление и Поддержка',
             character_eva_desc: 'Незаменимая единица поддержки, которая может лечить раненых солдат и повышать их выживаемость в бою.',
+            character_lucky_name: 'Лаки',
+            character_lucky_role: 'Удача и Сбор',
+            character_lucky_desc: 'Герой, ориентированный на удачу и сбор ресурсов, идеально подходит для оптимизации прибыли на карте.',
             view_details_button: 'Посмотреть детали',
             about_section_title: 'ℹ️ О нас',
             about_paragraph1: 'Добро пожаловать в Руководство Черной Руки, сообщество, посвященное игрокам, стремящимся оптимизировать свой прогресс и освоить все аспекты игры. Наша миссия — предоставить вам четкие руководства, актуальные советы и ценную информацию, чтобы помочь вам стать элитным игроком.',
@@ -583,7 +605,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: 'К сожалению, страница, которую вы ищете, не может быть загружена.',
             discord_invite_title: '🎉 Присоединяйтесь к нашему сообществу Discord!',
             discord_invite_text: 'Не пропустите ни одной дискуссии, совета или объявления! Присоединяйтесь к нашему Discord-серверу, чтобы общаться с другими энтузиастами и получать живую помощь.',
-            discord_join_button: 'Присоединиться к Discord'
+            discord_join_button: 'Присоединиться к Discord',
+            timers_influencer_trap: 'Ловушка для инфлюенсеров'
         },
         zh: { // Chinese
             home_link: '主页',
@@ -680,7 +703,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: '抱歉，无法加载您要查找的页面。',
             discord_invite_title: '🎉 加入我们的Discord社区！',
             discord_invite_text: '不要错过任何讨论、提示或公告！加入我们的Discord服务器，与其他爱好者交流并获得实时帮助。',
-            discord_join_button: '加入Discord'
+            discord_join_button: '加入Discord',
+            timers_influencer_trap: '网红陷阱'
         },
         ja: { // Japanese
             home_link: 'ホーム',
@@ -749,6 +773,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'エヴァ',
             character_eva_role: '回復＆サポート',
             character_eva_desc: '負傷した部隊を回復させ、戦闘での生存率を向上させることができる不可欠なサポートユニット。',
+            character_lucky_name: 'ラッキー',
+            character_lucky_role: '運＆収集',
+            character_lucky_desc: '運と資源収集に焦点を当てたヒーローで、マップでの利益を最大化するのに理想的です。',
             view_details_button: '詳細を見る',
             about_section_title: 'ℹ️ 私たちについて',
             about_paragraph1: 'ブラックハンドガイドへようこそ。このコミュニティは、ゲームの進行を最適化し、ゲームのあらゆる側面をマスターしようとしているプレイヤーに捧げられています。私たちの使命は、明確なガイド、最新のヒント、貴重な情報を提供し、あなたがエリートプレイヤーになるのを支援することです。',
@@ -777,7 +804,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: '申し訳ありません。お探しのページを読み込めませんでした。',
             discord_invite_title: '🎉 Discordコミュニティに参加しよう！',
             discord_invite_text: '議論、ヒント、お知らせを見逃さないでください！私たちのDiscordサーバーに参加して、他の愛好家と交流し、ライブでサポートを受けましょう。',
-            discord_join_button: 'Discordに参加'
+            discord_join_button: 'Discordに参加',
+            timers_influencer_trap: 'インフルエンサー トラップ'
         },
         el: { // Greek
             home_link: 'Αρχική',
@@ -846,6 +874,9 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'Εύα',
             character_eva_role: 'Θεραπεία & Υποστήριγμα',
             character_eva_desc: 'Μια απαραίτητη μονάδα υποστήριξης που μπορεί να θεραπεύσει τραυματισμένα στρατεύματα και να βελτιώσει την επιβίωσή τους στη μάχη.',
+            character_lucky_name: 'Λάκυ',
+            character_lucky_role: 'Τύχη & Συλλογή',
+            character_lucky_desc: 'Ένας ήρωας που επικεντρώνεται στην τύχη και τη συλλογή πόρων, ιδανικός για τη βελτιστοποίηση των κερδών στο χάρτη.',
             view_details_button: 'Δείτε λεπτομέρειες',
             about_section_title: 'ℹ️ Σχετικά με εμάς',
             about_paragraph1: 'Καλώς ήρθατε στον Οδηγό της Μαύρης Χειρός, την κοινότητα αφιερωμένη στους παίκτες που αναζητούν να βελτιστοποιήσουν την πρόοδό τους και να κυριαρχήσουν σε όλες τις πτυχές του παιχνιδιού. Η αποστολή μας είναι να σας παρέχουμε σαφείς οδηγούς, ενημερωμένες συμβουλές και πολύτιμες πληροφορίες για να σας βοηθήσουμε να γίνετε ένας ελίτ παίκτης.',
@@ -874,7 +905,8 @@ document.addEventListener('DOMContentLoaded', () => {
             page_not_found_message: 'Συγγνώμη, η σελίδα που ψάχνετε δεν μπόρεσε να φορτωθεί.',
             discord_invite_title: '🎉 Ελάτε στην Κοινότητα μας στο Discord!',
             discord_invite_text: 'Μην χάσετε καμία συζήτηση, συμβουλή ή ανακοίνωση! Ελάτε στον server μας στο Discord για να συνομιλήσετε με άλλους ενθουσιώδεις χρήστες και να λάβετε ζωντανή βοήθεια.',
-            discord_join_button: 'Εγγραφή στο Discord'
+            discord_join_button: 'Εγγραφή στο Discord',
+            timers_influencer_trap: 'Παγίδα επιρροής'
         }
     };
 
@@ -1034,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#main-content-area [data-page]').forEach(dynamicLink => {
             // Only attach if it's not a direct external link (like Discord button)
             // AND if it doesn't already have an internal href for a different purpose (like anchor links for characters)
-            if (!dynamicLink.classList.contains('discord-button') && !dynamicLink.href.includes('#')) {
+            if (!dynamicLink.classList.contains('discord-button')) { // Exclude Discord button
                 dynamicLink.removeEventListener('click', handleDynamicPageLinkClick); // Prevent duplicates
                 dynamicLink.addEventListener('click', handleDynamicPageLinkClick);
             }
@@ -1117,6 +1149,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="timer-item card">
                         <h4>🌟 ${translations[currentLang]?.timers_weekly_event || 'Weekly Event'} : ${translations[currentLang]?.timers_alliance_war || 'Alliance War'}</h4>
                         <p>${translations[currentLang]?.timers_start_in || 'Starts in'} : <span class="countdown" data-time="2025-06-26T10:00:00">Chargement...</span></p>
+                    </div>
+                    <div class="timer-item card">
+                        <h4>🔥 ${translations[currentLang]?.timers_influencer_trap || 'Influencer Trap'}</h4>
+                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-25T14:00:00">Chargement...</span></p>
                     </div>
                     <div class="timer-item card">
                         <h4>🏆 ${translations[currentLang]?.timers_special_event || 'Special Event'} : ${translations[currentLang]?.timers_state_championship || 'State Championship'}</h4>
