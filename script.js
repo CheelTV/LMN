@@ -1028,6 +1028,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Re-attach event listeners for dynamically loaded content here
+        // This is key for buttons like "Découvrir les guides" on home.html
+        document.querySelectorAll('#main-content-area [data-page]').forEach(dynamicLink => {
+            // Only attach if it's not a direct external link (like Discord button)
+            if (!dynamicLink.classList.contains('discord-button')) { // Exclude Discord button
+                dynamicLink.removeEventListener('click', handleDynamicPageLinkClick); // Prevent duplicates
+                dynamicLink.addEventListener('click', handleDynamicPageLinkClick);
+            }
+        });
+
+
         // Update URL for navigation history (allows back/forward buttons)
         const newUrl = subPageName ? `?page=${pageName}#${subPageName}` : `?page=${pageName}`;
         history.pushState({ page: pageName, subPage: subPageName }, '', newUrl);
@@ -1037,6 +1048,15 @@ document.addEventListener('DOMContentLoaded', () => {
             sidebar.classList.remove('active');
         }
     }
+
+    /** Handle clicks on dynamically loaded links with data-page attribute. */
+    function handleDynamicPageLinkClick(e) {
+        e.preventDefault();
+        const page = e.currentTarget.dataset.page;
+        const subPage = e.currentTarget.dataset.subPage || null;
+        loadPage(page, subPage);
+    }
+
 
     /**
      * Initializes accordion functionality for guide sections.
