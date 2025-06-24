@@ -757,7 +757,7 @@ footer {
         transform: translateX(-100%); /* Initialement masquée */
     }
     .sidebar.active {
-        transform: translateX(0); /* Affiche la barre latérale quand 'active' */
+        transform: translateX(0); /* Affichée quand active */
     }
 
     .hero-section h1 {
