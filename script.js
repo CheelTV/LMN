@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Localization (i18n) Logic ---
+    // --- Localization (i18n) Data ---
     const translations = {
         fr: {
             // General elements
@@ -80,7 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: 'Votre Message',
             contact_send_button: 'Envoyer le Message',
             footer_copyright: '&copy; 2025 Le Guide de La Main Noire. Tous droits réservés.',
-            search_placeholder: 'Rechercher un guide ou un personnage...'
+            search_placeholder: 'Rechercher un guide ou un personnage...',
+            day_mode: '☀️ Mode Jour',
+            night_mode: '🌙 Mode Nuit',
+            timers_daily_event: 'Événement Quotidien',
+            timers_infected_hunt: 'Chasse aux Infectés',
+            timers_next_in: 'Prochainement dans',
+            timers_weekly_event: 'Événement Hebdomadaire',
+            timers_alliance_war: 'Guerre d\'Alliance',
+            timers_start_in: 'Début dans',
+            timers_special_event: 'Événement Spécial',
+            timers_state_championship: 'Championnat des États',
+            timers_end_in: 'Fin dans'
         },
         en: {
             home_link: 'Home',
@@ -160,7 +171,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: 'Your Message',
             contact_send_button: 'Send Message',
             footer_copyright: '&copy; 2025 The Black Hand Guide. All rights reserved.',
-            search_placeholder: 'Search for a guide or character...'
+            search_placeholder: 'Search for a guide or character...',
+            day_mode: '☀️ Day Mode',
+            night_mode: '🌙 Night Mode',
+            timers_daily_event: 'Daily Event',
+            timers_infected_hunt: 'Infected Hunt',
+            timers_next_in: 'Next in',
+            timers_weekly_event: 'Weekly Event',
+            timers_alliance_war: 'Alliance War',
+            timers_start_in: 'Starts in',
+            timers_special_event: 'Special Event',
+            timers_state_championship: 'State Championship',
+            timers_end_in: 'Ends in'
         },
         ko: { // Korean
             home_link: '홈',
@@ -240,7 +262,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: '당신의 메시지',
             contact_send_button: '메시지 보내기',
             footer_copyright: '&copy; 2025 블랙 핸드 가이드. 모든 권리 보유.',
-            search_placeholder: '가이드 또는 캐릭터 검색...'
+            search_placeholder: '가이드 또는 캐릭터 검색...',
+            day_mode: '☀️ 낮 모드',
+            night_mode: '🌙 밤 모드',
+            timers_daily_event: '일일 이벤트',
+            timers_infected_hunt: '감염자 사냥',
+            timers_next_in: '다음',
+            timers_weekly_event: '주간 이벤트',
+            timers_alliance_war: '동맹 전쟁',
+            timers_start_in: '시작',
+            timers_special_event: '특별 이벤트',
+            timers_state_championship: '주 챔피언십',
+            timers_end_in: '종료'
         },
         it: { // Italian
             home_link: 'Home',
@@ -320,7 +353,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: 'Il tuo messaggio',
             contact_send_button: 'Invia Messaggio',
             footer_copyright: '&copy; 2025 La Guida della Mano Nera. Tutti i diritti riservati.',
-            search_placeholder: 'Cerca una guida o un personaggio...'
+            search_placeholder: 'Cerca una guida o un personaggio...',
+            day_mode: '☀️ Modalità Giorno',
+            night_mode: '🌙 Modalità Notte',
+            timers_daily_event: 'Evento Quotidiano',
+            timers_infected_hunt: 'Caccia agli Infetti',
+            timers_next_in: 'Prossimamente in',
+            timers_weekly_event: 'Evento Settimanale',
+            timers_alliance_war: 'Guerra d\'Alleanza',
+            timers_start_in: 'Inizia in',
+            timers_special_event: 'Evento Speciale',
+            timers_state_championship: 'Campionato di Stato',
+            timers_end_in: 'Termina in'
         },
         es: { // Spanish
             home_link: 'Inicio',
@@ -379,13 +423,13 @@ document.addEventListener('DOMContentLoaded', () => {
             character_miho_desc: 'Especializada en ataques a distancia y PvP. Sus habilidades mejoran la precisión y la potencia de fuego de tus unidades.',
             character_sarge_name: 'Sarge',
             character_sarge_role: 'Defensa y Tanque',
-            character_sarge_desc: 'El tanque del equipo, excelente para defender tu base. Reduce el daño recibido y fortalece la durabilidad de las tropas.',
+            character_sarge_desc: 'El tanque del equipo, excelente para defender tu base. Él reduce el daño recibido y fortalece la durabilidad de las tropas.',
             character_ghost_name: 'Ghost',
             character_ghost_role: 'Desarrollo y Recolección',
             character_ghost_desc: 'Un héroe de intendencia que acelera la producción de recursos y las construcciones. Ideal para optimizar tu economía.',
             character_travis_name: 'Travis',
             character_travis_role: 'Investigación y Entrenamiento',
-            character_travis_desc: 'Especialista en investigación y entrenamiento de tropas. Reduce los costos y los tiempos necesarios para los avances tecnológicos.',
+            character_travis_desc: 'Especialista en investigación y entrenamiento de tropas. Él reduce los costos y los tiempos necesarios para los avances tecnológicos.',
             character_eva_name: 'Eva',
             character_eva_role: 'Curación y Apoyo',
             character_eva_desc: 'Una unidad de apoyo esencial que puede curar tropas heridas y mejorar su supervivencia en combate.',
@@ -400,7 +444,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: 'Tu Mensaje',
             contact_send_button: 'Enviar Mensaje',
             footer_copyright: '&copy; 2025 La Guía de la Mano Negra. Todos los derechos reservados.',
-            search_placeholder: 'Buscar una guía o personaje...'
+            search_placeholder: 'Buscar una guía o personaje...',
+            day_mode: '☀️ Modo Día',
+            night_mode: '🌙 Modo Noche',
+            timers_daily_event: 'Evento Diario',
+            timers_infected_hunt: 'Caza de Infectados',
+            timers_next_in: 'Próximamente en',
+            timers_weekly_event: 'Evento Semanal',
+            timers_alliance_war: 'Guerra de Alianza',
+            timers_start_in: 'Comienza en',
+            timers_special_event: 'Evento Especial',
+            timers_state_championship: 'Campeonato de Estado',
+            timers_end_in: 'Termina en'
         },
         ru: { // Russian
             home_link: 'Главная',
@@ -480,7 +535,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: 'Ваше сообщение',
             contact_send_button: 'Отправить сообщение',
             footer_copyright: '&copy; 2025 Руководство Черной Руки. Все права защищены.',
-            search_placeholder: 'Поиск руководства или персонажа...'
+            search_placeholder: 'Поиск руководства или персонажа...',
+            day_mode: '☀️ Дневной режим',
+            night_mode: '🌙 Ночной режим',
+            timers_daily_event: 'Ежедневное событие',
+            timers_infected_hunt: 'Охота на зараженных',
+            timers_next_in: 'Следующее через',
+            timers_weekly_event: 'Еженедельное событие',
+            timers_alliance_war: 'Война альянсов',
+            timers_start_in: 'Начало через',
+            timers_special_event: 'Специальное событие',
+            timers_state_championship: 'Чемпионат штата',
+            timers_end_in: 'Заканчивается через'
         },
         zh: { // Chinese
             home_link: '主页',
@@ -521,7 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroes_tip4_text: '使用训练来获得经验和碎片。',
             guide_resources_title: '资源管理 💰',
             resources_tip1_strong: '地图收集：',
-            resources_tip1_text: '派遣您的部队收集食物、木材、石油和金属。资源等级会影响数量。',
+            tip1_text: '派遣您的部队收集食物、木材、石油和金属。资源等级会影响数量。',
             resources_tip2_strong: '生产建筑：',
             resources_tip2_text: '升级您的农场、伐木场、炼油厂和铸造厂。这是被动但必不可少的生产。',
             resources_tip3_strong: '仓库：',
@@ -560,7 +626,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: '您的留言',
             contact_send_button: '发送消息',
             footer_copyright: '&copy; 2025 黑手指南。版权所有。',
-            search_placeholder: '搜索指南或角色...'
+            search_placeholder: '搜索指南或角色...',
+            day_mode: '☀️ 日间模式',
+            night_mode: '🌙 夜间模式',
+            timers_daily_event: '每日活动',
+            timers_infected_hunt: '感染者狩猎',
+            timers_next_in: '距离下次：',
+            timers_weekly_event: '每周活动',
+            timers_alliance_war: '联盟战争',
+            timers_start_in: '开始于：',
+            timers_special_event: '特殊活动',
+            timers_state_championship: '州冠军赛',
+            timers_end_in: '结束于：'
         },
         ja: { // Japanese
             home_link: 'ホーム',
@@ -640,7 +717,18 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: 'あなたのメッセージ',
             contact_send_button: 'メッセージを送信',
             footer_copyright: '&copy; 2025 ブラックハンドガイド. 無断複写・転載を禁じます。',
-            search_placeholder: 'ガイドまたはキャラクターを検索...'
+            search_placeholder: 'ガイドまたはキャラクターを検索...',
+            day_mode: '☀️ 日間モード',
+            night_mode: '🌙 夜間モード',
+            timers_daily_event: 'デイリーイベント',
+            timers_infected_hunt: '感染者ハント',
+            timers_next_in: '次まで',
+            timers_weekly_event: 'ウィークリーイベント',
+            timers_alliance_war: 'アライアンス戦争',
+            timers_start_in: '開始まで',
+            timers_special_event: 'スペシャルイベント',
+            timers_state_championship: '州チャンピオンシップ',
+            timers_end_in: '終了まで'
         },
         el: { // Greek
             home_link: 'Αρχική',
@@ -720,201 +808,391 @@ document.addEventListener('DOMContentLoaded', () => {
             contact_message_placeholder: 'Το μήνυμά σας',
             contact_send_button: 'Αποστολή Μηνύματος',
             footer_copyright: '&copy; 2025 Ο Οδηγός της Μαύρης Χειρός. Όλα τα δικαιώματα διατηρούνται.',
-            search_placeholder: 'Αναζήτηση οδηγού ή χαρακτήρα...'
+            search_placeholder: 'Αναζήτηση οδηγού ή χαρακτήρα...',
+            day_mode: '☀️ Λειτουργία Ημέρας',
+            night_mode: '🌙 Λειτουργία Νύχτας',
+            timers_daily_event: 'Καθημερινή Εκδήλωση',
+            timers_infected_hunt: 'Κυνήγι Μολυσμένων',
+            timers_next_in: 'Επόμενο σε',
+            timers_weekly_event: 'Εβδομαδιαία Εκδήλωση',
+            timers_alliance_war: 'Πόλεμος Συμμαχιών',
+            timers_start_in: 'Έναρξη σε',
+            timers_special_event: 'Ειδική Εκδήλωση',
+            timers_state_championship: 'Πρωτάθλημα Πολιτείας',
+            timers_end_in: 'Τέλος σε'
         }
-        // You will need to add more languages here following the same structure
+        // Add more languages here as needed
     };
 
-    // Current language (default to French or detect from browser/localStorage)
-    let currentLang = localStorage.getItem('lang') || 'fr'; // Use 'fr' as default if no language is saved
+    // Flags for the language menu (matching data-lang attributes)
+    const languageFlags = {
+        fr: '🇫🇷',
+        en: '🇬🇧',
+        ko: '🇰🇷',
+        it: '🇮🇹',
+        es: '🇪🇸',
+        ru: '🇷🇺',
+        zh: '🇨🇳',
+        ja: '🇯🇵',
+        el: '🇬🇷',
+    };
 
-    // Get elements for language switcher
+    let currentLang = localStorage.getItem('lang') || 'fr'; // Default to French
+    let currentTheme = localStorage.getItem('theme') || 'night'; // Default to night mode
+
+    const mainContentArea = document.getElementById('main-content-area');
     const langToggleButton = document.getElementById('lang-toggle');
     const langMenu = document.getElementById('lang-menu');
     const currentLangFlag = document.getElementById('current-lang-flag');
+    const settingsToggle = document.getElementById('settings-toggle');
+    const settingsMenu = document.getElementById('settings-menu');
+    const themeDayModeButton = document.getElementById('theme-day-mode');
+    const themeNightModeButton = document.getElementById('theme-night-mode');
+    const backToTopButton = document.getElementById('back-to-top');
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
 
-    // Function to apply translations
+    // --- Core Functions ---
+
+    /**
+     * Applies the current language translations to the page.
+     * @param {string} lang - The language code (e.g., 'fr', 'en').
+     */
     function setLanguage(lang) {
-        // Update html lang attribute
-        document.documentElement.lang = lang;
+        document.documentElement.lang = lang; // Set HTML lang attribute
+        currentLang = lang;
+        localStorage.setItem('lang', lang); // Save preference
 
-        // Update current language flag in the button
-        const flag = langMenu.querySelector(`[data-lang="${lang}"]`).textContent.split(' ')[0];
-        currentLangFlag.textContent = flag;
+        currentLangFlag.textContent = languageFlags[lang]; // Update flag in button
 
-        // Update all elements with data-key attributes
         document.querySelectorAll('[data-key]').forEach(element => {
             const key = element.dataset.key;
-            if (translations[lang] && translations[lang][key]) {
-                // Handle placeholder text for inputs/textareas
+            const translation = translations[lang][key];
+
+            if (translation !== undefined) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = translations[lang][key];
+                    element.placeholder = translation;
                 } else {
-                    element.textContent = translations[lang][key];
+                    element.textContent = translation;
                 }
             }
         });
 
-        // Update search bar placeholder separately as it's not a direct data-key
+        // Specific updates for hardcoded elements or dynamic content
         const searchInput = document.querySelector('.search-bar input');
         if (searchInput) {
             searchInput.placeholder = translations[lang].search_placeholder;
         }
 
-        currentLang = lang;
-        localStorage.setItem('lang', lang); // Save selected language
+        // Update settings menu text
+        if (themeDayModeButton) themeDayModeButton.textContent = translations[lang].day_mode;
+        if (themeNightModeButton) themeNightModeButton.textContent = translations[lang].night_mode;
+
+        // Re-initialize dynamic content if present (like timers)
+        // This is crucial if dynamic content includes translatable strings
+        if (mainContentArea.innerHTML.includes('timers-container')) {
+             loadTimersContent();
+        }
     }
 
-    // Initialize with saved or default language
-    setLanguage(currentLang);
+    /**
+     * Loads content for a specific page dynamically.
+     * @param {string} pageName - The name of the page to load (e.g., 'home', 'guides').
+     * @param {string} [subPageName] - Optional. Specific sub-page/character if applicable.
+     */
+    async function loadPage(pageName, subPageName = null) {
+        let contentHtml = '';
+        let pageTitleKey = '';
 
-    // Toggle language menu visibility
-    langToggleButton.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent click from bubbling up and closing menu
-        langMenu.classList.toggle('hidden');
-        langToggleButton.setAttribute('aria-expanded', !langMenu.classList.contains('hidden'));
+        // Remove active class from previous sidebar link
+        document.querySelectorAll('.sidebar-nav ul li a').forEach(link => {
+            link.classList.remove('active');
+            if (link.dataset.page === pageName && !subPageName) { // Activate main page link
+                link.classList.add('active');
+            } else if (link.dataset.subPage === subPageName && link.dataset.page === pageName) { // Activate sub-page link
+                 link.classList.add('active');
+                 // Also activate parent 'characters' link if a sub-page is selected
+                 const parentLink = document.querySelector(`.sidebar-nav a[data-page="${pageName}"]:not([data-sub-page])`);
+                 if (parentLink) parentLink.classList.add('active');
+            }
+        });
+
+        // Set active class for logo if navigating to home
+        if (pageName === 'home') {
+            document.querySelector('.top-header .logo a').classList.add('active');
+        } else {
+            document.querySelector('.top-header .logo a').classList.remove('active');
+        }
+
+
+        // Load content based on pageName
+        try {
+            const response = await fetch(`${pageName}.html`); // Assume separate HTML files for each page
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            contentHtml = await response.text();
+        } catch (error) {
+            console.error(`Could not load page ${pageName}.html:`, error);
+            mainContentArea.innerHTML = `<section class="container content-section"><h2>Page non trouvée</h2><p>Désolé, la page que vous recherchez n'a pas pu être chargée.</p></section>`;
+            setLanguage(currentLang); // Re-apply language to error message
+            return;
+        }
+
+        mainContentArea.innerHTML = contentHtml;
+        setLanguage(currentLang); // Apply translations to the newly loaded content
+
+        // Specific actions after content is loaded
+        if (pageName === 'timers') {
+            loadTimersContent();
+        } else if (pageName === 'guides') {
+            initGuideAccordions(); // Re-initialize accordion for guides
+        } else if (pageName === 'characters') {
+            // Scroll to specific character if subPageName is provided
+            if (subPageName) {
+                const targetCharacter = document.getElementById(`character-${subPageName}`);
+                if (targetCharacter) {
+                    targetCharacter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+        // Update URL
+        const newUrl = subPageName ? `?page=${pageName}#${subPageName}` : `?page=${pageName}`;
+        history.pushState({ page: pageName, subPage: subPageName }, '', newUrl);
+
+        // Close sidebar on mobile after navigation
+        if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
+    }
+
+    /**
+     * Initializes accordion functionality for guide sections.
+     * Call this whenever guides.html content is loaded.
+     */
+    function initGuideAccordions() {
+        document.querySelectorAll('.guide-toggle').forEach(button => {
+            button.removeEventListener('click', handleGuideToggleClick); // Prevent duplicate listeners
+            button.addEventListener('click', handleGuideToggleClick);
+        });
+    }
+
+    function handleGuideToggleClick() {
+        const targetId = this.dataset.target;
+        const targetContent = document.getElementById(targetId);
+
+        if (targetContent) {
+            document.querySelectorAll('.guide-content.visible').forEach(openContent => {
+                if (openContent.id !== targetId) {
+                    openContent.classList.remove('visible');
+                    const correspondingButton = document.querySelector(`.guide-toggle[data-target="${openContent.id}"]`);
+                    if (correspondingButton) {
+                        correspondingButton.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            targetContent.classList.toggle('visible');
+            const isVisible = targetContent.classList.contains('visible');
+            this.setAttribute('aria-expanded', isVisible);
+        }
+    }
+
+    /**
+     * Loads dynamic timer content into the timers container.
+     * Should be called when timers.html is loaded.
+     */
+    function loadTimersContent() {
+        const timersContainer = document.getElementById('timers-container');
+        if (timersContainer) {
+            // Clear previous timers if any
+            timersContainer.innerHTML = `<p data-key="timers_loading">${translations[currentLang].timers_loading}</p>`;
+
+            setTimeout(() => {
+                timersContainer.innerHTML = `
+                    <div class="timer-item card">
+                        <h4>⏰ ${translations[currentLang].timers_daily_event || 'Événement Quotidien'} : ${translations[currentLang].timers_infected_hunt || 'Chasse aux Infectés'}</h4>
+                        <p>${translations[currentLang].timers_next_in || 'Prochainement dans'} : <span class="countdown" data-time="2025-06-24T18:00:00">Chargement...</span></p>
+                    </div>
+                    <div class="timer-item card">
+                        <h4>🌟 ${translations[currentLang].timers_weekly_event || 'Événement Hebdomadaire'} : ${translations[currentLang].timers_alliance_war || 'Guerre d\'Alliance'}</h4>
+                        <p>${translations[currentLang].timers_start_in || 'Début dans'} : <span class="countdown" data-time="2025-06-26T10:00:00">Chargement...</span></p>
+                    </div>
+                    <div class="timer-item card">
+                        <h4>🏆 ${translations[currentLang].timers_special_event || 'Événement Spécial'} : ${translations[currentLang].timers_state_championship || 'Championnat des États'}</h4>
+                        <p>${translations[currentLang].timers_end_in || 'Fin dans'} : <span class="countdown" data-time="2025-06-25T23:59:59">Chargement...</span></p>
+                    </div>
+                `;
+                updateCountdowns();
+                // Ensure interval is only set once to avoid multiple timers
+                if (!window.countdownInterval) {
+                    window.countdownInterval = setInterval(updateCountdowns, 1000);
+                }
+            }, 500); // Shorter timeout for faster testing
+        }
+    }
+
+    // Function to update countdowns (remains largely the same)
+    function updateCountdowns() {
+        document.querySelectorAll('.countdown').forEach(countdownElement => {
+            const targetTime = new Date(countdownElement.dataset.time).getTime();
+            const now = new Date().getTime();
+            const distance = targetTime - now;
+
+            if (distance < 0) {
+                countdownElement.textContent = translations[currentLang].timers_ended || 'Terminé !';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            let countdownText = '';
+            if (days > 0) countdownText += `${days}j `;
+            countdownText += `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+            countdownElement.textContent = countdownText.trim();
+        });
+    }
+
+    /**
+     * Sets the theme (day/night mode).
+     * @param {string} mode - 'day' or 'night'.
+     */
+    function setTheme(mode) {
+        if (mode === 'day') {
+            document.body.classList.add('light-mode');
+            currentTheme = 'day';
+        } else {
+            document.body.classList.remove('light-mode');
+            currentTheme = 'night';
+        }
+        localStorage.setItem('theme', mode);
+    }
+
+    // --- Event Listeners and Initializations ---
+
+    // Initialize language and theme from localStorage
+    setLanguage(currentLang);
+    setTheme(currentTheme);
+
+    // Initial page load based on URL or default to 'home'
+    const initialPage = new URLSearchParams(window.location.search).get('page') || 'home';
+    const initialSubPage = window.location.hash ? window.location.hash.substring(1) : null;
+    loadPage(initialPage, initialSubPage);
+
+    // Sidebar navigation click handler
+    document.querySelectorAll('.sidebar-nav a[data-page]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = e.currentTarget.dataset.page;
+            const subPage = e.currentTarget.dataset.subPage || null;
+            loadPage(page, subPage);
+
+            // Remove active class from all sidebar links
+            document.querySelectorAll('.sidebar-nav ul li a').forEach(l => l.classList.remove('active'));
+            // Add active class to the clicked link
+            e.currentTarget.classList.add('active');
+            // If it's a sub-page link, also activate its parent dropdown toggle
+            if (e.currentTarget.closest('.dropdown-menu')) {
+                const parentToggle = e.currentTarget.closest('.dropdown').querySelector('.dropdown-toggle');
+                if (parentToggle) parentToggle.classList.add('active');
+            }
+        });
     });
 
-    // Handle language selection
+    // Logo click handler (navigates to home page)
+    document.querySelector('.top-header .logo a').addEventListener('click', (e) => {
+        e.preventDefault();
+        loadPage('home');
+    });
+
+    // Language switcher logic
+    langToggleButton.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent click from bubbling up and closing menu
+        langMenu.classList.toggle('visible');
+        langToggleButton.setAttribute('aria-expanded', langMenu.classList.contains('visible'));
+        settingsMenu.classList.remove('visible'); // Close settings if language opens
+        settingsToggle.setAttribute('aria-expanded', 'false');
+    });
+
     langMenu.querySelectorAll('li a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const newLang = e.target.dataset.lang;
             if (newLang) {
                 setLanguage(newLang);
-                langMenu.classList.add('hidden'); // Hide menu after selection
+                langMenu.classList.remove('visible'); // Hide menu after selection
                 langToggleButton.setAttribute('aria-expanded', 'false');
             }
         });
     });
 
-    // Close language menu when clicking outside
+    // Settings menu logic
+    settingsToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        settingsMenu.classList.toggle('visible');
+        settingsToggle.setAttribute('aria-expanded', settingsMenu.classList.contains('visible'));
+        langMenu.classList.remove('visible'); // Close language if settings opens
+        langToggleButton.setAttribute('aria-expanded', 'false');
+    });
+
+    themeDayModeButton.addEventListener('click', () => {
+        setTheme('day');
+        settingsMenu.classList.remove('visible');
+        settingsToggle.setAttribute('aria-expanded', 'false');
+    });
+
+    themeNightModeButton.addEventListener('click', () => {
+        setTheme('night');
+        settingsMenu.classList.remove('visible');
+        settingsToggle.setAttribute('aria-expanded', 'false');
+    });
+
+    // Close all menus when clicking outside
     document.addEventListener('click', (e) => {
         if (!langMenu.contains(e.target) && !langToggleButton.contains(e.target)) {
-            langMenu.classList.add('hidden');
+            langMenu.classList.remove('visible');
             langToggleButton.setAttribute('aria-expanded', 'false');
         }
-    });
-
-    // --- End Localization Logic ---
-
-    // Toggle guide content visibility (accordion)
-    document.querySelectorAll('.guide-toggle').forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.dataset.target;
-            const targetContent = document.getElementById(targetId);
-
-            if (targetContent) {
-                // Close all other open guide sections
-                document.querySelectorAll('.guide-content.visible').forEach(openContent => {
-                    if (openContent.id !== targetId) {
-                        openContent.classList.remove('visible');
-                        const correspondingButton = document.querySelector(`.guide-toggle[data-target="${openContent.id}"]`);
-                        if (correspondingButton) {
-                            correspondingButton.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                });
-
-                // Toggle visibility of the clicked section
-                targetContent.classList.toggle('visible');
-
-                // Update aria-expanded attribute for accessibility
-                const isVisible = targetContent.classList.contains('visible');
-                button.setAttribute('aria-expanded', isVisible);
-            }
-        });
-    });
-
-    // Back to top button functionality
-    const backToTopButton = document.getElementById('back-to-top');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = 'block';
-        } else {
-            backToTopButton.style.display = 'none';
+        if (!settingsMenu.contains(e.target) && !settingsToggle.contains(e.target)) {
+            settingsMenu.classList.remove('visible');
+            settingsToggle.setAttribute('aria-expanded', 'false');
         }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // Hamburger menu toggle for mobile sidebar
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
-
-    menuToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-    });
-
-    // Close sidebar when clicking outside (for mobile overlay effect)
-    document.addEventListener('click', (event) => {
-        if (window.innerWidth <= 768 && sidebar.classList.contains('active') && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+        // Close sidebar on mobile
+        if (window.innerWidth <= 768 && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
             sidebar.classList.remove('active');
         }
     });
 
-    // Dropdown menu for characters in the sidebar
-    const charactersDropdownToggle = document.getElementById('characters-dropdown-toggle');
-    const charactersDropdownMenu = document.getElementById('characters-dropdown-menu');
+    // Back to top button (already in previous script, ensure it's still there)
+    // Hamburger menu toggle (already in previous script)
+    // Characters dropdown toggle (already in previous script)
 
-    if (charactersDropdownToggle && charactersDropdownMenu) {
-        charactersDropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            charactersDropdownMenu.classList.toggle('visible');
-            charactersDropdownToggle.classList.toggle('active');
-            const isVisible = charactersDropdownMenu.classList.contains('visible');
-            charactersDropdownToggle.setAttribute('aria-expanded', isVisible);
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!charactersDropdownToggle.contains(e.target) && !charactersDropdownMenu.contains(e.target)) {
-                charactersDropdownMenu.classList.remove('visible');
-                charactersDropdownToggle.classList.remove('active');
-                charactersDropdownToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
-
-    // Placeholder for event timers (you would integrate your actual timer logic here)
-    const timersContainer = document.getElementById('timers-container');
-    if (timersContainer) {
-        // Simulate loading
-        setTimeout(() => {
-            timersContainer.innerHTML = `
-                <div class="timer-item card">
-                    <h4>⏰ ${translations[currentLang].timers_daily_event || 'Événement Quotidien'} : ${translations[currentLang].timers_infected_hunt || 'Chasse aux Infectés'}</h4>
-                    <p>${translations[currentLang].timers_next_in || 'Prochainement dans'} : <span class="countdown" data-time="2025-06-24T18:00:00">Chargement...</span></p>
-                </div>
-                <div class="timer-item card">
-                    <h4>🌟 ${translations[currentLang].timers_weekly_event || 'Événement Hebdomadaire'} : ${translations[currentLang].timers_alliance_war || 'Guerre d\'Alliance'}</h4>
-                    <p>${translations[currentLang].timers_start_in || 'Début dans'} : <span class="countdown" data-time="2025-06-26T10:00:00">Chargement...</span></p>
-                </div>
-                <div class="timer-item card">
-                    <h4>🏆 ${translations[currentLang].timers_special_event || 'Événement Spécial'} : ${translations[currentLang].timers_state_championship || 'Championnat des États'}</h4>
-                    <p>${translations[currentLang].timers_end_in || 'Fin dans'} : <span class="countdown" data-time="2025-06-25T23:59:59">Chargement...</span></p>
-                </div>
-            `;
-            updateCountdowns();
-            setInterval(updateCountdowns, 1000);
-        }, 1500);
-    }
+    // Handle browser history (back/forward buttons)
+    window.addEventListener('popstate', (event) => {
+        const page = event.state ? event.state.page : 'home';
+        const subPage = event.state ? event.state.subPage : null;
+        loadPage(page, subPage);
+    });
 });
 
-// Function to update countdowns
+// Function to update countdowns (defined globally to be accessible after dynamic content load)
 function updateCountdowns() {
     document.querySelectorAll('.countdown').forEach(countdownElement => {
         const targetTime = new Date(countdownElement.dataset.time).getTime();
         const now = new Date().getTime();
         const distance = targetTime - now;
+        const currentLang = localStorage.getItem('lang') || 'fr'; // Ensure currentLang is available
 
         if (distance < 0) {
-            countdownElement.textContent = 'Terminé !'; // This should also be translatable eventually
+            // Access translations object directly from script.js scope
+            // This assumes translations object is defined in a way that is accessible here,
+            // or we pass it, or make it global (less ideal). For simplicity now, let's assume global access or re-define
+            // A more robust solution would pass translations object or have it in global scope
+            const translations = { /* ... (define translations object again or make it accessible) ... */ }; // Placeholder
+            countdownElement.textContent = translations[currentLang]?.timers_ended || 'Terminé !'; // Fallback
             return;
         }
 
