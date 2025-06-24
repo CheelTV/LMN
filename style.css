@@ -119,12 +119,18 @@ a:hover {
     background-color: var(--color-purple);
 }
 
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Pour positionner le dropdown de langue */
+}
+
 .user-actions .icon-button {
     background: none;
     border: none;
     color: var(--color-dark-grey-text);
     font-size: 1.3em;
-    margin-left: 20px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -132,6 +138,77 @@ a:hover {
 .user-actions .icon-button:hover {
     color: var(--color-blue);
 }
+
+/* Language Switcher Styles */
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.language-switcher .lang-toggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: var(--color-medium-grey);
+    color: var(--color-light-grey-text);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-switcher .lang-toggle:hover {
+    background-color: var(--color-black);
+}
+
+.language-switcher .lang-toggle span {
+    margin-right: 5px;
+    font-size: 1.2em; /* Pour que l'emoji soit bien visible */
+}
+
+.language-switcher .lang-menu {
+    position: absolute;
+    top: 100%;
+    right: 0; /* Aligne le menu à droite du bouton */
+    background-color: var(--color-dark-grey);
+    border: 1px solid var(--color-card-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 10px;
+    z-index: 1001; /* Au-dessus de tout */
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.language-switcher .lang-menu.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-switcher .lang-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-dark-grey-text);
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.language-switcher .lang-menu li a:hover {
+    background-color: var(--color-sidebar-link-hover);
+    color: var(--color-light-grey-text);
+}
+
+.language-switcher .lang-menu li a span {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
 
 /* Mise en page principale (barre latérale + contenu) */
 .main-layout {
@@ -600,7 +677,15 @@ footer {
     }
 
     .user-actions {
-        display: none; /* Cache les actions utilisateur sur mobile */
+        display: flex; /* Keep it visible for language switcher */
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+        order: 2; /* Position it below the logo on mobile */
+    }
+
+    .language-switcher {
+        margin-right: 15px; /* Add some spacing */
     }
 
     .main-layout {
