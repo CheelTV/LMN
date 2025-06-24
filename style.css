@@ -1,33 +1,59 @@
 /* Variables pour les couleurs, plus facile à maintenir */
 :root {
-    --color-black: #121212; /* Noir profond pour le fond */
-    --color-dark-grey: #1e1e1e; /* Gris foncé pour les éléments de fond */
-    --color-medium-grey: #2a2a2a; /* Gris moyen pour les cartes et bordures */
-    --color-light-grey-text: #e0e0e0; /* Texte clair pour les titres et éléments importants */
-    --color-dark-grey-text: #b0b0b0; /* Texte plus sombre pour le corps du texte */
+    /* Night Mode (Default) */
+    --color-bg-primary: #121212; /* Noir profond pour le fond */
+    --color-bg-secondary: #1e1e1e; /* Gris foncé pour les éléments de fond */
+    --color-bg-card: #2a2a2a; /* Gris moyen pour les cartes et bordures */
+    --color-text-light: #e0e0e0; /* Texte clair pour les titres et éléments importants */
+    --color-text-dark: #b0b0b0; /* Texte plus sombre pour le corps du texte */
+    --color-border-subtle: rgba(255, 255, 255, 0.08); /* Bordure subtile des cartes */
+
     --color-purple: #8e2de2; /* Couleur d'accent principale (violet vibrant) */
     --color-dark-purple: #4a00e0; /* Variation plus foncée du violet */
     --color-blue: #00bcd4; /* Couleur d'accent secondaire (bleu-cyan) */
     --color-cta-hover: #a766f7; /* Couleur de survol pour les CTA */
     --color-sidebar-bg: #1a1a1a; /* Fond de la barre latérale */
     --color-sidebar-link-hover: #333333; /* Fond au survol des liens de la barre latérale */
-    --color-card-border: rgba(255, 255, 255, 0.08); /* Bordure subtile des cartes */
+    --color-guide-item-bg: #121212; /* Fond des éléments de liste de guide */
+    --color-guide-item-border: var(--color-blue); /* Bordure des éléments de liste de guide */
 }
+
+/* Light Mode Variables */
+body.light-mode {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f0f2f5;
+    --color-bg-card: #ffffff;
+    --color-text-light: #333333;
+    --color-text-dark: #555555;
+    --color-border-subtle: rgba(0, 0, 0, 0.1);
+
+    /* Accents can remain vibrant or be softened */
+    --color-purple: #6a0dad; /* A slightly darker purple for contrast */
+    --color-dark-purple: #4b0082;
+    --color-blue: #007bb6; /* A slightly darker blue for contrast */
+    --color-cta-hover: #9c27b0; /* Adjust hover for light mode */
+    --color-sidebar-bg: #f8f8f8;
+    --color-sidebar-link-hover: #e0e0e0;
+    --color-guide-item-bg: #fdfdfd;
+    --color-guide-item-border: var(--color-blue);
+}
+
 
 /* Styles de base */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--color-black);
-    color: var(--color-dark-grey-text);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-dark);
     line-height: 1.6;
     overflow-x: hidden; /* Empêche le défilement horizontal non désiré */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transition pour le mode jour/nuit */
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     font-weight: 700;
 }
 
@@ -43,16 +69,17 @@ a:hover {
 
 /* Mise en page - En-tête supérieur */
 .top-header {
-    background-color: var(--color-dark-grey);
+    background-color: var(--color-bg-secondary);
     padding: 15px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--color-border-subtle);
     position: sticky;
     top: 0;
     z-index: 100; /* L'en-tête reste toujours au-dessus */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
 .top-header .logo {
@@ -64,14 +91,14 @@ a:hover {
 .top-header .logo a {
     font-size: 1.6em;
     font-weight: 700;
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     white-space: nowrap; /* Empêche le retour à la ligne du texte sur les petits écrans */
 }
 
 .menu-toggle {
     background: none;
     border: none;
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     font-size: 1.5em;
     cursor: pointer;
     display: none; /* Caché par défaut sur grand écran, affiché sur mobile */
@@ -87,17 +114,17 @@ a:hover {
 .search-bar input {
     width: 100%;
     padding: 10px 15px;
-    border: 1px solid var(--color-medium-grey);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 20px 0 0 20px;
-    background-color: var(--color-black);
-    color: var(--color-light-grey-text);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-light);
     font-size: 1em;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.5s ease;
 }
 
 .search-bar input::placeholder {
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
 }
 
 .search-bar input:focus {
@@ -106,7 +133,7 @@ a:hover {
 
 .search-bar button {
     background-color: var(--color-dark-purple);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     border: none;
     padding: 10px 15px;
     border-radius: 0 20px 20px 0;
@@ -123,13 +150,13 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 15px;
-    position: relative; /* Pour positionner le dropdown de langue */
+    position: relative; /* Pour positionner les dropdowns */
 }
 
 .user-actions .icon-button {
     background: none;
     border: none;
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
     font-size: 1.3em;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -150,15 +177,15 @@ a:hover {
     align-items: center;
     padding: 8px 12px;
     border-radius: 5px;
-    background-color: var(--color-medium-grey);
-    color: var(--color-light-grey-text);
+    background-color: var(--color-bg-card);
+    color: var(--color-text-light);
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .language-switcher .lang-toggle:hover {
-    background-color: var(--color-black);
+    background-color: var(--color-bg-primary);
 }
 
 .language-switcher .lang-toggle span {
@@ -166,12 +193,13 @@ a:hover {
     font-size: 1.2em; /* Pour que l'emoji soit bien visible */
 }
 
-.language-switcher .lang-menu {
+.language-switcher .lang-menu,
+.settings-menu { /* Apply common styles for both dropdowns */
     position: absolute;
     top: 100%;
-    right: 0; /* Aligne le menu à droite du bouton */
-    background-color: var(--color-dark-grey);
-    border: 1px solid var(--color-card-border);
+    right: 0;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     list-style: none;
@@ -185,23 +213,32 @@ a:hover {
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
-.language-switcher .lang-menu.visible {
+.language-switcher .lang-menu.visible,
+.settings-menu.visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
 
-.language-switcher .lang-menu li a {
+.language-switcher .lang-menu li a,
+.settings-menu li button { /* Style for links in lang menu and buttons in settings */
     display: block;
     padding: 10px 20px;
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
     white-space: nowrap;
     transition: background-color 0.2s ease, color 0.2s ease;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
 }
 
-.language-switcher .lang-menu li a:hover {
+.language-switcher .lang-menu li a:hover,
+.settings-menu li button:hover {
     background-color: var(--color-sidebar-link-hover);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
 }
 
 .language-switcher .lang-menu li a span {
@@ -220,8 +257,8 @@ a:hover {
 .sidebar {
     background-color: var(--color-sidebar-bg);
     padding-top: 20px;
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease;
+    border-right: 1px solid var(--color-border-subtle);
+    transition: transform 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
     /* Pour mobile, la sidebar est initialement masquée */
     transform: translateX(0); /* Par défaut visible sur desktop */
 }
@@ -253,7 +290,7 @@ a:hover {
     display: flex;
     align-items: center;
     padding: 12px 25px;
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
     font-size: 1.1em;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -265,11 +302,11 @@ a:hover {
 
 .sidebar-nav li a:hover {
     background-color: var(--color-sidebar-link-hover);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
 }
 
 .sidebar-nav li a.active {
-    background-color: var(--color-medium-grey);
+    background-color: var(--color-bg-card); /* Should be medium grey for current selection */
     color: var(--color-purple);
     border-left: 4px solid var(--color-purple);
     font-weight: 600;
@@ -295,49 +332,65 @@ a:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: var(--color-black);
+    background-color: var(--color-bg-primary);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out;
+    transition: max-height 0.4s ease-out, background-color 0.5s ease;
 }
 
 .dropdown-menu.visible {
     max-height: 500px; /* Hauteur max pour afficher tous les éléments */
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--color-border-subtle);
 }
 
 .dropdown-menu li a {
     padding: 10px 25px 10px 55px; /* Indentation pour les sous-éléments */
     font-size: 1em;
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
 }
 
 .dropdown-menu li a:hover {
     background-color: var(--color-sidebar-link-hover);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
 }
 
 /* Wrapper du contenu principal */
-.content-wrapper {
+#main-content-area { /* ID to target the main content dynamically */
     padding: 0; /* Les sections gèrent leur propre padding */
+    transition: background-color 0.5s ease;
 }
 
 .content-section {
     padding: 40px 20px;
     max-width: 1000px; /* Largeur maximale pour le contenu à l'intérieur des sections */
     margin: 0 auto;
+    animation: fadeIn 0.5s ease-out; /* Animation à l'apparition du contenu */
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 /* Section héroïque (bannière principale) */
 .hero-section {
-    background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-black) 100%);
+    background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-bg-primary) 100%);
     padding: 80px 20px;
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     text-align: center;
     position: relative;
     overflow: hidden;
     box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease; /* Transition pour le mode jour/nuit */
 }
+
+/* Specific background for light mode hero to ensure readability */
+body.light-mode .hero-section {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-bg-secondary) 100%);
+    color: var(--color-text-light);
+}
+
 
 .hero-section::before {
     content: '';
@@ -360,7 +413,7 @@ a:hover {
     font-size: 3.5em;
     margin-bottom: 10px;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
 }
 
 .hero-section p {
@@ -371,7 +424,7 @@ a:hover {
 
 .cta-button {
     background-color: var(--color-blue);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     padding: 15px 30px;
     border-radius: 5px;
     font-size: 1.2em;
@@ -392,13 +445,13 @@ a:hover {
 
 /* Style des cartes génériques */
 .card {
-    background-color: var(--color-medium-grey);
+    background-color: var(--color-bg-card);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
-    border: 1px solid var(--color-card-border);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-border-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
 }
 
 .card:hover {
@@ -409,7 +462,7 @@ a:hover {
 .note {
     font-style: italic;
     font-size: 0.9em;
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
     margin-top: 20px;
     text-align: center;
 }
@@ -422,7 +475,7 @@ a:hover {
 
 .guide-toggle {
     background: linear-gradient(90deg, var(--color-purple) 0%, var(--color-dark-purple) 100%);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     border: none;
     padding: 15px 25px;
     border-radius: 8px;
@@ -446,9 +499,9 @@ a:hover {
 .guide-content {
     max-height: 0; /* Par défaut, contenu masqué */
     overflow: hidden;
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
-    background-color: var(--color-dark-grey);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out, background-color 0.5s ease;
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border-subtle);
     padding: 0 20px; /* Padding initial à 0 */
     border-radius: 0 0 10px 10px;
     margin-top: -15px; /* Pour un chevauchement esthétique avec le bouton */
@@ -473,13 +526,13 @@ a:hover {
 }
 
 .guide-content ul li {
-    background-color: var(--color-black);
+    background-color: var(--color-guide-item-bg);
     padding: 15px;
     margin-bottom: 10px;
-    border-left: 4px solid var(--color-blue);
+    border-left: 4px solid var(--color-guide-item-border);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.5s ease, border-color 0.5s ease;
 }
 
 .guide-content ul li:hover {
@@ -525,7 +578,7 @@ a:hover {
 
 .character-card h3 {
     margin: 10px 0 5px;
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     font-size: 1.6em;
 }
 
@@ -537,13 +590,13 @@ a:hover {
 
 .character-description {
     font-size: 0.95em;
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
     flex-grow: 1; /* Permet à la description de prendre l'espace disponible */
 }
 
 .view-details-button {
     background-color: var(--color-purple);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: 20px;
@@ -571,13 +624,13 @@ a:hover {
 .contact-form input,
 .contact-form textarea {
     padding: 12px;
-    border: 1px solid var(--color-medium-grey);
+    border: 1px solid var(--color-border-subtle);
     border-radius: 8px;
-    background-color: var(--color-black);
-    color: var(--color-light-grey-text);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-light);
     font-size: 1em;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background-color 0.5s ease;
 }
 
 .contact-form input:focus,
@@ -595,16 +648,17 @@ a:hover {
 
 /* Pied de page */
 footer {
-    background-color: var(--color-dark-grey);
-    color: var(--color-dark-grey-text);
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-dark);
     text-align: center;
     padding: 30px 20px;
     margin-top: 50px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--color-border-subtle);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
 .social-links a {
-    color: var(--color-dark-grey-text);
+    color: var(--color-text-dark);
     font-size: 1.5em;
     margin: 0 10px;
     transition: color 0.3s ease;
@@ -621,7 +675,7 @@ footer {
     bottom: 30px;
     right: 30px;
     background-color: var(--color-blue);
-    color: var(--color-light-grey-text);
+    color: var(--color-text-light);
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -677,7 +731,7 @@ footer {
     }
 
     .user-actions {
-        display: flex; /* Keep it visible for language switcher */
+        display: flex; /* Keep it visible for language switcher and settings */
         margin-top: 10px;
         width: 100%;
         justify-content: center;
@@ -692,6 +746,16 @@ footer {
         grid-template-columns: 1fr; /* Empile la barre latérale et le contenu */
     }
 
+    .sidebar {
+        position: fixed;
+        top: 60px; /* Commence sous l'en-tête mobile */
+        left: 0;
+        width: 250px;
+        height: calc(100% - 60px);
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+        z-index: 90;
+        transform: translateX(-100%); /* Initialement masquée */
+    }
     .sidebar.active {
         transform: translateX(0); /* Affiche la barre latérale quand 'active' */
     }
