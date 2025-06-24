@@ -12,91 +12,180 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">Le Guide de La Main Noire ⚔️</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#event-timers">⏱️ Timers</a></li>
-                <li><a href="#guides">📚 Guides</a></li>
-                <li><a href="#about">ℹ️ À Propos</a></li>
-            </ul>
-        </nav>
-        <div class="hero-section">
-            <h1>Bienvenue sur Le Guide de La Main Noire</h1>
-            <p>Votre ressource ultime pour dominer le jeu et progresser efficacement !</p>
-            <a href="#guides" class="cta-button">Découvrir les Guides <i class="fas fa-arrow-down"></i></a>
+    <header class="top-header">
+        <div class="logo">
+            <button id="menu-toggle" class="menu-toggle"><i class="fas fa-bars"></i></button>
+            <a href="#">Le Guide de La Main Noire ⚔️</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher un guide ou un personnage...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-actions">
+            <button class="icon-button"><i class="fas fa-bell"></i></button>
+            <button class="icon-button"><i class="fas fa-cog"></i></button>
         </div>
     </header>
 
-    <main>
-        <section id="event-timers" class="container">
-            <h2>⏱️ Timers d'Événements</h2>
-            <div id="timers-container" class="card">
-                <p>Chargement des timers...</p>
-                </div>
-            <p class="note">* Tous les horaires sont affichés dans votre fuseau horaire local.</p>
-        </section>
-
-        <section id="guides" class="container">
-            <h2>📚 Guides Stratégiques</h2>
-
-            <div class="guide-category card">
-                <h3><button class="guide-toggle" data-target="guide-debut">Début de Jeu 🚀</button></h3>
-                <div id="guide-debut" class="guide-content hidden">
-                    <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Début+de+Jeu" alt="Début de Jeu" class="guide-image">
-                    <ul>
-                        <li><strong>Concentrez-vous sur le QG (Quartier Général) :</strong> Améliorez-le dès que possible pour débloquer de nouvelles fonctionnalités et bâtiments. C'est la clé de votre progression.</li>
-                        <li><strong>Protégez vos ressources :</strong> Gardez vos ressources (nourriture, bois, pétrole, métal) sous le seuil de protection de votre entrepôt pour ne pas les perdre en cas d'attaque.</li>
-                        <li><strong>Ne gaspillez pas vos accélérateurs :</strong> Gardez-les pour les constructions et recherches de haut niveau. Utilisez l'aide de l'alliance au maximum.</li>
-                        <li><strong>Rejoignez une alliance active :</strong> C'est primordial pour recevoir de l'aide, participer à des événements, et être protégé.</li>
-                        <li><strong>Montez vos héros d'exploration :</strong> Rusty, Miho, Sarge sont de bons choix pour l'exploration de la carte et les chasses aux infectés.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="guide-category card">
-                <h3><button class="guide-toggle" data-target="guide-heros">Héros et Compétences 💪</button></h3>
-                <div id="guide-heros" class="guide-content hidden">
-                    <img src="https://via.placeholder.com/600x300/8e2de2/ffffff?text=Héros+et+Compétences" alt="Héros et Compétences" class="guide-image">
-                    <ul>
-                        <li><strong>Types de Héros :</strong>
-                            <ul>
-                                <li><strong>Exploration/Combat (Rallye) :</strong> Pour les chasses, les rallyes, et les attaques (ex: Rusty, Miho, Sarge).</li>
-                                <li><strong>Développement (Intendance) :</strong> Pour les bonus de construction, recherche, production de ressources (ex: Ghost, Travis, Eva).</li>
+    <div class="main-layout">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Accueil</a></li>
+                    <li><a href="#event-timers"><i class="fas fa-hourglass-half"></i> Timers d'Événements</a></li>
+                    <li><a href="#guides"><i class="fas fa-book"></i> Guides Stratégiques</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" id="characters-dropdown-toggle"><i class="fas fa-users"></i> Personnages <i class="fas fa-caret-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu" id="characters-dropdown-menu">
+                            <li><a href="#character-rusty">Rusty</a></li>
+                            <li><a href="#character-miho">Miho</a></li>
+                            <li><a href="#character-sarge">Sarge</a></li>
+                            <li><a href="#character-ghost">Ghost</a></li>
+                            <li><a href="#character-travis">Travis</a></li>
+                            <li><a href="#character-eva">Eva</a></li>
                             </ul>
-                        </li>
-                        <li><strong>Focus sur quelques-uns :</strong> Au début, concentrez-vous sur 3-5 héros principaux pour l'exploration et les rallyes. Ne dispersez pas vos ressources.</li>
-                        <li><strong>Éveil des Héros :</strong> Collectez des fragments de héros pour les éveiller et débloquer de puissantes compétences.</li>
-                        <li><strong>Formation de Héro :</strong> Utilisez la formation pour gagner de l'expérience et des fragments.</li>
-                    </ul>
-                </div>
-            </div>
+                    </li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> À Propos</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            <div class="guide-category card">
-                <h3><button class="guide-toggle" data-target="guide-ressources">Gestion des Ressources 💰</button></h3>
-                <div id="guide-ressources" class="guide-content hidden">
-                    <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Gestion+des+Ressources" alt="Gestion des Ressources" class="guide-image">
-                    <ul>
-                        <li><strong>Collecte sur la carte :</strong> Envoyez vos troupes collecter de la nourriture, du bois, du pétrole, et du métal. Le niveau de la ressource influe sur la quantité.</li>
-                        <li><strong>Bâtiments de production :</strong> Améliorez vos fermes, scieries, raffineries et fonderies. C'est une production passive mais essentielle.</li>
-                        <li><strong>Entrepôt :</strong> Améliorez votre entrepôt pour augmenter le seuil de protection des ressources.</li>
-                        <li><strong>Missions et événements :</strong> Participez aux événements quotidiens, hebdomadaires et aux missions de l'histoire pour gagner de grandes quantités de ressources.</li>
-                        <li><strong>Utilisation judicieuse :</strong> Ne produisez pas un surplus de ressources au-delà de ce dont vous avez besoin pour vos prochaines constructions/recherches majeures, surtout si vous n'êtes pas bien protégé.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        <main class="content-wrapper">
+            <section class="hero-section">
+                <h1>Bienvenue sur Le Guide de La Main Noire</h1>
+                <p>Votre ressource ultime pour dominer le jeu et progresser efficacement !</p>
+                <a href="#guides" class="cta-button">Découvrir les Guides <i class="fas fa-arrow-down"></i></a>
+            </section>
 
-        <section id="about" class="container">
-            <h2>ℹ️ À Propos de Nous</h2>
-            <div class="card about-card">
-                <p>Bienvenue sur Le Guide de La Main Noire, la communauté dédiée aux joueurs cherchant à optimiser leur progression et maîtriser toutes les facettes du jeu. Notre mission est de vous fournir des guides clairs, des astuces à jour et des informations précieuses pour vous aider à devenir un joueur d'élite.</p>
-                <p>Que vous soyez un débutant cherchant ses marques ou un vétéran souhaitant affiner ses stratégies, vous trouverez ici les ressources nécessaires pour atteindre vos objectifs. Rejoignez notre communauté et commencez votre ascension vers la victoire !</p>
-            </div>
-        </section>
-    </main>
+            <section id="event-timers" class="container content-section">
+                <h2>⏱️ Timers d'Événements</h2>
+                <div id="timers-container" class="card">
+                    <p>Chargement des timers...</p>
+                </div>
+                <p class="note">* Tous les horaires sont affichés dans votre fuseau horaire local.</p>
+            </section>
+
+            <section id="guides" class="container content-section">
+                <h2>📚 Guides Stratégiques</h2>
+
+                <div class="guide-category card">
+                    <h3><button class="guide-toggle" data-target="guide-debut">Début de Jeu 🚀</button></h3>
+                    <div id="guide-debut" class="guide-content hidden">
+                        <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Début+de+Jeu" alt="Début de Jeu" class="guide-image">
+                        <ul>
+                            <li><strong>Concentrez-vous sur le QG (Quartier Général) :</strong> Améliorez-le dès que possible pour débloquer de nouvelles fonctionnalités et bâtiments. C'est la clé de votre progression.</li>
+                            <li><strong>Protégez vos ressources :</strong> Gardez vos ressources (nourriture, bois, pétrole, métal) sous le seuil de protection de votre entrepôt pour ne pas les perdre en cas d'attaque.</li>
+                            <li><strong>Ne gaspillez pas vos accélérateurs :</strong> Gardez-les pour les constructions et recherches de haut niveau. Utilisez l'aide de l'alliance au maximum.</li>
+                            <li><strong>Rejoignez une alliance active :</strong> C'est primordial pour recevoir de l'aide, participer à des événements, et être protégé.</li>
+                            <li><strong>Montez vos héros d'exploration :</strong> Rusty, Miho, Sarge sont de bons choix pour l'exploration de la carte et les chasses aux infectés.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="guide-category card">
+                    <h3><button class="guide-toggle" data-target="guide-heros">Héros et Compétences 💪</button></h3>
+                    <div id="guide-heros" class="guide-content hidden">
+                        <img src="https://via.placeholder.com/600x300/8e2de2/ffffff?text=Héros+et+Compétences" alt="Héros et Compétences" class="guide-image">
+                        <ul>
+                            <li><strong>Types de Héros :</strong>
+                                <ul>
+                                    <li><strong>Exploration/Combat (Rallye) :</strong> Pour les chasses, les rallyes, et les attaques (ex: Rusty, Miho, Sarge).</li>
+                                    <li><strong>Développement (Intendance) :</strong> Pour les bonus de construction, recherche, production de ressources (ex: Ghost, Travis, Eva).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Focus sur quelques-uns :</strong> Au début, concentrez-vous sur 3-5 héros principaux pour l'exploration et les rallyes. Ne dispersez pas vos ressources.</li>
+                            <li><strong>Éveil des Héros :</strong> Collectez des fragments de héros pour les éveiller et débloquer de puissantes compétences.</li>
+                            <li><strong>Formation de Héro :</strong> Utilisez la formation pour gagner de l'expérience et des fragments.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="guide-category card">
+                    <h3><button class="guide-toggle" data-target="guide-ressources">Gestion des Ressources 💰</button></h3>
+                    <div id="guide-ressources" class="guide-content hidden">
+                        <img src="https://via.placeholder.com/600x300/4a00e0/ffffff?text=Gestion+des+Ressources" alt="Gestion des Ressources" class="guide-image">
+                        <ul>
+                            <li><strong>Collecte sur la carte :</strong> Envoyez vos troupes collecter de la nourriture, du bois, du pétrole, et du métal. Le niveau de la ressource influe sur la quantité.</li>
+                            <li><strong>Bâtiments de production :</strong> Améliorez vos fermes, scieries, raffineries et fonderies. C'est une production passive mais essentielle.</li>
+                            <li><strong>Entrepôt :</strong> Améliorez votre entrepôt pour augmenter le seuil de protection des ressources.</li>
+                            <li><strong>Missions et événements :</strong> Participez aux événements quotidiens, hebdomadaires et aux missions de l'histoire pour gagner de grandes quantités de ressources.</li>
+                            <li><strong>Utilisation judicieuse :</strong> Ne produisez pas un surplus de ressources au-delà de ce dont vous avez besoin pour vos prochaines constructions/recherches majeures, surtout si vous n'êtes pas bien protégé.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="characters" class="container content-section">
+                <h2>👤 Nos Héros et Personnages</h2>
+                <div class="character-grid">
+                    <div class="character-card card" id="character-rusty">
+                        <img src="https://via.placeholder.com/150x150/00bcd4/ffffff?text=Rusty" alt="Rusty" class="character-avatar">
+                        <h3>Rusty</h3>
+                        <p class="character-role">Exploration & Combat</p>
+                        <p class="character-description">Un héros de combat polyvalent, excellent pour les expéditions et les rallyes contre les infectés. Ses compétences augmentent les dégâts des troupes.</p>
+                        <a href="#" class="view-details-button">Voir les détails</a>
+                    </div>
+                    <div class="character-card card" id="character-miho">
+                        <img src="https://via.placeholder.com/150x150/8e2de2/ffffff?text=Miho" alt="Miho" class="character-avatar">
+                        <h3>Miho</h3>
+                        <p class="character-role">Exploration & PvP</p>
+                        <p class="character-description">Spécialisée dans les attaques à distance et le PvP. Ses compétences améliorent la précision et la puissance de feu de vos unités.</p>
+                        <a href="#" class="view-details-button">Voir les détails</a>
+                    </div>
+                    <div class="character-card card" id="character-sarge">
+                        <img src="https://via.placeholder.com/150x150/4a00e0/ffffff?text=Sarge" alt="Sarge" class="character-avatar">
+                        <h3>Sarge</h3>
+                        <p class="character-role">Défense & Tank</p>
+                        <p class="character-description">Le tank de l'équipe, excellent pour la défense de votre base. Il réduit les dégâts subis et renforce la durabilité des troupes.</p>
+                        <a href="#" class="view-details-button">Voir les détails</a>
+                    </div>
+                    <div class="character-card card" id="character-ghost">
+                        <img src="https://via.placeholder.com/150x150/00bcd4/ffffff?text=Ghost" alt="Ghost" class="character-avatar">
+                        <h3>Ghost</h3>
+                        <p class="character-role">Développement & Collecte</p>
+                        <p class="character-description">Un héros d'intendance qui accélère la production de ressources et les constructions. Idéal pour optimiser votre économie.</p>
+                        <a href="#" class="view-details-button">Voir les détails</a>
+                    </div>
+                    <div class="character-card card" id="character-travis">
+                        <img src="https://via.placeholder.com/150x150/8e2de2/ffffff?text=Travis" alt="Travis" class="character-avatar">
+                        <h3>Travis</h3>
+                        <p class="character-role">Recherche & Entraînement</p>
+                        <p class="character-description">Spécialiste de la recherche et de l'entraînement des troupes. Il réduit les coûts et les temps nécessaires pour les avancées technologiques.</p>
+                        <a href="#" class="view-details-button">Voir les détails</a>
+                    </div>
+                    <div class="character-card card" id="character-eva">
+                        <img src="https://via.placeholder.com/150x150/4a00e0/ffffff?text=Eva" alt="Eva" class="character-avatar">
+                        <h3>Eva</h3>
+                        <p class="character-role">Soins & Soutien</p>
+                        <p class="character-description">Une unité de soutien essentielle qui peut soigner les troupes blessées et améliorer leur survie au combat.</p>
+                        <a href="#" class="view-details-button">Voir les détails</a>
+                    </div>
+                    </div>
+            </section>
+
+            <section id="about" class="container content-section">
+                <h2>ℹ️ À Propos de Nous</h2>
+                <div class="card about-card">
+                    <p>Bienvenue sur Le Guide de La Main Noire, la communauté dédiée aux joueurs cherchant à optimiser leur progression et maîtriser toutes les facettes du jeu. Notre mission est de vous fournir des guides clairs, des astuces à jour et des informations précieuses pour vous aider à devenir un joueur d'élite.</p>
+                    <p>Que vous soyez un débutant cherchant ses marques ou un vétéran souhaitant affiner ses stratégies, vous trouverez ici les ressources nécessaires pour atteindre vos objectifs. Rejoignez notre communauté et commencez votre ascension vers la victoire !</p>
+                </div>
+            </section>
+
+            <section id="contact" class="container content-section">
+                <h2>📧 Contactez-Nous</h2>
+                <div class="card contact-card">
+                    <p>Des questions, des suggestions, ou besoin d'aide ? N'hésitez pas à nous contacter !</p>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Votre Nom" required>
+                        <input type="email" placeholder="Votre Email" required>
+                        <textarea placeholder="Votre Message" rows="5" required></textarea>
+                        <button type="submit" class="cta-button">Envoyer le Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>&copy; 2025 Le Guide de La Main Noire. Tous droits réservés.</p>
