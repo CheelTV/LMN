@@ -664,9 +664,10 @@ footer {
     transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-    color: var(--color-blue);
-}
+a.social-link-facebook:hover { color: #3b5998; } /* Facebook Blue */
+a.social-link-twitter:hover { color: #1da1f2; } /* Twitter Blue */
+a.social-link-discord:hover { color: #7289da; } /* Discord Purple */
+
 
 /* Bouton "Retour en haut" */
 #back-to-top {
@@ -690,6 +691,29 @@ footer {
 #back-to-top:hover {
     background-color: var(--color-purple);
     transform: translateY(-3px);
+}
+
+/* Discord Invite Section */
+.text-center {
+    text-align: center;
+}
+
+.discord-button {
+    background-color: #7289da; /* Couleur Discord officielle */
+}
+
+.discord-button:hover {
+    background-color: #677bc4; /* Légèrement plus sombre au survol */
+    transform: translateY(-3px);
+}
+
+.discord-button i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Taille de l'icône Discord */
+}
+
+#discord-invite {
+    margin-top: 50px; /* Ajoute un peu d'espace au-dessus de la section */
 }
 
 /* Design Responsif */
