@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Localization (i18n) Data ---
+    // --- Localization (i18n) Data with ALL Translations ---
     const translations = {
         fr: {
             // General elements
@@ -92,7 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: 'Événement Spécial',
             timers_state_championship: 'Championnat des États',
             timers_end_in: 'Fin dans',
-            timers_ended: 'Terminé !'
+            timers_ended: 'Terminé !',
+            page_not_found_title: 'Page non trouvée',
+            page_not_found_message: 'Désolé, la page que vous recherchez n\'a pas pu être chargée.',
+            discord_invite_title: '🎉 Rejoignez notre Communauté Discord !',
+            discord_invite_text: 'Ne manquez aucune discussion, astuce ou annonce ! Rejoignez notre serveur Discord pour échanger avec d\'autres passionnés et obtenir de l\'aide en direct.',
+            discord_join_button: 'Rejoindre le Discord'
         },
         en: {
             home_link: 'Home',
@@ -184,7 +189,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: 'Special Event',
             timers_state_championship: 'State Championship',
             timers_end_in: 'Ends in',
-            timers_ended: 'Finished!'
+            timers_ended: 'Finished!',
+            page_not_found_title: 'Page Not Found',
+            page_not_found_message: 'Sorry, the page you are looking for could not be loaded.',
+            discord_invite_title: '🎉 Join our Discord Community!',
+            discord_invite_text: 'Don\'t miss any discussions, tips, or announcements! Join our Discord server to chat with other enthusiasts and get live help.',
+            discord_join_button: 'Join Discord'
         },
         ko: { // Korean
             home_link: '홈',
@@ -276,7 +286,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: '특별 이벤트',
             timers_state_championship: '주 챔피언십',
             timers_end_in: '종료',
-            timers_ended: '완료!'
+            timers_ended: '완료!',
+            page_not_found_title: '페이지를 찾을 수 없습니다',
+            page_not_found_message: '죄송합니다. 찾으시는 페이지를 로드할 수 없습니다.',
+            discord_invite_title: '🎉 저희 디스코드 커뮤니티에 참여하세요!',
+            discord_invite_text: '어떤 토론, 팁, 공지도 놓치지 마세요! 저희 디스코드 서버에 참여하여 다른 열정적인 사람들과 교류하고 실시간으로 도움을 받으세요.',
+            discord_join_button: '디스코드 참여'
         },
         it: { // Italian
             home_link: 'Home',
@@ -368,7 +383,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: 'Evento Speciale',
             timers_state_championship: 'Campionato di Stato',
             timers_end_in: 'Termina in',
-            timers_ended: 'Finito!'
+            timers_ended: 'Finito!',
+            page_not_found_title: 'Pagina non trovata',
+            page_not_found_message: 'Spiacenti, la pagina che stai cercando non è stata caricata.',
+            discord_invite_title: '🎉 Unisciti alla nostra Comunità Discord!',
+            discord_invite_text: 'Non perdere nessuna discussione, suggerimento o annuncio! Unisciti al nostro server Discord per chattare con altri appassionati e ottenere aiuto dal vivo.',
+            discord_join_button: 'Unisciti a Discord'
         },
         es: { // Spanish
             home_link: 'Inicio',
@@ -460,7 +480,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: 'Evento Especial',
             timers_state_championship: 'Campeonato de Estado',
             timers_end_in: 'Termina en',
-            timers_ended: '¡Terminado!'
+            timers_ended: '¡Terminado!',
+            page_not_found_title: 'Página no encontrada',
+            page_not_found_message: 'Lo sentimos, la página que buscas no pudo ser cargada.',
+            discord_invite_title: '🎉 ¡Únete a nuestra Comunidad de Discord!',
+            discord_invite_text: '¡No te pierdas ninguna discusión, consejo o anuncio! Únete a nuestro servidor de Discord para chatear con otros entusiastas y obtener ayuda en vivo.',
+            discord_join_button: 'Unirse a Discord'
         },
         ru: { // Russian
             home_link: 'Главная',
@@ -552,7 +577,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: 'Специальное событие',
             timers_state_championship: 'Чемпионат штата',
             timers_end_in: 'Заканчивается через',
-            timers_ended: 'Завершено!'
+            timers_ended: 'Завершено!',
+            page_not_found_title: 'Страница не найдена',
+            page_not_found_message: 'К сожалению, страница, которую вы ищете, не может быть загружена.',
+            discord_invite_title: '🎉 Присоединяйтесь к нашему сообществу Discord!',
+            discord_invite_text: 'Не пропустите ни одной дискуссии, совета или объявления! Присоединяйтесь к нашему Discord-серверу, чтобы общаться с другими энтузиастами и получать живую помощь.',
+            discord_join_button: 'Присоединиться к Discord'
         },
         zh: { // Chinese
             home_link: '主页',
@@ -644,7 +674,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: '特殊活动',
             timers_state_championship: '州冠军赛',
             timers_end_in: '结束于：',
-            timers_ended: '已完成！'
+            timers_ended: '已完成！',
+            page_not_found_title: '页面未找到',
+            page_not_found_message: '抱歉，无法加载您要查找的页面。',
+            discord_invite_title: '🎉 加入我们的Discord社区！',
+            discord_invite_text: '不要错过任何讨论、提示或公告！加入我们的Discord服务器，与其他爱好者交流并获得实时帮助。',
+            discord_join_button: '加入Discord'
         },
         ja: { // Japanese
             home_link: 'ホーム',
@@ -736,7 +771,12 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: 'スペシャルイベント',
             timers_state_championship: '州チャンピオンシップ',
             timers_end_in: '終了まで',
-            timers_ended: '完了！'
+            timers_ended: '完了！',
+            page_not_found_title: 'ページが見つかりません',
+            page_not_found_message: '申し訳ありません。お探しのページを読み込めませんでした。',
+            discord_invite_title: '🎉 Discordコミュニティに参加しよう！',
+            discord_invite_text: '議論、ヒント、お知らせを見逃さないでください！私たちのDiscordサーバーに参加して、他の愛好家と交流し、ライブでサポートを受けましょう。',
+            discord_join_button: 'Discordに参加'
         },
         el: { // Greek
             home_link: 'Αρχική',
@@ -828,10 +868,13 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_special_event: 'Ειδική Εκδήλωση',
             timers_state_championship: 'Πρωτάθλημα Πολιτείας',
             timers_end_in: 'Τέλος σε',
-            timers_ended: 'Ολοκληρώθηκε!'
+            timers_ended: 'Ολοκληρώθηκε!',
+            page_not_found_title: 'Η σελίδα δεν βρέθηκε',
+            page_not_found_message: 'Συγγνώμη, η σελίδα που ψάχνετε δεν μπόρεσε να φορτωθεί.',
+            discord_invite_title: '🎉 Ελάτε στην Κοινότητα μας στο Discord!',
+            discord_invite_text: 'Μην χάσετε καμία συζήτηση, συμβουλή ή ανακοίνωση! Ελάτε στον server μας στο Discord για να συνομιλήσετε με άλλους ενθουσιώδεις χρήστες και να λάβετε ζωντανή βοήθεια.',
+            discord_join_button: 'Εγγραφή στο Discord'
         }
-        // Add more languages here as needed, following the same structure.
-        // REMINDER: Fill in all translations for each language.
     };
 
     // Flags for the language menu (matching data-lang attributes)
@@ -921,7 +964,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Update active class for sidebar links
         document.querySelectorAll('.sidebar-nav ul li a').forEach(link => {
             link.classList.remove('active');
+            // Ensure parent dropdowns are closed and inactive unless directly clicked
+            const parentDropdown = link.closest('.dropdown');
+            if (parentDropdown && parentDropdown.querySelector('.dropdown-menu').classList.contains('visible') && !link.classList.contains('dropdown-toggle')) {
+                 parentDropdown.querySelector('.dropdown-menu').classList.remove('visible');
+                 parentDropdown.querySelector('.dropdown-toggle').classList.remove('active');
+            }
         });
+
         const currentActiveLink = document.querySelector(`.sidebar-nav a[data-page="${pageName}"]${subPageName ? `[data-sub-page="${subPageName}"]` : ':not([data-sub-page])'}`);
         if (currentActiveLink) {
             currentActiveLink.classList.add('active');
