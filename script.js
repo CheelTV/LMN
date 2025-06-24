@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resources_tip4_text: 'Partecipa agli eventi giornalieri, settimanali e alle missioni della storia per guadagnare grandi quantità di risorse.',
             resources_tip5_strong: 'Uso giudizioso:',
             resources_tip5_text: 'Non produrre un surplus di risorse oltre ciò di cui hai bisogno per le tue prossime grandi costruzioni/ricerche, soprattutto se non sei ben protetto.',
-            characters_section_title: '👤 I Nostri Eroi e Personaggi',
+            characters_section_title: '👤 I Nostri Eroi e Personnaggi',
             character_rusty_name: 'Rusty',
             character_rusty_role: 'Esplorazione e Combattimento',
             character_rusty_desc: 'Un eroe di combattimento versatile, eccellente per spedizioni e rally contro gli infetti. Le sue abilità aumentano il danno delle truppe.',
@@ -894,7 +894,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_daily_event: 'Καθημερινή Εκδήλωση',
             timers_infected_hunt: 'Κυνήγι Μολυσμένων',
             timers_next_in: 'Επόμενο σε',
-            timers_weekly_event: 'Εβδομαδιαία Εκδήλωση',
+            timers_weekly_event: 'Εβδομαδιαία Εκδήλεση',
             timers_alliance_war: 'Πόλεμος Συμμαχιών',
             timers_start_in: 'Έναρξη σε',
             timers_special_event: 'Ειδική Εκδήλωση',
@@ -1322,10 +1322,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // START OF MODIFICATION: Explicit event listener for the characters dropdown toggle
+    const charactersDropdownToggle = document.getElementById('characters-dropdown-toggle');
+    const charactersDropdownMenu = document.getElementById('characters-dropdown-menu');
+
+    if (charactersDropdownToggle && charactersDropdownMenu) {
+        charactersDropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior (navigating to #)
+            e.stopPropagation(); // Prevent document click listener from immediately closing it
+
+            const isVisible = charactersDropdownMenu.classList.contains('visible');
+
+            // Toggle visibility of the characters dropdown
+            charactersDropdownMenu.classList.toggle('visible');
+            charactersDropdownToggle.classList.toggle('active'); // For icon rotation
+            charactersDropdownToggle.setAttribute('aria-expanded', !isVisible);
+        });
+    }
+    // END OF MODIFICATION
 
     // Back to top button (already in previous script, ensure it's still there)
     // Hamburger menu toggle (already in previous script)
-    // Characters dropdown toggle (already in previous script)
+    // Characters dropdown toggle (already in previous script) - this is now handled above
 
     // Handle browser history (back/forward buttons) for SPA behavior
     window.addEventListener('popstate', (event) => {
