@@ -1,9 +1,731 @@
-/* Styles pour la table Joiner Bonus */
-.joiner-bonus-table-container {
+/* Variables pour les couleurs, plus facile à maintenir */
+:root {
+    /* Night Mode (Default) */
+    --color-bg-primary: #121212; /* Noir profond pour le fond */
+    --color-bg-secondary: #1e1e1e; /* Gris foncé pour les éléments de fond */
+    --color-bg-card: #2a2a2a; /* Gris moyen pour les cartes et bordures */
+    --color-text-light: #e0e0e0; /* Texte clair pour les titres et éléments importants */
+    --color-text-dark: #b0b0b0; /* Texte plus sombre pour le corps du texte */
+    --color-border-subtle: rgba(255, 255, 255, 0.08); /* Bordure subtile des cartes */
+
+    --color-purple: #8e2de2; /* Couleur d'accent principale (violet vibrant) */
+    --color-dark-purple: #4a00e0; /* Variation plus foncée du violet */
+    --color-blue: #00bcd4; /* Couleur d'accent secondaire (bleu-cyan) */
+    --color-cta-hover: #a766f7; /* Couleur de survol pour les CTA */
+    --color-sidebar-bg: #1a1a1a; /* Fond de la barre latérale */
+    --color-sidebar-link-hover: #333333; /* Fond au survol des liens de la barre latérale */
+    --color-guide-item-bg: #121212; /* Fond des éléments de liste de guide */
+    --color-guide-item-border: var(--color-blue); /* Bordure des éléments de liste de guide */
+}
+
+/* Light Mode Variables */
+body.light-mode {
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f0f2f5;
+    --color-bg-card: #ffffff;
+    --color-text-light: #333333;
+    --color-text-dark: #555555;
+    --color-border-subtle: rgba(0, 0, 0, 0.1);
+
+    /* Accents can remain vibrant or be softened */
+    --color-purple: #6a0dad; /* A slightly darker purple for contrast */
+    --color-dark-purple: #4b0082;
+    --color-blue: #007bb6; /* A slightly darker blue for contrast */
+    --color-cta-hover: #9c27b0; /* Adjust hover for light mode */
+    --color-sidebar-bg: #f8f8f8;
+    --color-sidebar-link-hover: #e0e0e0;
+    --color-guide-item-bg: #fdfdfd;
+    --color-guide-item-border: var(--color-blue);
+}
+
+
+/* Styles de base */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Empêche le défilement horizontal non désiré */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transition pour le mode jour/nuit */
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-light);
+    font-weight: 700;
+}
+
+a {
+    color: var(--color-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-purple);
+}
+
+/* Mise en page - En-tête supérieur */
+.top-header {
+    background-color: var(--color-bg-secondary);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 100; /* L'en-tête reste toujours au-dessus */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.top-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-header .logo a {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--color-text-light);
+    white-space: nowrap; /* Empêche le retour à la ligne du texte sur les petits écrans */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none; /* Caché par défaut sur grand écran, affiché sur mobile */
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1; /* Prend l'espace disponible */
+    max-width: 500px;
+    margin: 0 30px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 20px 0 0 20px;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-light);
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.5s ease;
+}
+
+.search-bar input::placeholder {
+    color: var(--color-text-dark);
+}
+
+.search-bar input:focus {
+    border-color: var(--color-purple);
+}
+
+.search-bar button {
+    background-color: var(--color-dark-purple);
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--color-purple);
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /* Pour positionner les dropdowns */
+}
+
+.user-actions .icon-button {
+    background: none;
+    border: none;
+    color: var(--color-text-dark);
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.user-actions .icon-button:hover {
+    color: var(--color-blue);
+}
+
+/* Language Switcher Styles */
+.language-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.language-switcher .lang-toggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: var(--color-bg-card);
+    color: var(--color-text-light);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.language-switcher .lang-toggle:hover {
+    background-color: var(--color-bg-primary);
+}
+
+.language-switcher .lang-toggle span {
+    margin-right: 5px;
+    font-size: 1.2em; /* Pour que l'emoji soit bien visible */
+}
+
+.language-switcher .lang-menu,
+.settings-menu { /* Apply common styles for both dropdowns */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 10px;
+    z-index: 1001; /* Au-dessus de tout */
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.language-switcher .lang-menu.visible,
+.settings-menu.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-switcher .lang-menu li a,
+.settings-menu li button { /* Style for links in lang menu and buttons in settings */
+    display: block;
+    padding: 10px 20px;
+    color: var(--color-text-dark);
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.language-switcher .lang-menu li a:hover,
+.settings-menu li button:hover {
+    background-color: var(--color-sidebar-link-hover);
+    color: var(--color-text-light);
+}
+
+.language-switcher .lang-menu li a span {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+
+/* Mise en page principale (barre latérale + contenu) */
+.main-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* 250px pour la barre latérale, le reste pour le contenu */
+    min-height: calc(100vh - 70px); /* Ajuste la hauteur pour remplir la vue (70px hauteur header) */
+}
+
+.sidebar {
+    background-color: var(--color-sidebar-bg);
+    padding-top: 20px;
+    border-right: 1px solid var(--color-border-subtle);
+    transition: transform 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+    /* Pour mobile, la sidebar est initialement masquée */
+    transform: translateX(0); /* Par défaut visible sur desktop */
+}
+
+/* État masqué sur mobile (sera géré par JS avec la classe 'active') */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 60px; /* Commence sous l'en-tête mobile */
+        left: 0;
+        width: 250px;
+        height: calc(100% - 60px);
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+        z-index: 90;
+        transform: translateX(-100%); /* Initialement masquée */
+    }
+    .sidebar.active {
+        transform: translateX(0); /* Affichée quand active */
+    }
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    color: var(--color-text-dark);
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav li a i {
+    margin-right: 15px;
+    font-size: 1.2em;
+}
+
+.sidebar-nav li a:hover {
+    background-color: var(--color-sidebar-link-hover);
+    color: var(--color-text-light);
+}
+
+.sidebar-nav li a.active {
+    background-color: var(--color-bg-card); /* Should be medium grey for current selection */
+    color: var(--color-purple);
+    border-left: 4px solid var(--color-purple);
+    font-weight: 600;
+}
+
+/* Menu déroulant pour les guides et personnages */
+.dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-icon {
+    margin-left: auto; /* Pousse l'icône à droite */
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle.active .dropdown-icon {
+    transform: rotate(180deg); /* Fait pivoter la flèche quand le menu est ouvert */
+}
+
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-bg-primary);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, background-color 0.5s ease;
+}
+
+.dropdown-menu.visible {
+    max-height: 500px; /* Hauteur max pour afficher tous les éléments */
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+.dropdown-menu li a {
+    padding: 10px 25px 10px 55px; /* Indentation pour les sous-éléments */
+    font-size: 1em;
+    color: var(--color-text-dark);
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--color-sidebar-link-hover);
+    color: var(--color-text-light);
+}
+
+/* Wrapper du contenu principal */
+#main-content-area { /* ID to target the main content dynamically */
+    padding: 0; /* Les sections gèrent leur propre padding */
+    transition: background-color 0.5s ease;
+}
+
+.content-section {
+    padding: 40px 20px;
+    max-width: 1000px; /* Largeur maximale pour le contenu à l'intérieur des sections */
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease-out; /* Animation à l'apparition du contenu */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Section héroïque (bannière principale) */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-dark-purple) 0%, var(--color-bg-primary) 100%);
+    padding: 80px 20px;
+    color: var(--color-text-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.5s ease; /* Transition pour le mode jour/nuit */
+}
+
+/* Specific background for light mode hero to ensure readability */
+body.light-mode .hero-section {
+    background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-bg-secondary) 100%);
+    color: var(--color-text-light);
+}
+
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(142, 45, 226, 0.15) 0%, rgba(26, 26, 26, 0) 70%);
+    opacity: 0.3;
+    animation: rotateBackground 20s linear infinite;
+}
+
+@keyframes rotateBackground {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    color: var(--color-text-light);
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background-color: var(--color-blue);
+    color: var(--color-text-light);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: var(--color-cta-hover);
+    transform: translateY(-3px);
+}
+
+.cta-button i {
+    margin-left: 10px;
+}
+
+/* Style des cartes génériques */
+.card {
+    background-color: var(--color-bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    border: 1px solid var(--color-border-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.note {
+    font-style: italic;
+    font-size: 0.9em;
+    color: var(--color-text-dark);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Sections de guide (accordéon) */
+.guide-category h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.guide-toggle {
+    background: linear-gradient(90deg, var(--color-purple) 0%, var(--color-dark-purple) 100%);
+    color: var(--color-text-light);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.guide-toggle:hover {
+    background: linear-gradient(90deg, var(--color-cta-hover) 0%, var(--color-purple) 100%);
+    transform: translateY(-2px);
+}
+
+.guide-content {
+    max-height: 0; /* Par défaut, contenu masqué */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out, background-color 0.5s ease;
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border-subtle);
+    padding: 0 20px; /* Padding initial à 0 */
+    border-radius: 0 0 10px 10px;
+    margin-top: -15px; /* Pour un chevauchement esthétique avec le bouton */
+}
+
+.guide-content.visible {
+    max-height: 1000px; /* Hauteur suffisante pour afficher le contenu */
+    padding: 20px; /* Le padding s'applique quand la section est visible */
+}
+
+.guide-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.guide-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guide-content ul li {
+    background-color: var(--color-guide-item-bg);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--color-guide-item-border);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.guide-content ul li:hover {
+    transform: translateX(5px);
+}
+
+.guide-content ul li strong {
+    color: var(--color-purple);
+}
+
+/* Grille des personnages */
+.character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes adaptatives */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.character-card {
+    text-align: center;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styles pour les avatars des personnages */
+.character-avatar {
+    width: 120px; /* Taille fixe pour le cercle */
+    height: 120px;
+    object-fit: cover; /* Recadre l'image pour remplir le cercle */
+    object-position: top; /* Centre le visage en recadrant par le haut */
+    border-radius: 50%; /* Rend l'image circulaire */
+    border: 3px solid var(--color-blue); /* Bordure colorée */
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4); /* Ombre légère avec couleur d'accent */
+    position: relative;
+    top: -10px; /* Déplace l'image légèrement au-dessus de sa position pour effet de "dépassement" */
+    margin-bottom: 5px; /* Ajuste l'espace après l'avatar */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover .character-avatar {
+    transform: scale(1.05); /* Agrandit légèrement au survol */
+    border-color: var(--color-purple); /* Change la couleur de la bordure au survol */
+    box-shadow: 0 0 20px rgba(142, 45, 226, 0.6); /* Change l'ombre au survol */
+}
+
+.character-card h3 {
+    margin: 10px 0 5px;
+    color: var(--color-text-light);
+    font-size: 1.6em;
+}
+
+.character-role {
+    color: var(--color-blue);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.character-description {
+    font-size: 0.95em;
+    color: var(--color-text-dark);
+    flex-grow: 1; /* Permet à la description de prendre l'espace disponible */
+}
+
+.view-details-button {
+    background-color: var(--color-purple);
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.view-details-button:hover {
+    background-color: var(--color-cta-hover);
+}
+
+/* Section "À Propos" */
+.about-card {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Section "Contact" */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 8px;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-light);
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.5s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-purple);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permet de redimensionner verticalement */
+}
+
+.contact-form .cta-button {
+    align-self: flex-start; /* Aligne le bouton à gauche */
+}
+
+/* Pied de page */
+footer {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-dark);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--color-border-subtle);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.social-links a {
+    color: var(--color-text-dark);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+a.social-link-facebook:hover { color: #3b5998; } /* Facebook Blue */
+a.social-link-twitter:hover { color: #1da1f2; } /* Twitter Blue */
+a.social-link-discord:hover { color: #7289da; } /* Discord Purple */
+
+
+/* Bouton "Retour en haut" */
+#back-to-top {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-blue);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+}
+
+#back-to-top:hover {
+    background-color: var(--color-purple);
+    transform: translateY(-3px);
+}
+
+/* Discord Invite Section */
+.text-center {
+    text-align: center;
+}
+
+.discord-button {
+    background-color: #7289da; /* Couleur Discord officielle */
+}
+
+.discord-button:hover {
+    background-color: #677bc4; /* Légèrement plus sombre au survol */
+    transform: translateY(-3px);
+}
+
+.discord-button i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Taille de l'icône Discord */
+}
+
+#discord-invite {
+    margin-top: 50px; /* Ajoute un peu d'espace au-dessus de la section */
+}
+
+/* Styles pour la table KoH (dans guides-koh.html) */
+.koh-table-container {
     overflow-x: auto; /* Permet le défilement horizontal sur petits écrans */
     margin-bottom: 20px;
 }
-.joiner-bonus-table-container table {
+.koh-table-container table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
@@ -12,26 +734,26 @@
     background-color: var(--color-bg-primary);
     color: var(--color-text-dark);
 }
-.joiner-bonus-table-container th,
-.joiner-bonus-table-container td {
+.koh-table-container th,
+.koh-table-container td {
     padding: 12px 15px;
     border: 1px solid var(--color-border-subtle);
     transition: background-color 0.5s ease;
 }
-.joiner-bonus-table-container thead th {
+.koh-table-container thead th {
     background-color: var(--color-dark-purple);
     color: var(--color-text-light);
     text-align: center;
     text-transform: uppercase;
 }
-.joiner-bonus-table-container tbody tr:nth-of-type(even) {
+.koh-table-container tbody tr:nth-of-type(even) {
     background-color: var(--color-bg-secondary);
 }
-.joiner-bonus-table-container tbody tr:hover {
+.koh-table-container tbody tr:hover {
     background-color: var(--color-sidebar-link-hover);
 }
 
-/* Style spécifique pour les héros à 0% de bonus */
+/* Style spécifique pour les héros à 0% de bonus (dans guides-joiner-bonus.html) */
 .joiner-bonus-table-container tbody tr.no-bonus-hero {
     background-color: rgba(255, 0, 0, 0.1); /* Fond légèrement rouge pour attirer l'attention */
 }
@@ -39,7 +761,7 @@
     color: var(--color-text-light); /* Texte clair pour qu'il soit visible sur le fond rouge */
 }
 
-.warning-card {
+.warning-card { /* Utilisé dans guides-joiner-bonus.html et guides-koh.html */
     background-color: rgba(255, 165, 0, 0.15); /* Orange clair pour l'avertissement */
     border: 1px solid orange;
     color: var(--color-text-light);
@@ -51,8 +773,178 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.warning-card .warning-icon {
+.warning-card .warning-icon { /* Utilisé dans guides-joiner-bonus.html et guides-koh.html */
     margin-right: 10px;
     font-size: 1.5em;
     color: orange;
+}
+
+/* Styles pour le sommaire des guides (dans guides.html) */
+.guide-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.guide-summary-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.guide-summary-card h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+    color: var(--color-purple);
+}
+
+.guide-summary-card p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.guide-summary-button {
+    margin-top: auto; /* Pousse le bouton vers le bas de la carte */
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: var(--color-blue);
+}
+
+.guide-summary-button:hover {
+    background-color: var(--color-cta-hover);
+}
+
+/* Style pour les labels masqués du formulaire de contact (dans contact.html) */
+.hidden-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Responsive adjustments for tables to prevent overflow on small screens */
+@media (max-width: 768px) {
+    .koh-table-container,
+    .joiner-bonus-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    }
+    .koh-table-container table,
+    .joiner-bonus-table-container table {
+        min-width: 600px; /* Ensure table doesn't shrink too much */
+    }
+}
+
+
+/* Design Responsif Général (inchangé par rapport aux versions précédentes) */
+@media (max-width: 1024px) {
+    .main-layout {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .sidebar-nav li a {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 15px;
+    }
+
+    .top-header .logo {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+    }
+
+    .search-bar {
+        order: 3;
+        margin: 10px 0 0 0;
+        width: 100%;
+        max-width: none;
+    }
+
+    .user-actions {
+        display: flex;
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+        order: 2;
+    }
+
+    .language-switcher {
+        margin-right: 15px;
+    }
+
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 250px;
+        height: calc(100% - 60px);
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.4);
+        z-index: 90;
+        transform: translateX(-100%);
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
 }
