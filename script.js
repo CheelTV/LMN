@@ -2,6 +2,107 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Localization (i18n) Data with ALL Translations ---
     const translations = {
         fr: {
+            // ... (traductions existantes)
+            contact_name_placeholder: 'Votre Nom',
+            contact_email_placeholder: 'Votre Email',
+            contact_message_placeholder: 'Votre Message',
+            contact_send_button: 'Envoyer le Message',
+            contact_name_label: 'Votre Nom', // Nouvelle clé
+            contact_email_label: 'Votre Email', // Nouvelle clé
+            contact_message_label: 'Votre Message', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        },
+        en: {
+            // ... (traductions existantes)
+            contact_name_placeholder: 'Your Name',
+            contact_email_placeholder: 'Your Email',
+            contact_message_placeholder: 'Your Message',
+            contact_send_button: 'Send Message',
+            contact_name_label: 'Your Name', // New key
+            contact_email_label: 'Your Email', // New key
+            contact_message_label: 'Your Message', // New key
+            // ... (fin des traductions existantes)
+        },
+        ko: { // Korean
+            // ... (traductions existantes)
+            contact_name_placeholder: '당신의 이름',
+            contact_email_placeholder: '당신의 이메일',
+            contact_message_placeholder: '당신의 메시지',
+            contact_send_button: '메시지 보내기',
+            contact_name_label: '당신의 이름', // Nouvelle clé
+            contact_email_label: '당신의 이메일', // Nouvelle clé
+            contact_message_label: '당신의 메시지', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        },
+        it: { // Italian
+            // ... (traductions existantes)
+            contact_name_placeholder: 'Il tuo nome',
+            contact_email_placeholder: 'La tua email',
+            contact_message_placeholder: 'Il tuo messaggio',
+            contact_send_button: 'Invia Messaggio',
+            contact_name_label: 'Il tuo nome', // Nouvelle clé
+            contact_email_label: 'La tua email', // Nouvelle clé
+            contact_message_label: 'Il tuo messaggio', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        },
+        es: { // Spanish
+            // ... (traductions existantes)
+            contact_name_placeholder: 'Tu Nombre',
+            contact_email_placeholder: 'Tu Correo Electrónico',
+            contact_message_placeholder: 'Tu Mensaje',
+            contact_send_button: 'Enviar Mensaje',
+            contact_name_label: 'Tu Nombre', // Nouvelle clé
+            contact_email_label: 'Tu Correo Electrónico', // Nouvelle clé
+            contact_message_label: 'Tu Mensaje', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        },
+        ru: { // Russian
+            // ... (traductions existantes)
+            contact_name_placeholder: 'Ваше имя',
+            contact_email_placeholder: 'Ваш адрес электронной почты',
+            contact_message_placeholder: 'Ваше сообщение',
+            contact_send_button: 'Отправить сообщение',
+            contact_name_label: 'Ваше имя', // Nouvelle clé
+            contact_email_label: 'Ваш адрес электронной почты', // Nouvelle clé
+            contact_message_label: 'Ваше сообщение', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        },
+        zh: { // Chinese
+            // ... (traductions existantes)
+            contact_name_placeholder: '您的姓名',
+            contact_email_placeholder: '您的电子邮件',
+            contact_message_placeholder: '您的留言',
+            contact_send_button: '发送消息',
+            contact_name_label: '您的姓名', // Nouvelle clé
+            contact_email_label: '您的电子邮件', // Nouvelle clé
+            contact_message_label: '您的留言', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        },
+        ja: { // Japanese
+            // ... (traductions existantes)
+            contact_name_placeholder: 'お名前',
+            contact_email_placeholder: 'あなたのメールアドレス',
+            contact_message_placeholder: 'あなたのメッセージ',
+            contact_send_button: 'メッセージを送信',
+            contact_name_label: 'お名前', // Nouvelle clé
+            contact_email_label: 'あなたのメールアドレス', // Nouvelle clé
+            contact_message_label: 'あなたのメッセージ', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        },
+        el: { // Greek
+            // ... (traductions existantes)
+            contact_name_placeholder: 'Το όνομά σας',
+            contact_email_placeholder: 'Το email σας',
+            contact_message_placeholder: 'Το μήνυμά σας',
+            contact_send_button: 'Αποστολή Μηνύματος',
+            contact_name_label: 'Το όνομά σας', // Nouvelle clé
+            contact_email_label: 'Το email σας', // Nouvelle clé
+            contact_message_label: 'Το μήνυμά σας', // Nouvelle clé
+            // ... (fin des traductions existantes)
+        }
+    };
+    // ... (reste de votre script.js)
+});
             // General elements
             home_link: 'Accueil',
             timers_link: 'Timers d\'Événements',
