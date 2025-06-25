@@ -2,107 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Localization (i18n) Data with ALL Translations ---
     const translations = {
         fr: {
-            // ... (traductions existantes)
-            contact_name_placeholder: 'Votre Nom',
-            contact_email_placeholder: 'Votre Email',
-            contact_message_placeholder: 'Votre Message',
-            contact_send_button: 'Envoyer le Message',
-            contact_name_label: 'Votre Nom', // Nouvelle clé
-            contact_email_label: 'Votre Email', // Nouvelle clé
-            contact_message_label: 'Votre Message', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        },
-        en: {
-            // ... (traductions existantes)
-            contact_name_placeholder: 'Your Name',
-            contact_email_placeholder: 'Your Email',
-            contact_message_placeholder: 'Your Message',
-            contact_send_button: 'Send Message',
-            contact_name_label: 'Your Name', // New key
-            contact_email_label: 'Your Email', // New key
-            contact_message_label: 'Your Message', // New key
-            // ... (fin des traductions existantes)
-        },
-        ko: { // Korean
-            // ... (traductions existantes)
-            contact_name_placeholder: '당신의 이름',
-            contact_email_placeholder: '당신의 이메일',
-            contact_message_placeholder: '당신의 메시지',
-            contact_send_button: '메시지 보내기',
-            contact_name_label: '당신의 이름', // Nouvelle clé
-            contact_email_label: '당신의 이메일', // Nouvelle clé
-            contact_message_label: '당신의 메시지', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        },
-        it: { // Italian
-            // ... (traductions existantes)
-            contact_name_placeholder: 'Il tuo nome',
-            contact_email_placeholder: 'La tua email',
-            contact_message_placeholder: 'Il tuo messaggio',
-            contact_send_button: 'Invia Messaggio',
-            contact_name_label: 'Il tuo nome', // Nouvelle clé
-            contact_email_label: 'La tua email', // Nouvelle clé
-            contact_message_label: 'Il tuo messaggio', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        },
-        es: { // Spanish
-            // ... (traductions existantes)
-            contact_name_placeholder: 'Tu Nombre',
-            contact_email_placeholder: 'Tu Correo Electrónico',
-            contact_message_placeholder: 'Tu Mensaje',
-            contact_send_button: 'Enviar Mensaje',
-            contact_name_label: 'Tu Nombre', // Nouvelle clé
-            contact_email_label: 'Tu Correo Electrónico', // Nouvelle clé
-            contact_message_label: 'Tu Mensaje', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        },
-        ru: { // Russian
-            // ... (traductions existantes)
-            contact_name_placeholder: 'Ваше имя',
-            contact_email_placeholder: 'Ваш адрес электронной почты',
-            contact_message_placeholder: 'Ваше сообщение',
-            contact_send_button: 'Отправить сообщение',
-            contact_name_label: 'Ваше имя', // Nouvelle clé
-            contact_email_label: 'Ваш адрес электронной почты', // Nouvelle clé
-            contact_message_label: 'Ваше сообщение', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        },
-        zh: { // Chinese
-            // ... (traductions existantes)
-            contact_name_placeholder: '您的姓名',
-            contact_email_placeholder: '您的电子邮件',
-            contact_message_placeholder: '您的留言',
-            contact_send_button: '发送消息',
-            contact_name_label: '您的姓名', // Nouvelle clé
-            contact_email_label: '您的电子邮件', // Nouvelle clé
-            contact_message_label: '您的留言', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        },
-        ja: { // Japanese
-            // ... (traductions existantes)
-            contact_name_placeholder: 'お名前',
-            contact_email_placeholder: 'あなたのメールアドレス',
-            contact_message_placeholder: 'あなたのメッセージ',
-            contact_send_button: 'メッセージを送信',
-            contact_name_label: 'お名前', // Nouvelle clé
-            contact_email_label: 'あなたのメールアドレス', // Nouvelle clé
-            contact_message_label: 'あなたのメッセージ', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        },
-        el: { // Greek
-            // ... (traductions existantes)
-            contact_name_placeholder: 'Το όνομά σας',
-            contact_email_placeholder: 'Το email σας',
-            contact_message_placeholder: 'Το μήνυμά σας',
-            contact_send_button: 'Αποστολή Μηνύματος',
-            contact_name_label: 'Το όνομά σας', // Nouvelle clé
-            contact_email_label: 'Το email σας', // Nouvelle clé
-            contact_message_label: 'Το μήνυμά σας', // Nouvelle clé
-            // ... (fin des traductions existantes)
-        }
-    };
-    // ... (reste de votre script.js)
-});
             // General elements
             home_link: 'Accueil',
             timers_link: 'Timers d\'Événements',
@@ -244,7 +143,17 @@ document.addEventListener('DOMContentLoaded', () => {
             army_resistance_type: 'Résistance d\'Armée',
             joiner_bonus_note: '* Le bonus affiché correspond aux compétences de niveau 5.',
             joiner_bonus_warning: '⚠️ NE JAMAIS UTILISER un héros avec 0% de bonus pour rejoindre un rallye en tant que capitaine.',
-            joiner_bonus_never_use: 'NE JAMAIS UTILISER un héros avec 0% de bonus pour rejoindre un rallye en tant que capitaine.'
+            joiner_bonus_never_use: 'NE JAMAIS UTILISER un héros avec 0% de bonus pour rejoindre un rallye en tant que capitaine.',
+            guides_summary_intro: 'Parcourez nos guides détaillés pour maîtriser tous les aspects du jeu.',
+            guide_beginner_summary: 'Conseils essentiels pour bien démarrer votre aventure et poser les bases de votre progression.',
+            guide_heroes_summary: 'Optimisez vos héros : types, compétences, éveil et stratégies de formation.',
+            guide_resources_summary: 'Maîtrisez la production, la collecte et la protection de vos précieuses ressources.',
+            koh_guide_summary: 'Stratégies détaillées étape par étape pour dominer l\'événement King of the Hill.',
+            joiner_bonus_summary: 'Comprenez les bonus de résistance d\'armée et quels héros utiliser en tant que capitaine de rallye.',
+            view_guide_button: 'Voir le guide',
+            contact_name_label: 'Votre Nom',
+            contact_email_label: 'Votre Email',
+            contact_message_label: 'Votre Message'
         },
         en: {
             home_link: 'Home',
@@ -1006,7 +915,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resources_tip1_text: '派遣您的部队收集食物、木材、石油和金属。资源等级会影响数量。',
             resources_tip2_strong: '生产建筑：',
             resources_tip2_text: '升级您的农场、伐木场、炼油厂和铸造厂。这是被动但必不可少的生产。',
-            resources_tip3_strong: '仓库：',
+            resources_tip3_strong: '仓库：', // Corrected from 'tip3_strong'
             resources_tip3_text: '升级您的仓库以增加资源保护阈值。',
             resources_tip4_strong: '任务和活动：',
             resources_tip4_text: '参与每日、每周活动和故事任务以获得大量资源。',
@@ -1651,7 +1560,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="timer-item card">
                         <h4>🔥 ${translations[currentLang]?.timers_influencer_trap || 'Influencer Trap'}</h4>
-                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-25T19:00:00Z">Chargement...</span></p> </div>
+                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-25T19:00:00Z">Chargement...</span></p>
+                    </div>
                     <div class="timer-item card">
                         <h4>🏆 ${translations[currentLang]?.timers_special_event || 'Special Event'} : ${translations[currentLang]?.timers_state_championship || 'State Championship'}</h4>
                         <p>${translations[currentLang]?.timers_end_in || 'Ends in'} : <span class="countdown" data-time="2025-06-25T23:59:59Z">Chargement...</span></p>
