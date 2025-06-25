@@ -312,7 +312,7 @@ a:hover {
     font-weight: 600;
 }
 
-/* Menu déroulant pour les personnages */
+/* Menu déroulant pour les guides et personnages */
 .dropdown-toggle {
     display: flex;
     justify-content: space-between;
@@ -719,6 +719,40 @@ a.social-link-discord:hover { color: #7289da; } /* Discord Purple */
 #discord-invite {
     margin-top: 50px; /* Ajoute un peu d'espace au-dessus de la section */
 }
+
+/* Style spécifique pour la table KoH */
+.koh-table-container {
+    overflow-x: auto; /* Permet le défilement horizontal sur petits écrans */
+    margin-bottom: 20px;
+}
+.koh-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    text-align: left;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-dark);
+}
+.koh-table-container th,
+.koh-table-container td {
+    padding: 12px 15px;
+    border: 1px solid var(--color-border-subtle);
+    transition: background-color 0.5s ease;
+}
+.koh-table-container thead tr {
+    background-color: var(--color-dark-purple);
+    color: var(--color-text-light);
+    text-align: center;
+    text-transform: uppercase;
+}
+.koh-table-container tbody tr:nth-of-type(even) {
+    background-color: var(--color-bg-secondary);
+}
+.koh-table-container tbody tr:hover {
+    background-color: var(--color-sidebar-link-hover);
+}
+
 
 /* Design Responsif */
 @media (max-width: 1024px) {
