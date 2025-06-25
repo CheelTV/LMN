@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: 'Guides Stratégiques', // Parent guide link
             general_guides_link: 'Guides Généraux', // New sub-category
             koh_guide_link: 'King of the Hill (KoH)', // New sub-category
+            joiner_bonus_guide_link: 'Joiner Bonus', // New sub-category
             characters_link: 'Personnages',
             about_link: 'À Propos',
             contact_link: 'Contact',
@@ -108,9 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: 'Ce guide détaille la stratégie pour l\'événement King of the Hill (KoH), un événement de 60 minutes divisé en 3 étapes de 20 minutes chacune.',
             koh_plan_title: 'Plan Initial : King of the Hill (Dimanche 18.08)',
             koh_plan_info: 'Le plan alloue des équipes à des positions spécifiques avec des leaders et des membres.',
-            koh_leader_a: 'Leader A (Centre)', // Updated to generic
-            koh_leader_b: 'Leader B (Gauche)', // Updated to generic
-            koh_leader_c: 'Leader C (Droite)', // Updated to generic
+            koh_leader_a: 'Équipe A (Centre)', // Updated to generic
+            koh_leader_b: 'Équipe B (Gauche)', // Updated to generic
+            koh_leader_c: 'Équipe C (Droite)', // Updated to generic
             koh_stage1_title: 'Étape 1 : Occupation du Territoire (20 minutes)',
             koh_stage1_obj: 'Objectif :',
             koh_stage1_action: 'Action :',
@@ -132,7 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: 'Phase Finale (20 dernières minutes)',
             koh_final_phase_text: 'Pendant les 20 dernières minutes, nous nous battrons sur tous les bâtiments de la carte et collecterons des points. L\'union qui marque le plus de points l\'emportera.',
             koh_bug_note: '🚨 **NOTE IMPORTANTE :** Il y a des bugs dans le jeu concernant l\'heure exacte des événements. Merci de vous connecter à **12:00 UTC** pour être en ligne.',
-            koh_questions_pm: 'Si vous avez des questions concernant cet événement, vous pouvez me les poser en message privé.'
+            koh_questions_pm: 'Si vous avez des questions concernant cet événement, vous pouvez me les poser en message privé.',
+            joiner_bonus_guide_title: '🛡️ Guide : JOINER BONUS (Bonus de Résistance d\'Armée)',
+            joiner_bonus_intro: 'Ce guide présente les bonus de résistance d\'armée que les héros confèrent lorsqu\'ils rejoignent un rallye en tant que capitaine (compétences de niveau 5).',
+            joiner_bonus_table_title: 'Tableau des Héros et de leurs Bonus',
+            table_header_hero: 'HÉROS',
+            table_header_bonus: 'BONUS',
+            table_header_type: 'TYPE',
+            army_resistance_type: 'Résistance d\'Armée',
+            joiner_bonus_note: '* Le bonus affiché correspond aux compétences de niveau 5.',
+            joiner_bonus_warning: '⚠️ NE JAMAIS UTILISER un héros avec 0% de bonus pour rejoindre un rallye en tant que capitaine.',
+            joiner_bonus_never_use: 'NE JAMAIS UTILISER un héros avec 0% de bonus pour rejoindre un rallye en tant que capitaine.'
         },
         en: {
             home_link: 'Home',
@@ -140,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: 'Strategy Guides',
             general_guides_link: 'General Guides',
             koh_guide_link: 'King of the Hill (KoH)',
+            joiner_bonus_guide_link: 'Joiner Bonus',
             characters_link: 'Characters',
             about_link: 'About Us',
             contact_link: 'Contact',
@@ -240,9 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: 'This guide details the strategy for the King of the Hill (KoH) event, a 60-minute event divided into 3 stages of 20 minutes each.',
             koh_plan_title: 'Initial Plan: King of the Hill (Sunday 18.08)',
             koh_plan_info: 'The plan assigns teams to specific positions with leaders and members.',
-            koh_leader_a: 'Leader A (Center)',
-            koh_leader_b: 'Leader B (Left)',
-            koh_leader_c: 'Leader C (Right)',
+            koh_leader_a: 'Team A (Center)',
+            koh_leader_b: 'Team B (Left)',
+            koh_leader_c: 'Team C (Right)',
             koh_stage1_title: 'Stage 1: Territory Occupation (20 minutes)',
             koh_stage1_obj: 'Objective:',
             koh_stage1_action: 'Action:',
@@ -264,7 +276,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: 'Final Phase (Last 20 minutes)',
             koh_final_phase_text: 'During the last 20 minutes, we will fight on all buildings on the map and collect points. The union that scores the most points will win.',
             koh_bug_note: '🚨 **IMPORTANT NOTE:** There are bugs in the game regarding the exact event time. Please be online at **12:00 UTC** to be ready.',
-            koh_questions_pm: 'If you have any questions about this event, you can ask me in private message.'
+            koh_questions_pm: 'If you have any questions about this event, you can ask me in private message.',
+            joiner_bonus_guide_title: '🛡️ Guide: JOINER BONUS (Army Resistance Bonus)',
+            joiner_bonus_intro: 'This guide presents the Army Resistance bonuses that heroes grant when joining a rally as captain (Level 5 Skills).',
+            joiner_bonus_table_title: 'Hero and Bonus Table',
+            table_header_hero: 'HERO',
+            table_header_bonus: 'BONUS',
+            table_header_type: 'TYPE',
+            army_resistance_type: 'Army Resistance',
+            joiner_bonus_note: '* The bonus shown corresponds to Level 5 skills.',
+            joiner_bonus_warning: '⚠️ NEVER USE a hero with 0% bonus to join a rally as captain.',
+            joiner_bonus_never_use: 'NEVER USE a hero with 0% bonus to join a rally as captain.'
         },
         ko: { // Korean
             home_link: '홈',
@@ -272,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: '전략 가이드',
             general_guides_link: '일반 가이드',
             koh_guide_link: '언덕의 왕 (KoH)',
+            joiner_bonus_guide_link: '합류 보너스',
             characters_link: '캐릭터',
             about_link: '소개',
             contact_link: '문의',
@@ -372,9 +395,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: '이 가이드는 언덕의 왕 (KoH) 이벤트 전략을 설명합니다. 이 이벤트는 각각 20분씩 3단계로 나뉘어 총 60분 동안 진행됩니다.',
             koh_plan_title: '초기 계획: 언덕의 왕 (일요일 18.08)',
             koh_plan_info: '이 계획은 특정 위치에 팀을 할당하고 리더와 구성원을 지정합니다.',
-            koh_leader_a: '리더 A (중앙)',
-            koh_leader_b: '리더 B (왼쪽)',
-            koh_leader_c: '리더 C (오른쪽)',
+            koh_leader_a: '팀 A (중앙)',
+            koh_leader_b: '팀 B (왼쪽)',
+            koh_leader_c: '팀 C (오른쪽)',
             koh_stage1_title: '1단계: 영토 점령 (20분)',
             koh_stage1_obj: '목표:',
             koh_stage1_action: '행동:',
@@ -396,7 +419,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: '최종 단계 (마지막 20분)',
             koh_final_phase_text: '마지막 20분 동안은 지도상의 모든 건물에서 전투하고 점수를 수집합니다. 가장 많은 점수를 획득한 연맹이 승리합니다.',
             koh_bug_note: '🚨 **중요 참고:** 게임에 정확한 이벤트 시간과 관련된 버그가 있습니다. 준비를 위해 **UTC 12:00**에 접속해 주십시오.',
-            koh_questions_pm: '이 이벤트에 대해 궁금한 점이 있으시면 개인 메시지로 문의해주세요.'
+            koh_questions_pm: '이 이벤트에 대해 궁금한 점이 있으시면 개인 메시지로 문의해주세요.',
+            joiner_bonus_guide_title: '🛡️ 가이드: 합류 보너스 (군대 저항 보너스)',
+            joiner_bonus_intro: '이 가이드는 영웅이 랠리에 대장으로 합류할 때 부여하는 군대 저항 보너스(레벨 5 스킬)를 제시합니다.',
+            joiner_bonus_table_title: '영웅 및 보너스 표',
+            table_header_hero: '영웅',
+            table_header_bonus: '보너스',
+            table_header_type: '유형',
+            army_resistance_type: '군대 저항',
+            joiner_bonus_note: '* 표시된 보너스는 레벨 5 스킬에 해당합니다.',
+            joiner_bonus_warning: '⚠️ 0% 보너스 영웅을 사용하여 랠리에 대장으로 합류하지 마십시오.',
+            joiner_bonus_never_use: '0% 보너스 영웅을 사용하여 랠리에 대장으로 합류하지 마십시오.'
         },
         it: { // Italian
             home_link: 'Home',
@@ -404,6 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: 'Guide Strategiche',
             general_guides_link: 'Guide Generali',
             koh_guide_link: 'Re della Collina (KoH)',
+            joiner_bonus_guide_link: 'Bonus di Unione',
             characters_link: 'Personaggi',
             about_link: 'Chi Siamo',
             contact_link: 'Contatti',
@@ -504,9 +538,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: 'Questa guida illustra la strategia per l\'evento Re della Collina (KoH), un evento di 60 minuti diviso in 3 fasi di 20 minuti ciascuna.',
             koh_plan_title: 'Piano Iniziale: Re della Collina (Domenica 18.08)',
             koh_plan_info: 'Il piano assegna le squadre a posizioni specifiche con leader e membri.',
-            koh_leader_a: 'Leader A (Centro)',
-            koh_leader_b: 'Leader B (Sinistra)',
-            koh_leader_c: 'Leader C (Destra)',
+            koh_leader_a: 'Squadra A (Centro)',
+            koh_leader_b: 'Squadra B (Sinistra)',
+            koh_leader_c: 'Squadra C (Destra)',
             koh_stage1_title: 'Fase 1: Occupazione del Territorio (20 minuti)',
             koh_stage1_obj: 'Obiettivo:',
             koh_stage1_action: 'Azione:',
@@ -528,7 +562,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: 'Fase Finale (Ultimi 20 minuti)',
             koh_final_phase_text: 'Durante gli ultimi 20 minuti, combatteremo su tutti gli edifici sulla mappa e raccoglieremo punti. L\'unione che segna più punti vincerà.',
             koh_bug_note: '🚨 **NOTA IMPORTANTE:** Ci sono bug nel gioco riguardo l\'orario esatto degli eventi. Connettetevi alle **12:00 UTC** per essere pronti.',
-            koh_questions_pm: 'Se avete domande su questo evento, potete chiedermele in messaggio privato.'
+            koh_questions_pm: 'Se avete domande su questo evento, potete chiedermele in messaggio privato.',
+            joiner_bonus_guide_title: '🛡️ Guida: BONUS DI UNIONE (Bonus di Resistenza dell\'Esercito)',
+            joiner_bonus_intro: 'Questa guida presenta i bonus di resistenza dell\'esercito che gli eroi concedono quando si uniscono a un raduno come capitano (Abilità di livello 5).',
+            joiner_bonus_table_title: 'Tabella Eroi e Bonus',
+            table_header_hero: 'EROE',
+            table_header_bonus: 'BONUS',
+            table_header_type: 'TIPO',
+            army_resistance_type: 'Resistenza dell\'Esercito',
+            joiner_bonus_note: '* Il bonus mostrato corrisponde alle abilità di livello 5.',
+            joiner_bonus_warning: '⚠️ NON USARE MAI un eroe con bonus dello 0% per unirti a un raduno come capitano.',
+            joiner_bonus_never_use: 'NON USARE MAI un eroe con bonus dello 0% per unirti a un raduno come capitano.'
         },
         es: { // Spanish
             home_link: 'Inicio',
@@ -536,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: 'Guías Estratégicas',
             general_guides_link: 'Guías Generales',
             koh_guide_link: 'Rey de la Colina (KoH)',
+            joiner_bonus_guide_link: 'Bonificación de Unión',
             characters_link: 'Personajes',
             about_link: 'Acerca de Nosotros',
             contact_link: 'Contacto',
@@ -636,9 +681,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: 'Esta guía detalla la estrategia para el evento Rey de la Colina (KoH), un evento de 60 minutos dividido en 3 etapas de 20 minutos cada una.',
             koh_plan_title: 'Plan Inicial: Rey de la Colina (Domingo 18.08)',
             koh_plan_info: 'El plan asigna equipos a posiciones específicas con líderes y miembros.',
-            koh_leader_a: 'Líder A (Centro)',
-            koh_leader_b: 'Líder B (Izquierda)',
-            koh_leader_c: 'Líder C (Derecha)',
+            koh_leader_a: 'Equipo A (Centro)',
+            koh_leader_b: 'Equipo B (Izquierda)',
+            koh_leader_c: 'Equipo C (Derecha)',
             koh_stage1_title: 'Etapa 1: Ocupación del Territorio (20 minutos)',
             koh_stage1_obj: 'Objetivo:',
             koh_stage1_action: 'Acción:',
@@ -660,7 +705,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: 'Fase Final (Últimos 20 minutos)',
             koh_final_phase_text: 'Durante los últimos 20 minutos, lucharemos en todos los edificios del mapa y recolectaremos puntos. La unión que obtenga más puntos ganará.',
             koh_bug_note: '🚨 **NOTA IMPORTANTE:** Hay errores en el juego con respecto a la hora exacta del evento. Por favor, conéctate a las **12:00 UTC** para estar listo.',
-            koh_questions_pm: 'Si tienes alguna pregunta sobre este evento, puedes consultarme en mensaje privado.'
+            koh_questions_pm: 'Si tienes alguna pregunta sobre este evento, puedes consultarme en mensaje privado.',
+            joiner_bonus_guide_title: '🛡️ Guía: Bonificación de Unión (Bonificación de Resistencia del Ejército)',
+            joiner_bonus_intro: 'Esta guía presenta las bonificaciones de resistencia del ejército que los héroes otorgan al unirse a un rally como capitán (Habilidades de Nivel 5).',
+            joiner_bonus_table_title: 'Tabla de Héroes y Bonificaciones',
+            table_header_hero: 'HÉROE',
+            table_header_bonus: 'BONIFICACIÓN',
+            table_header_type: 'TIPO',
+            army_resistance_type: 'Resistencia del Ejército',
+            joiner_bonus_note: '* La bonificación mostrada corresponde a las habilidades de Nivel 5.',
+            joiner_bonus_warning: '⚠️ NUNCA USES un héroe con 0% de bonificación para unirte a un rally como capitán.',
+            joiner_bonus_never_use: 'NUNCA USES un héroe con 0% de bonificación para unirte a un rally como capitán.'
         },
         ru: { // Russian
             home_link: 'Главная',
@@ -668,6 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: 'Стратегические руководства',
             general_guides_link: 'Общие руководства',
             koh_guide_link: 'Царь Горы (KoH)',
+            joiner_bonus_guide_link: 'Бонус присоединяющегося',
             characters_link: 'Персонажи',
             about_link: 'О нас',
             contact_link: 'Контакты',
@@ -768,9 +824,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: 'Это руководство описывает стратегию для события «Царь Горы» (KoH), 60-минутного события, разделенного на 3 этапа по 20 минут каждый.',
             koh_plan_title: 'Первоначальный план: Царь Горы (воскресенье, 18.08)',
             koh_plan_info: 'План назначает команды на определенные позиции с лидерами и участниками.',
-            koh_leader_a: 'Лидер А (Центр)',
-            koh_leader_b: 'Лидер Б (Лево)',
-            koh_leader_c: 'Лидер В (Право)',
+            koh_leader_a: 'Команда А (Центр)',
+            koh_leader_b: 'Команда Б (Лево)',
+            koh_leader_c: 'Команда В (Право)',
             koh_stage1_title: 'Этап 1: Захват территории (20 минут)',
             koh_stage1_obj: 'Цель:',
             koh_stage1_action: 'Действие:',
@@ -792,7 +848,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: 'Финальная фаза (последние 20 минут)',
             koh_final_phase_text: 'В течение последних 20 минут мы будем сражаться за все здания на карте и собирать очки. Союз, набравший наибольшее количество очков, победит.',
             koh_bug_note: '🚨 **ВАЖНОЕ ПРИМЕЧАНИЕ:** В игре есть ошибки, касающиеся точного времени события. Пожалуйста, будьте онлайн в **12:00 UTC**, чтобы быть готовыми.',
-            koh_questions_pm: 'Если у вас есть какие-либо вопросы по этому событию, вы можете задать их мне в личном сообщении.'
+            koh_questions_pm: 'Если у вас есть какие-либо вопросы по этому событию, вы можете задать их мне в личном сообщении.',
+            joiner_bonus_guide_title: '🛡️ Руководство: Бонус присоединяющегося (Бонус к сопротивлению армии)',
+            joiner_bonus_intro: 'Это руководство представляет бонусы к сопротивлению армии, которые герои дают при присоединении к ралли в качестве капитана (навыки уровня 5).',
+            joiner_bonus_table_title: 'Таблица героев и их бонусов',
+            table_header_hero: 'ГЕРОЙ',
+            table_header_bonus: 'БОНУС',
+            table_header_type: 'ТИП',
+            army_resistance_type: 'Сопротивление армии',
+            joiner_bonus_note: '* Показанный бонус соответствует навыкам уровня 5.',
+            joiner_bonus_warning: '⚠️ НИКОГДА НЕ ИСПОЛЬЗУЙТЕ героя с 0% бонусом для присоединения к ралли в качестве капитана.',
+            joiner_bonus_never_use: 'НИКОГДА НЕ ИСПОЛЬЗУЙТЕ героя с 0% бонусом для присоединения к ралли в качестве капитана.'
         },
         zh: { // Chinese
             home_link: '主页',
@@ -800,6 +866,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: '策略指南',
             general_guides_link: '通用指南',
             koh_guide_link: '山丘之王 (KoH)',
+            joiner_bonus_guide_link: '加入者奖励',
             characters_link: '角色',
             about_link: '关于我们',
             contact_link: '联系我们',
@@ -838,7 +905,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resources_tip1_text: '派遣您的部队收集食物、木材、石油和金属。资源等级会影响数量。',
             resources_tip2_strong: '生产建筑：',
             resources_tip2_text: '升级您的农场、伐木场、炼油厂和铸造厂。这是被动但必不可少的生产。',
-            tip3_strong: '仓库：',
+            resources_tip3_strong: '仓库：',
             resources_tip3_text: '升级您的仓库以增加资源保护阈值。',
             resources_tip4_strong: '任务和活动：',
             resources_tip4_text: '参与每日、每周活动和故事任务以获得大量资源。',
@@ -897,9 +964,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: '本指南详细介绍了山丘之王 (KoH) 活动的策略，这是一个为期 60 分钟的活动，分为 3 个阶段，每个阶段 20 分钟。',
             koh_plan_title: '初始计划：山丘之王 (8月18日星期日)',
             koh_plan_info: '该计划为特定位置分配了团队，并指定了领导者和成员。',
-            koh_leader_a: '领导者 A (中心)',
-            koh_leader_b: '领导者 B (左)',
-            koh_leader_c: '领导者 C (右)',
+            koh_leader_a: '团队 A (中心)',
+            koh_leader_b: '团队 B (左)',
+            koh_leader_c: '团队 C (右)',
             koh_stage1_title: '阶段 1: 领土占领 (20 分钟)',
             koh_stage1_obj: '目标:',
             koh_stage1_action: '行动:',
@@ -921,7 +988,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: '最后阶段 (最后 20 分钟)',
             koh_final_phase_text: '在最后 20 分钟，我们将在地图上的所有建筑物中战斗并收集积分。得分最高的联盟将获胜。',
             koh_bug_note: '🚨 **重要提示:** 游戏中存在与确切事件时间相关的错误。请在 **UTC 12:00** 在线，做好准备。',
-            koh_questions_pm: '如果您对本次活动有任何疑问，可以私信我。'
+            koh_questions_pm: '如果您对本次活动有任何疑问，可以私信我。',
+            joiner_bonus_guide_title: '🛡️ 指南：加入者奖励（军队抵抗力奖励）',
+            joiner_bonus_intro: '本指南介绍了英雄在作为队长加入集结时提供的军队抵抗力奖励（5级技能）。',
+            joiner_bonus_table_title: '英雄和奖励表',
+            table_header_hero: '英雄',
+            table_header_bonus: '奖励',
+            table_header_type: '类型',
+            army_resistance_type: '军队抵抗力',
+            joiner_bonus_note: '* 显示的奖励对应于 5 级技能。',
+            joiner_bonus_warning: '⚠️ 切勿使用 0% 奖励的英雄作为队长加入集结。',
+            joiner_bonus_never_use: '切勿使用 0% 奖励的英雄作为队长加入集结。'
         },
         ja: { // Japanese
             home_link: 'ホーム',
@@ -929,6 +1006,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: '戦略ガイド',
             general_guides_link: '一般ガイド',
             koh_guide_link: 'キングオブザヒル (KoH)',
+            joiner_bonus_guide_link: 'ジョイナーボーナス',
             characters_link: 'キャラクター',
             about_link: '私たちについて',
             contact_link: 'お問い合わせ',
@@ -1029,9 +1107,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: 'このガイドでは、キングオブザヒル (KoH) イベントの戦略について詳しく説明します。これは、それぞれ20分間の3つのステージに分けられた60分間のイベントです。',
             koh_plan_title: '初期計画: キングオブザヒル (8月18日日曜日)',
             koh_plan_info: 'この計画は、リーダーとメンバーを持つ特定のポジションにチームを割り当てます。',
-            koh_leader_a: 'リーダー A (中央)',
-            koh_leader_b: 'リーダー B (左)',
-            koh_leader_c: 'リーダー C (右)',
+            koh_leader_a: 'チーム A (中央)',
+            koh_leader_b: 'チーム B (左)',
+            koh_leader_c: 'チーム C (右)',
             koh_stage1_title: 'ステージ 1: 領土占領 (20分)',
             koh_stage1_obj: '目的:',
             koh_stage1_action: '行動:',
@@ -1053,7 +1131,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: '最終フェーズ (最後の20分)',
             koh_final_phase_text: '最後の20分間は、マップ上のすべての建物を巡って戦い、ポイントを集めます。最も多くのポイントを獲得した同盟が勝利します。',
             koh_bug_note: '🚨 **重要事項:** ゲームには正確なイベント時間に関するバグがあります。準備のため、**UTC 12:00** にオンラインにしてください。',
-            koh_questions_pm: 'このイベントについてご質問がある場合は、プライベートメッセージでお尋ねください。'
+            koh_questions_pm: 'このイベントについてご質問がある場合は、プライベートメッセージでお尋ねください。',
+            joiner_bonus_guide_title: '🛡️ ガイド: ジョイナーボーナス (軍隊の耐性ボーナス)',
+            joiner_bonus_intro: 'このガイドは、ヒーローが隊長としてラリーに参加したときに付与される軍隊の耐性ボーナス (スキルレベル5) を紹介します。',
+            joiner_bonus_table_title: 'ヒーローとボーナス表',
+            table_header_hero: 'ヒーロー',
+            table_header_bonus: 'ボーナス',
+            table_header_type: 'タイプ',
+            army_resistance_type: '軍隊の耐性',
+            joiner_bonus_note: '* 表示されているボーナスはスキルレベル5に相当します。',
+            joiner_bonus_warning: '⚠️ ボーナス0%のヒーローを隊長としてラリーに参加させないでください。',
+            joiner_bonus_never_use: 'ボーナス0%のヒーローを隊長としてラリーに参加させないでください。'
         },
         el: { // Greek
             home_link: 'Αρχική',
@@ -1061,6 +1149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: 'Στρατηγικοί Οδηγοί',
             general_guides_link: 'Γενικοί Οδηγοί',
             koh_guide_link: 'Βασιλιάς του Λόφου (KoH)',
+            joiner_bonus_guide_link: 'Μπόνους Συμμετέχοντα',
             characters_link: 'Χαρακτήρες',
             about_link: 'Σχετικά με εμάς',
             contact_link: 'Επικοινωνία',
@@ -1161,9 +1250,9 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_intro: 'Αυτός ο οδηγός περιγράφει τη στρατηγική για το γεγονός Βασιλιάς του Λόφου (KoH), ένα γεγονός 60 λεπτών χωρισμένο σε 3 στάδια των 20 λεπτών το καθένα.',
             koh_plan_title: 'Αρχικό Σχέδιο: Βασιλιάς του Λόφου (Κυριακή 18.08)',
             koh_plan_info: 'Το σχέδιο αναθέτει ομάδες σε συγκεκριμένες θέσεις με αρχηγούς και μέλη.',
-            koh_leader_a: 'Αρχηγός Α (Κέντρο)',
-            koh_leader_b: 'Αρχηγός Β (Αριστερά)',
-            koh_leader_c: 'Αρχηγός Γ (Δεξιά)',
+            koh_leader_a: 'Ομάδα Α (Κέντρο)',
+            koh_leader_b: 'Ομάδα Β (Αριστερά)',
+            koh_leader_c: 'Ομάδα Γ (Δεξιά)',
             koh_stage1_title: 'Στάδιο 1: Κατάληψη Εδάφους (20 λεπτά)',
             koh_stage1_obj: 'Στόχος:',
             koh_stage1_action: 'Ενέργεια:',
@@ -1185,7 +1274,17 @@ document.addEventListener('DOMContentLoaded', () => {
             koh_final_phase_title: 'Τελική Φάση (Τελευταία 20 λεπτά)',
             koh_final_phase_text: 'Κατά τα τελευταία 20 λεπτά, θα πολεμήσουμε σε όλα τα κτίρια στον χάρτη και θα συλλέξουμε πόντους. Η ένωση που θα συγκεντρώσει τους περισσότερους πόντους θα κερδίσει.',
             koh_bug_note: '🚨 **ΣΗΜΑΝΤΙΚΗ ΣΗΜΕΙΩΣΗ:** Υπάρχουν σφάλματα στο παιχνίδι σχετικά με την ακριβή ώρα του γεγονότος. Παρακαλούμε να είστε συνδεδεμένοι στις **12:00 UTC** για να είστε έτοιμοι.',
-            koh_questions_pm: 'Αν έχετε οποιεσδήποτε ερωτήσεις σχετικά με αυτό το γεγονός, μπορείτε να μου τις ρωτήσετε σε ιδιωτικό μήνυμα.'
+            koh_questions_pm: 'Αν έχετε οποιεσδήποτε ερωτήσεις σχετικά με αυτό το γεγονός, μπορείτε να μου τις ρωτήσετε σε ιδιωτικό μήνυμα.',
+            joiner_bonus_guide_title: '🛡️ Οδηγός: Μπόνους Συμμετέχοντα (Μπόνους Αντίστασης Στρατού)',
+            joiner_bonus_intro: 'Αυτός ο οδηγός παρουσιάζει τα μπόνους Αντίστασης Στρατού που χορηγούν οι ήρωες όταν συμμετέχουν σε ένα ράλι ως αρχηγός (Ικανότητες Επιπέδου 5).',
+            joiner_bonus_table_title: 'Πίνακας Ηρώων και Μπόνους',
+            table_header_hero: 'ΗΡΩΑΣ',
+            table_header_bonus: 'ΜΠΟΝΟΥΣ',
+            table_header_type: 'ΤΥΠΟΣ',
+            army_resistance_type: 'Αντίσταση Στρατού',
+            joiner_bonus_note: '* Το μπόνους που εμφανίζεται αντιστοιχεί στις ικανότητες Επιπέδου 5.',
+            joiner_bonus_warning: '⚠️ ΠΟΤΕ ΜΗΝ ΧΡΗΣΙΜΟΠΟΙΕΙΤΕ έναν ήρωα με 0% μπόνους για να συμμετάσχετε σε ένα ράλι ως αρχηγός.',
+            joiner_bonus_never_use: 'ΠΟΤΕ ΜΗΝ ΧΡΗΣΙΜΟΠΟΙΕΙΤΕ έναν ήρωα με 0% μπόνους για να συμμετάσχετε σε ένα ράλι ως αρχηγός.'
         }
     };
 
@@ -1278,11 +1377,15 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.remove('active');
             // Ensure parent dropdowns are closed and inactive unless directly clicked
             const parentDropdown = link.closest('.dropdown');
-            if (parentDropdown && parentDropdown.querySelector('.dropdown-menu').classList.contains('visible') && !link.classList.contains('dropdown-toggle')) {
-                 parentDropdown.querySelector('.dropdown-menu').classList.remove('visible');
-                 // Only remove 'active' from the toggle itself if not the one clicked
-                 if(parentDropdown.querySelector('.dropdown-toggle').id !== link.id) {
-                     parentDropdown.querySelector('.dropdown-toggle').classList.remove('active');
+            if (parentDropdown && parentDropdown.querySelector('.dropdown-menu').classList.contains('visible')) {
+                 // Only remove 'visible' from dropdown menu if it's not the one being opened
+                 // And only remove 'active' from the toggle if it's not the current active toggle
+                 const currentToggleId = (parentDropdown.querySelector('.dropdown-toggle') && parentDropdown.querySelector('.dropdown-toggle').id) || '';
+
+                 if (!((pageName === 'guides' || pageName === 'guides-koh') && currentToggleId === 'guides-dropdown-toggle') &&
+                     !(pageName === 'characters' && currentToggleId === 'characters-dropdown-toggle')) {
+                    parentDropdown.querySelector('.dropdown-menu').classList.remove('visible');
+                    parentDropdown.querySelector('.dropdown-toggle').classList.remove('active');
                  }
             }
         });
@@ -1332,13 +1435,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Post-load initialization for specific page types
         if (pageName === 'timers') {
             loadTimersContent(); // Activate timer logic
-        } else if (pageName === 'guides') {
+        } else if (pageName === 'guides') { // General guides page has accordions
             initGuideAccordions(); // Initialize accordion functionality
-        } else if (pageName === 'guides-koh') { // Special handling for KoH guide page
-            // If KoH guide is loaded, it might have its own accordion-like sections
-            // Or specific elements needing JS initialization
-            // For now, no specific init needed beyond translation
-             // If there's content inside koh_guide, you might call initGuideAccordions();
+        } else if (pageName === 'guides-koh' || pageName === 'guides-joiner-bonus') { // Specific guide pages might have unique inits
+             // Specific init for KoH table or Joiner Bonus table if needed
+             // For now, only translation is handled
         }
         else if (pageName === 'characters') {
             // Scroll to specific character if subPageName is provided
@@ -1524,12 +1625,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sidebar navigation click handler for character sub-pages AND KoH guide link
+    // Sidebar navigation click handler for character sub-pages AND KoH guide link AND Joiner Bonus guide link
     document.querySelectorAll('.sidebar-nav ul li ul.dropdown-menu li a[data-page]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const page = e.currentTarget.dataset.page;
-            const subPage = e.currentTarget.dataset.subPage || null; // Will be null for guides-koh link
+            const subPage = e.currentTarget.dataset.subPage || null; // Will be null for guides-koh and guides-joiner-bonus links
             loadPage(page, subPage);
         });
     });
@@ -1547,7 +1648,6 @@ document.addEventListener('DOMContentLoaded', () => {
             guidesDropdownToggle.setAttribute('aria-expanded', isVisible);
         });
     }
-
 
     // Logo click handler (navigates to home page)
     document.querySelector('.top-header .logo a').addEventListener('click', (e) => {
@@ -1624,6 +1724,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         // Close guides dropdown if open
+        const guidesDropdownMenu = document.getElementById('guides-dropdown-menu');
+        const guidesDropdownToggle = document.getElementById('guides-dropdown-toggle');
         if (guidesDropdownMenu && guidesDropdownToggle && guidesDropdownMenu.classList.contains('visible')) {
              if (!guidesDropdownMenu.contains(e.target) && !guidesDropdownToggle.contains(e.target)) {
                 guidesDropdownMenu.classList.remove('visible');
@@ -1632,11 +1734,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-
-    // Back to top button (already in previous script, ensure it's still there)
-    // Hamburger menu toggle (already in previous script)
-    // Characters dropdown toggle (already in previous script)
 
     // Handle browser history (back/forward buttons) for SPA behavior
     window.addEventListener('popstate', (event) => {
