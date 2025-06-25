@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
             home_link: 'Accueil',
             timers_link: 'Timers d\'Événements',
             guides_link: 'Guides Stratégiques', // Parent guide link
-            general_guides_link: 'Guides Généraux', // New sub-category
-            koh_guide_link: 'King of the Hill (KoH)', // New sub-category
-            joiner_bonus_guide_link: 'Joiner Bonus', // New sub-category
+            general_guides_link: 'Guides Généraux', // New sub-category link for guides.html
+            koh_guide_link: 'King of the Hill (KoH)', // New sub-category link for guides-koh.html
+            joiner_bonus_guide_link: 'Joiner Bonus (Joiners)', // New sub-category link for guides-joiner-bonus.html
             characters_link: 'Personnages',
             about_link: 'À Propos',
             contact_link: 'Contact',
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_section_title: '⏱️ Timers d\'Événements',
             timers_loading: 'Chargement des timers...',
             timers_note: '* Tous les horaires sont affichés dans votre fuseau horaire local.',
-            guides_section_title: '📚 Guides Stratégiques', // This is still used for the main guides page content
+            guides_section_title: '📚 Guides Stratégiques', // This is still used for the main guides page content (guides.html title)
             guide_beginner_title: 'Début de Jeu 🚀',
             beginner_tip1_strong: 'Concentrez-vous sur le QG (Quartier Général) :',
             beginner_tip1_text: 'Améliorez-le dès que possible pour débloquer de nouvelles fonctionnalités et bâtiments. C\'est la clé de votre progression.',
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guides_link: 'Strategy Guides',
             general_guides_link: 'General Guides',
             koh_guide_link: 'King of the Hill (KoH)',
-            joiner_bonus_guide_link: 'Joiner Bonus',
+            joiner_bonus_guide_link: 'Joiner Bonus (Joiners)',
             characters_link: 'Characters',
             about_link: 'About Us',
             contact_link: 'Contact',
@@ -1382,7 +1382,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  // And only remove 'active' from the toggle if it's not the current active toggle
                  const currentToggleId = (parentDropdown.querySelector('.dropdown-toggle') && parentDropdown.querySelector('.dropdown-toggle').id) || '';
 
-                 if (!((pageName === 'guides' || pageName === 'guides-koh') && currentToggleId === 'guides-dropdown-toggle') &&
+                 if (!((pageName === 'guides' || pageName === 'guides-koh' || pageName === 'guides-joiner-bonus') && currentToggleId === 'guides-dropdown-toggle') &&
                      !(pageName === 'characters' && currentToggleId === 'characters-dropdown-toggle')) {
                     parentDropdown.querySelector('.dropdown-menu').classList.remove('visible');
                     parentDropdown.querySelector('.dropdown-toggle').classList.remove('active');
@@ -1435,11 +1435,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Post-load initialization for specific page types
         if (pageName === 'timers') {
             loadTimersContent(); // Activate timer logic
-        } else if (pageName === 'guides') { // General guides page has accordions
-            initGuideAccordions(); // Initialize accordion functionality
-        } else if (pageName === 'guides-koh' || pageName === 'guides-joiner-bonus') { // Specific guide pages might have unique inits
-             // Specific init for KoH table or Joiner Bonus table if needed
-             // For now, only translation is handled
+        } else if (pageName === 'guides') { // General guides summary page
+            initGuideSummaryLinks(); // Initialize links on guides summary page
+        } else if (pageName.startsWith('guides-')) { // Specific guide pages (e.g., guides-koh, guides-beginner, etc.)
+            initGuideAccordions(); // These individual guide pages still use accordions
         }
         else if (pageName === 'characters') {
             // Scroll to specific character if subPageName is provided
@@ -1481,10 +1480,19 @@ document.addEventListener('DOMContentLoaded', () => {
         loadPage(page, subPage);
     }
 
+    /**
+     * Initializes links on the main guides summary page.
+     */
+    function initGuideSummaryLinks() {
+        document.querySelectorAll('.guide-summary-card a[data-page]').forEach(link => {
+            link.removeEventListener('click', handleDynamicPageLinkClick); // Prevent duplicates
+            link.addEventListener('click', handleDynamicPageLinkClick);
+        });
+    }
 
     /**
      * Initializes accordion functionality for guide sections.
-     * Needs to be called whenever guides.html content is loaded.
+     * Needs to be called whenever guide content is loaded.
      */
     function initGuideAccordions() {
         document.querySelectorAll('.guide-toggle').forEach(button => {
@@ -1534,19 +1542,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 timersContainer.innerHTML = `
                     <div class="timer-item card">
                         <h4>⏰ ${translations[currentLang]?.timers_daily_event || 'Daily Event'} : ${translations[currentLang]?.timers_infected_hunt || 'Infected Hunt'}</h4>
-                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-24T18:00:00">Chargement...</span></p>
+                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-24T18:00:00Z">Chargement...</span></p>
                     </div>
                     <div class="timer-item card">
                         <h4>🌟 ${translations[currentLang]?.timers_weekly_event || 'Weekly Event'} : ${translations[currentLang]?.timers_alliance_war || 'Alliance War'}</h4>
-                        <p>${translations[currentLang]?.timers_start_in || 'Starts in'} : <span class="countdown" data-time="2025-06-26T10:00:00">Chargement...</span></p>
+                        <p>${translations[currentLang]?.timers_start_in || 'Starts in'} : <span class="countdown" data-time="2025-06-26T10:00:00Z">Chargement...</span></p>
                     </div>
                     <div class="timer-item card">
                         <h4>🔥 ${translations[currentLang]?.timers_influencer_trap || 'Influencer Trap'}</h4>
-                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-25T14:00:00">Chargement...</span></p>
-                    </div>
+                        <p>${translations[currentLang]?.timers_next_in || 'Next in'} : <span class="countdown" data-time="2025-06-25T19:00:00Z">Chargement...</span></p> </div>
                     <div class="timer-item card">
                         <h4>🏆 ${translations[currentLang]?.timers_special_event || 'Special Event'} : ${translations[currentLang]?.timers_state_championship || 'State Championship'}</h4>
-                        <p>${translations[currentLang]?.timers_end_in || 'Ends in'} : <span class="countdown" data-time="2025-06-25T23:59:59">Chargement...</span></p>
+                        <p>${translations[currentLang]?.timers_end_in || 'Ends in'} : <span class="countdown" data-time="2025-06-25T23:59:59Z">Chargement...</span></p>
                     </div>
                 `;
                 updateCountdowns(); // Initial update
@@ -1625,7 +1632,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sidebar navigation click handler for character sub-pages AND KoH guide link AND Joiner Bonus guide link
+    // Sidebar navigation click handler for sub-pages (characters, KoH, Joiner Bonus)
     document.querySelectorAll('.sidebar-nav ul li ul.dropdown-menu li a[data-page]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
