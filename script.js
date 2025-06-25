@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // General elements
             home_link: 'Accueil',
             timers_link: 'Timers d\'Événements',
-            guides_link: 'Guides Stratégiques',
+            guides_link: 'Guides Stratégiques', // Parent guide link
+            general_guides_link: 'Guides Généraux', // New sub-category
+            koh_guide_link: 'King of the Hill (KoH)', // New sub-category
             characters_link: 'Personnages',
             about_link: 'À Propos',
             contact_link: 'Contact',
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_section_title: '⏱️ Timers d\'Événements',
             timers_loading: 'Chargement des timers...',
             timers_note: '* Tous les horaires sont affichés dans votre fuseau horaire local.',
-            guides_section_title: '📚 Guides Stratégiques',
+            guides_section_title: '📚 Guides Stratégiques', // This is still used for the main guides page content
             guide_beginner_title: 'Début de Jeu 🚀',
             beginner_tip1_strong: 'Concentrez-vous sur le QG (Quartier Général) :',
             beginner_tip1_text: 'Améliorez-le dès que possible pour débloquer de nouvelles fonctionnalités et bâtiments. C\'est la clé de votre progression.',
@@ -101,12 +103,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 Rejoignez notre Communauté Discord !',
             discord_invite_text: 'Ne manquez aucune discussion, astuce ou annonce ! Rejoignez notre serveur Discord pour échanger avec d\'autres passionnés et obtenir de l\'aide en direct.',
             discord_join_button: 'Rejoindre le Discord',
-            timers_influencer_trap: 'Piège à influenceurs'
+            timers_influencer_trap: 'Piège à influenceurs',
+            koh_guide_title: '👑 Guide de Stratégie : King of the Hill (KoH)',
+            koh_intro: 'Ce guide détaille la stratégie pour l\'événement King of the Hill (KoH), un événement de 60 minutes divisé en 3 étapes de 20 minutes chacune.',
+            koh_plan_title: 'Plan Initial : King of the Hill (Dimanche 18.08)',
+            koh_plan_info: 'Le plan alloue des équipes à des positions spécifiques avec des leaders et des membres.',
+            koh_leader_a: 'Leader A (Centre)', // Updated to generic
+            koh_leader_b: 'Leader B (Gauche)', // Updated to generic
+            koh_leader_c: 'Leader C (Droite)', // Updated to generic
+            koh_stage1_title: 'Étape 1 : Occupation du Territoire (20 minutes)',
+            koh_stage1_obj: 'Objectif :',
+            koh_stage1_action: 'Action :',
+            koh_stage1_key: 'Point Clé :',
+            koh_stage1_note: 'Il doit y avoir des marches en cours dans tous les bâtiments qui sont en contact avec le territoire des adversaires pour les empêcher d\'entrer et d\'occuper notre territoire.',
+            koh_stage2_title: 'Étape 2 : Capture des Villes Clés (20 minutes)',
+            koh_stage2_obj: 'Objectif :',
+            koh_stage2_action: 'Action :',
+            koh_stage2_key: 'Point Clé :',
+            koh_stage2_teamA: 'Équipe A : occupe (A31, A32), (B31, B32), (C31, C32).',
+            koh_stage2_teamB: 'Équipe B : occupe (B31, B32).',
+            koh_stage2_teamC: 'Équipe C : occupe (C31, C32).',
+            koh_stage2_result: 'Ce blocage nous permettra de bloquer le passage de nos adversaires vers le centre, et à l\'étape 3, ils ne pourront pas y entrer.',
+            koh_stage3_title: 'Étape 3 : Combat pour le Centre / Blocage (20 minutes)',
+            koh_stage3_obj: 'Objectif :',
+            koh_stage3_action: 'Action :',
+            koh_stage3_key: 'Point Clé :',
+            koh_stage3_last_sentence: 'Si nous pouvons bloquer tout autour du centre, alors seules quelques personnes iront au centre, il n\'est pas nécessaire d\'y courir tous ensemble, car l\'adversaire ne pourra pas y entrer. Nous surveillons les bâtiments autour du centre et ne laissons pas l\'adversaire passer.', // Adjusted
+            koh_final_phase_title: 'Phase Finale (20 dernières minutes)',
+            koh_final_phase_text: 'Pendant les 20 dernières minutes, nous nous battrons sur tous les bâtiments de la carte et collecterons des points. L\'union qui marque le plus de points l\'emportera.',
+            koh_bug_note: '🚨 **NOTE IMPORTANTE :** Il y a des bugs dans le jeu concernant l\'heure exacte des événements. Merci de vous connecter à **12:00 UTC** pour être en ligne.',
+            koh_questions_pm: 'Si vous avez des questions concernant cet événement, vous pouvez me les poser en message privé.'
         },
         en: {
             home_link: 'Home',
             timers_link: 'Event Timers',
             guides_link: 'Strategy Guides',
+            general_guides_link: 'General Guides',
+            koh_guide_link: 'King of the Hill (KoH)',
             characters_link: 'Characters',
             about_link: 'About Us',
             contact_link: 'Contact',
@@ -202,12 +235,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 Join our Discord Community!',
             discord_invite_text: 'Don\'t miss any discussions, tips, or announcements! Join our Discord server to chat with other enthusiasts and get live help.',
             discord_join_button: 'Join Discord',
-            timers_influencer_trap: 'Influencer Trap'
+            timers_influencer_trap: 'Influencer Trap',
+            koh_guide_title: '👑 Strategy Guide: King of the Hill (KoH)',
+            koh_intro: 'This guide details the strategy for the King of the Hill (KoH) event, a 60-minute event divided into 3 stages of 20 minutes each.',
+            koh_plan_title: 'Initial Plan: King of the Hill (Sunday 18.08)',
+            koh_plan_info: 'The plan assigns teams to specific positions with leaders and members.',
+            koh_leader_a: 'Leader A (Center)',
+            koh_leader_b: 'Leader B (Left)',
+            koh_leader_c: 'Leader C (Right)',
+            koh_stage1_title: 'Stage 1: Territory Occupation (20 minutes)',
+            koh_stage1_obj: 'Objective:',
+            koh_stage1_action: 'Action:',
+            koh_stage1_key: 'Key Point:',
+            koh_stage1_note: 'There should be marches underway in all buildings that are in contact with opponent\'s territory to prevent them from entering and occupying our territory.',
+            koh_stage2_title: 'Stage 2: Key City Capture (20 minutes)',
+            koh_stage2_obj: 'Objective:',
+            koh_stage2_action: 'Action:',
+            koh_stage2_key: 'Key Point:',
+            koh_stage2_teamA: 'Team A: occupies (A31, A32), (B31, B32), (C31, C32).',
+            koh_stage2_teamB: 'Team B: occupies (B31, B32).',
+            koh_stage2_teamC: 'Team C: occupies (C31, C32).',
+            koh_stage2_result: 'This blockade will allow us to block the passage of our opponents to the center, and in Stage 3, they will not be able to enter there.',
+            koh_stage3_title: 'Stage 3: Fight for the Center / Blockade (20 minutes)',
+            koh_stage3_obj: 'Objective:',
+            koh_stage3_action: 'Action:',
+            koh_stage3_key: 'Key Point:',
+            koh_stage3_last_sentence: 'If we can block everything around the center, then only a few people go to the center, there is no need to run there together, since the opponent will not be able to enter there. We watch the buildings around the center and do not let the opponent pass.',
+            koh_final_phase_title: 'Final Phase (Last 20 minutes)',
+            koh_final_phase_text: 'During the last 20 minutes, we will fight on all buildings on the map and collect points. The union that scores the most points will win.',
+            koh_bug_note: '🚨 **IMPORTANT NOTE:** There are bugs in the game regarding the exact event time. Please be online at **12:00 UTC** to be ready.',
+            koh_questions_pm: 'If you have any questions about this event, you can ask me in private message.'
         },
         ko: { // Korean
             home_link: '홈',
             timers_link: '이벤트 타이머',
             guides_link: '전략 가이드',
+            general_guides_link: '일반 가이드',
+            koh_guide_link: '언덕의 왕 (KoH)',
             characters_link: '캐릭터',
             about_link: '소개',
             contact_link: '문의',
@@ -303,12 +367,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 저희 디스코드 커뮤니티에 참여하세요!',
             discord_invite_text: '어떤 토론, 팁, 공지도 놓치지 마세요! 저희 디스코드 서버에 참여하여 다른 열정적인 사람들과 교류하고 실시간으로 도움을 받으세요.',
             discord_join_button: '디스코드 참여',
-            timers_influencer_trap: '인플루언서 트랩'
+            timers_influencer_trap: '인플루언서 트랩',
+            koh_guide_title: '👑 전략 가이드: 언덕의 왕 (KoH)',
+            koh_intro: '이 가이드는 언덕의 왕 (KoH) 이벤트 전략을 설명합니다. 이 이벤트는 각각 20분씩 3단계로 나뉘어 총 60분 동안 진행됩니다.',
+            koh_plan_title: '초기 계획: 언덕의 왕 (일요일 18.08)',
+            koh_plan_info: '이 계획은 특정 위치에 팀을 할당하고 리더와 구성원을 지정합니다.',
+            koh_leader_a: '리더 A (중앙)',
+            koh_leader_b: '리더 B (왼쪽)',
+            koh_leader_c: '리더 C (오른쪽)',
+            koh_stage1_title: '1단계: 영토 점령 (20분)',
+            koh_stage1_obj: '목표:',
+            koh_stage1_action: '행동:',
+            koh_stage1_key: '핵심 포인트:',
+            koh_stage1_note: '상대방의 영토와 접촉하는 모든 건물에 계속해서 행진을 보내 상대방이 우리 영토에 진입하여 점령하는 것을 막아야 합니다.',
+            koh_stage2_title: '2단계: 주요 도시 점령 (20분)',
+            koh_stage2_obj: '목표:',
+            koh_stage2_action: '행동:',
+            koh_stage2_key: '핵심 포인트:',
+            koh_stage2_teamA: '팀 A: (A31, A32), (B31, B32), (C31, C32)를 점령합니다.',
+            koh_stage2_teamB: '팀 B: (B31, B32)를 점령합니다.',
+            koh_stage2_teamC: '팀 C: (C31, C32)를 점령합니다.',
+            koh_stage2_result: '이 봉쇄는 상대방이 중앙으로 통과하는 것을 막을 것이며, 3단계에서는 진입할 수 없습니다.',
+            koh_stage3_title: '3단계: 중앙 전투 / 봉쇄 (20분)',
+            koh_stage3_obj: '목표:',
+            koh_stage3_action: '행동:',
+            koh_stage3_key: '핵심 포인트:',
+            koh_stage3_last_sentence: '중앙 주변의 모든 것을 봉쇄할 수 있다면 소수의 인원만 중앙으로 이동하면 됩니다. 상대방이 진입할 수 없으므로 모두 함께 달려갈 필요는 없습니다. 중앙 주변의 건물을 주시하고 상대방이 통과하지 못하게 합니다.',
+            koh_final_phase_title: '최종 단계 (마지막 20분)',
+            koh_final_phase_text: '마지막 20분 동안은 지도상의 모든 건물에서 전투하고 점수를 수집합니다. 가장 많은 점수를 획득한 연맹이 승리합니다.',
+            koh_bug_note: '🚨 **중요 참고:** 게임에 정확한 이벤트 시간과 관련된 버그가 있습니다. 준비를 위해 **UTC 12:00**에 접속해 주십시오.',
+            koh_questions_pm: '이 이벤트에 대해 궁금한 점이 있으시면 개인 메시지로 문의해주세요.'
         },
         it: { // Italian
             home_link: 'Home',
             timers_link: 'Timer Eventi',
             guides_link: 'Guide Strategiche',
+            general_guides_link: 'Guide Generali',
+            koh_guide_link: 'Re della Collina (KoH)',
             characters_link: 'Personaggi',
             about_link: 'Chi Siamo',
             contact_link: 'Contatti',
@@ -353,7 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resources_tip4_text: 'Partecipa agli eventi giornalieri, settimanali e alle missioni della storia per guadagnare grandi quantità di risorse.',
             resources_tip5_strong: 'Uso giudizioso:',
             resources_tip5_text: 'Non produrre un surplus di risorse oltre ciò di cui hai bisogno per le tue prossime grandi costruzioni/ricerche, soprattutto se non sei ben protetto.',
-            characters_section_title: '👤 I Nostri Eroi e Personnaggi',
+            characters_section_title: '👤 I Nostri Eroi e Personaggi',
             character_rusty_name: 'Rusty',
             character_rusty_role: 'Esplorazione e Combattimento',
             character_rusty_desc: 'Un eroe di combattimento versatile, eccellente per spedizioni e rally contro gli infetti. Le sue abilità aumentano il danno delle truppe.',
@@ -404,12 +499,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 Unisciti alla nostra Comunità Discord!',
             discord_invite_text: 'Non perdere nessuna discussione, suggerimento o annuncio! Unisciti al nostro server Discord per chattare con altri appassionati e ottenere aiuto dal vivo.',
             discord_join_button: 'Unisciti a Discord',
-            timers_influencer_trap: 'Trappola per Influencer'
+            timers_influencer_trap: 'Trappola per Influencer',
+            koh_guide_title: '👑 Guida Strategica: Re della Collina (KoH)',
+            koh_intro: 'Questa guida illustra la strategia per l\'evento Re della Collina (KoH), un evento di 60 minuti diviso in 3 fasi di 20 minuti ciascuna.',
+            koh_plan_title: 'Piano Iniziale: Re della Collina (Domenica 18.08)',
+            koh_plan_info: 'Il piano assegna le squadre a posizioni specifiche con leader e membri.',
+            koh_leader_a: 'Leader A (Centro)',
+            koh_leader_b: 'Leader B (Sinistra)',
+            koh_leader_c: 'Leader C (Destra)',
+            koh_stage1_title: 'Fase 1: Occupazione del Territorio (20 minuti)',
+            koh_stage1_obj: 'Obiettivo:',
+            koh_stage1_action: 'Azione:',
+            koh_stage1_key: 'Punto Chiave:',
+            koh_stage1_note: 'Ci devono essere sempre marce in corso in tutti gli edifici che sono a contatto con il territorio avversario per impedire loro di entrare e occupare il nostro territorio.',
+            koh_stage2_title: 'Fase 2: Cattura delle Città Chiave (20 minuti)',
+            koh_stage2_obj: 'Obiettivo:',
+            koh_stage2_action: 'Azione:',
+            koh_stage2_key: 'Punto Chiave:',
+            koh_stage2_teamA: 'Squadra A: occupa (A31, A32), (B31, B32), (C31, C32).',
+            koh_stage2_teamB: 'Squadra B: occupa (B31, B32).',
+            koh_stage2_teamC: 'Squadra C: occupa (C31, C32).',
+            koh_stage2_result: 'Questo blocco ci permetterà di bloccare il passaggio dei nostri avversari verso il centro e nella Fase 3 non potranno entrare.',
+            koh_stage3_title: 'Fase 3: Battaglia per il Centro / Blocco (20 minuti)',
+            koh_stage3_obj: 'Obiettivo:',
+            koh_stage3_action: 'Azione:',
+            koh_stage3_key: 'Punto Chiave:',
+            koh_stage3_last_sentence: 'Se riusciamo a bloccare tutto intorno al centro, allora solo poche persone andranno al centro, non è necessario correre tutti insieme, poiché l\'avversario non potrà entrare. Controlliamo gli edifici intorno al centro e non lasciamo passare l\'avversario.',
+            koh_final_phase_title: 'Fase Finale (Ultimi 20 minuti)',
+            koh_final_phase_text: 'Durante gli ultimi 20 minuti, combatteremo su tutti gli edifici sulla mappa e raccoglieremo punti. L\'unione che segna più punti vincerà.',
+            koh_bug_note: '🚨 **NOTA IMPORTANTE:** Ci sono bug nel gioco riguardo l\'orario esatto degli eventi. Connettetevi alle **12:00 UTC** per essere pronti.',
+            koh_questions_pm: 'Se avete domande su questo evento, potete chiedermele in messaggio privato.'
         },
         es: { // Spanish
             home_link: 'Inicio',
             timers_link: 'Temporizadores de Eventos',
             guides_link: 'Guías Estratégicas',
+            general_guides_link: 'Guías Generales',
+            koh_guide_link: 'Rey de la Colina (KoH)',
             characters_link: 'Personajes',
             about_link: 'Acerca de Nosotros',
             contact_link: 'Contacto',
@@ -505,12 +631,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 ¡Únete a nuestra Comunidad de Discord!',
             discord_invite_text: '¡No te pierdas ninguna discusión, consejo o anuncio! Únete a nuestro servidor de Discord para chatear con otros entusiastas y obtener ayuda en vivo.',
             discord_join_button: 'Unirse a Discord',
-            timers_influencer_trap: 'Trampa de Influencers'
+            timers_influencer_trap: 'Trampa de Influencers',
+            koh_guide_title: '👑 Guía de Estrategia: Rey de la Colina (KoH)',
+            koh_intro: 'Esta guía detalla la estrategia para el evento Rey de la Colina (KoH), un evento de 60 minutos dividido en 3 etapas de 20 minutos cada una.',
+            koh_plan_title: 'Plan Inicial: Rey de la Colina (Domingo 18.08)',
+            koh_plan_info: 'El plan asigna equipos a posiciones específicas con líderes y miembros.',
+            koh_leader_a: 'Líder A (Centro)',
+            koh_leader_b: 'Líder B (Izquierda)',
+            koh_leader_c: 'Líder C (Derecha)',
+            koh_stage1_title: 'Etapa 1: Ocupación del Territorio (20 minutos)',
+            koh_stage1_obj: 'Objetivo:',
+            koh_stage1_action: 'Acción:',
+            koh_stage1_key: 'Punto Clave:',
+            koh_stage1_note: 'Debe haber marchas en curso en todos los edificios que estén en contacto con el territorio del oponente para evitar que entren y ocupen nuestro territorio.',
+            koh_stage2_title: 'Etapa 2: Captura de Ciudades Clave (20 minutos)',
+            koh_stage2_obj: 'Objetivo:',
+            koh_stage2_action: 'Acción:',
+            koh_stage2_key: 'Punto Clave:',
+            koh_stage2_teamA: 'Equipo A: ocupa (A31, A32), (B31, B32), (C31, C32).',
+            koh_stage2_teamB: 'Equipo B: ocupa (B31, B32).',
+            koh_stage2_teamC: 'Equipo C: ocupa (C31, C32).',
+            koh_stage2_result: 'Este bloqueo nos permitirá bloquear el paso de nuestros oponentes hacia el centro, y en la Etapa 3, no podrán entrar allí.',
+            koh_stage3_title: 'Etapa 3: Lucha por el Centro / Bloqueo (20 minutos)',
+            koh_stage3_obj: 'Objetivo:',
+            koh_stage3_action: 'Acción:',
+            koh_stage3_key: 'Punto Clave:',
+            koh_stage3_last_sentence: 'Si podemos bloquear todo alrededor del centro, solo unas pocas personas irán al centro, no es necesario correr todos juntos, ya que el oponente no podrá entrar allí. Vigilamos los edificios alrededor del centro y no dejamos pasar al oponente.',
+            koh_final_phase_title: 'Fase Final (Últimos 20 minutos)',
+            koh_final_phase_text: 'Durante los últimos 20 minutos, lucharemos en todos los edificios del mapa y recolectaremos puntos. La unión que obtenga más puntos ganará.',
+            koh_bug_note: '🚨 **NOTA IMPORTANTE:** Hay errores en el juego con respecto a la hora exacta del evento. Por favor, conéctate a las **12:00 UTC** para estar listo.',
+            koh_questions_pm: 'Si tienes alguna pregunta sobre este evento, puedes consultarme en mensaje privado.'
         },
         ru: { // Russian
             home_link: 'Главная',
             timers_link: 'Таймеры событий',
             guides_link: 'Стратегические руководства',
+            general_guides_link: 'Общие руководства',
+            koh_guide_link: 'Царь Горы (KoH)',
             characters_link: 'Персонажи',
             about_link: 'О нас',
             contact_link: 'Контакты',
@@ -606,12 +763,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 Присоединяйтесь к нашему сообществу Discord!',
             discord_invite_text: 'Не пропустите ни одной дискуссии, совета или объявления! Присоединяйтесь к нашему Discord-серверу, чтобы общаться с другими энтузиастами и получать живую помощь.',
             discord_join_button: 'Присоединиться к Discord',
-            timers_influencer_trap: 'Ловушка для инфлюенсеров'
+            timers_influencer_trap: 'Ловушка для инфлюенсеров',
+            koh_guide_title: '👑 Руководство по стратегии: Царь Горы (KoH)',
+            koh_intro: 'Это руководство описывает стратегию для события «Царь Горы» (KoH), 60-минутного события, разделенного на 3 этапа по 20 минут каждый.',
+            koh_plan_title: 'Первоначальный план: Царь Горы (воскресенье, 18.08)',
+            koh_plan_info: 'План назначает команды на определенные позиции с лидерами и участниками.',
+            koh_leader_a: 'Лидер А (Центр)',
+            koh_leader_b: 'Лидер Б (Лево)',
+            koh_leader_c: 'Лидер В (Право)',
+            koh_stage1_title: 'Этап 1: Захват территории (20 минут)',
+            koh_stage1_obj: 'Цель:',
+            koh_stage1_action: 'Действие:',
+            koh_stage1_key: 'Ключевой момент:',
+            koh_stage1_note: 'Всегда должны быть марши на все здания, которые находятся в контакте с территорией противника, чтобы не дать им войти и занять нашу территорию.',
+            koh_stage2_title: 'Этап 2: Захват ключевых городов (20 минут)',
+            koh_stage2_obj: 'Цель:',
+            koh_stage2_action: 'Действие:',
+            koh_stage2_key: 'Ключевой момент:',
+            koh_stage2_teamA: 'Команда А: занимает (А31, А32), (Б31, Б32), (В31, В32).',
+            koh_stage2_teamB: 'Команда Б: занимает (Б31, Б32).',
+            koh_stage2_teamC: 'Команда В: занимает (В31, В32).',
+            koh_stage2_result: 'Эта блокада позволит нам заблокировать проход наших противников к центру, и на этапе 3 они не смогут туда войти.',
+            koh_stage3_title: 'Этап 3: Битва за Центр / Блокада (20 минут)',
+            koh_stage3_obj: 'Цель:',
+            koh_stage3_action: 'Действие:',
+            koh_stage3_key: 'Ключевой момент:',
+            koh_stage3_last_sentence: 'Если мы сможем заблокировать все вокруг центра, то только несколько человек пойдут в центр, не нужно бежать туда всем вместе, так как противник не сможет туда войти. Мы следим за зданиями вокруг центра и не даем противнику пройти.',
+            koh_final_phase_title: 'Финальная фаза (последние 20 минут)',
+            koh_final_phase_text: 'В течение последних 20 минут мы будем сражаться за все здания на карте и собирать очки. Союз, набравший наибольшее количество очков, победит.',
+            koh_bug_note: '🚨 **ВАЖНОЕ ПРИМЕЧАНИЕ:** В игре есть ошибки, касающиеся точного времени события. Пожалуйста, будьте онлайн в **12:00 UTC**, чтобы быть готовыми.',
+            koh_questions_pm: 'Если у вас есть какие-либо вопросы по этому событию, вы можете задать их мне в личном сообщении.'
         },
         zh: { // Chinese
             home_link: '主页',
             timers_link: '活动计时器',
             guides_link: '策略指南',
+            general_guides_link: '通用指南',
+            koh_guide_link: '山丘之王 (KoH)',
             characters_link: '角色',
             about_link: '关于我们',
             contact_link: '联系我们',
@@ -650,7 +838,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resources_tip1_text: '派遣您的部队收集食物、木材、石油和金属。资源等级会影响数量。',
             resources_tip2_strong: '生产建筑：',
             resources_tip2_text: '升级您的农场、伐木场、炼油厂和铸造厂。这是被动但必不可少的生产。',
-            resources_tip3_strong: '仓库：',
+            tip3_strong: '仓库：',
             resources_tip3_text: '升级您的仓库以增加资源保护阈值。',
             resources_tip4_strong: '任务和活动：',
             resources_tip4_text: '参与每日、每周活动和故事任务以获得大量资源。',
@@ -704,12 +892,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 加入我们的Discord社区！',
             discord_invite_text: '不要错过任何讨论、提示或公告！加入我们的Discord服务器，与其他爱好者交流并获得实时帮助。',
             discord_join_button: '加入Discord',
-            timers_influencer_trap: '网红陷阱'
+            timers_influencer_trap: '网红陷阱',
+            koh_guide_title: '👑 策略指南: 山丘之王 (KoH)',
+            koh_intro: '本指南详细介绍了山丘之王 (KoH) 活动的策略，这是一个为期 60 分钟的活动，分为 3 个阶段，每个阶段 20 分钟。',
+            koh_plan_title: '初始计划：山丘之王 (8月18日星期日)',
+            koh_plan_info: '该计划为特定位置分配了团队，并指定了领导者和成员。',
+            koh_leader_a: '领导者 A (中心)',
+            koh_leader_b: '领导者 B (左)',
+            koh_leader_c: '领导者 C (右)',
+            koh_stage1_title: '阶段 1: 领土占领 (20 分钟)',
+            koh_stage1_obj: '目标:',
+            koh_stage1_action: '行动:',
+            koh_stage1_key: '关键点:',
+            koh_stage1_note: '所有与对手领土接触的建筑物都应有行军部队，以防止他们进入和占领我们的领土。',
+            koh_stage2_title: '阶段 2: 关键城市占领 (20 分钟)',
+            koh_stage2_obj: '目标:',
+            koh_stage2_action: '行动:',
+            koh_stage2_key: '关键点:',
+            koh_stage2_teamA: 'A 队: 占领 (A31, A32), (B31, B32), (C31, C32)。',
+            koh_stage2_teamB: 'B 队: 占领 (B31, B32)。',
+            koh_stage2_teamC: 'C 队: 占领 (C31, C32)。',
+            koh_stage2_result: '这种封锁将阻止我们的对手进入中心，在第 3 阶段他们将无法进入。',
+            koh_stage3_title: '阶段 3: 争夺中心 / 封锁 (20 分钟)',
+            koh_stage3_obj: '目标:',
+            koh_stage3_action: '行动:',
+            koh_stage3_key: '关键点:',
+            koh_stage3_last_sentence: '如果我们能够封锁中心周围的一切，那么只有少数人会进入中心，没有必要都一起跑过去，因为对手将无法进入。我们监视中心周围的建筑物，不让对手通过。',
+            koh_final_phase_title: '最后阶段 (最后 20 分钟)',
+            koh_final_phase_text: '在最后 20 分钟，我们将在地图上的所有建筑物中战斗并收集积分。得分最高的联盟将获胜。',
+            koh_bug_note: '🚨 **重要提示:** 游戏中存在与确切事件时间相关的错误。请在 **UTC 12:00** 在线，做好准备。',
+            koh_questions_pm: '如果您对本次活动有任何疑问，可以私信我。'
         },
         ja: { // Japanese
             home_link: 'ホーム',
             timers_link: 'イベントタイマー',
             guides_link: '戦略ガイド',
+            general_guides_link: '一般ガイド',
+            koh_guide_link: 'キングオブザヒル (KoH)',
             characters_link: 'キャラクター',
             about_link: '私たちについて',
             contact_link: 'お問い合わせ',
@@ -805,12 +1024,43 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 Discordコミュニティに参加しよう！',
             discord_invite_text: '議論、ヒント、お知らせを見逃さないでください！私たちのDiscordサーバーに参加して、他の愛好家と交流し、ライブでサポートを受けましょう。',
             discord_join_button: 'Discordに参加',
-            timers_influencer_trap: 'インフルエンサー トラップ'
+            timers_influencer_trap: 'インフルエンサー トラップ',
+            koh_guide_title: '👑 戦略ガイド: キングオブザヒル (KoH)',
+            koh_intro: 'このガイドでは、キングオブザヒル (KoH) イベントの戦略について詳しく説明します。これは、それぞれ20分間の3つのステージに分けられた60分間のイベントです。',
+            koh_plan_title: '初期計画: キングオブザヒル (8月18日日曜日)',
+            koh_plan_info: 'この計画は、リーダーとメンバーを持つ特定のポジションにチームを割り当てます。',
+            koh_leader_a: 'リーダー A (中央)',
+            koh_leader_b: 'リーダー B (左)',
+            koh_leader_c: 'リーダー C (右)',
+            koh_stage1_title: 'ステージ 1: 領土占領 (20分)',
+            koh_stage1_obj: '目的:',
+            koh_stage1_action: '行動:',
+            koh_stage1_key: '重要なポイント:',
+            koh_stage1_note: '相手の領土と接触しているすべての建物では常に進軍が行われ、彼らが私たちの領土に侵入して占領するのを防ぐ必要があります。',
+            koh_stage2_title: 'ステージ 2: 主要都市の確保 (20分)',
+            koh_stage2_obj: '目的:',
+            koh_stage2_action: '行動:',
+            koh_stage2_key: '重要なポイント:',
+            koh_stage2_teamA: 'チーム A: (A31, A32), (B31, B32), (C31, C32) を占領します。',
+            koh_stage2_teamB: 'チーム B: (B31, B32) を占領します。',
+            koh_stage2_teamC: 'チーム C: (C31, C32) を占領します。',
+            koh_stage2_result: 'この封鎖により、敵が中央に進むのをブロックできるようになり、ステージ3では侵入できなくなります。',
+            koh_stage3_title: 'ステージ 3: 中央の戦い / 封鎖 (20分)',
+            koh_stage3_obj: '目的:',
+            koh_stage3_action: '行動:',
+            koh_stage3_key: '重要なポイント:',
+            koh_stage3_last_sentence: '中央の周囲をすべてブロックできる場合、中央に行くのは数人だけで済みます。敵は侵入できないため、全員で走っていく必要はありません。中央周辺の建物を監視し、敵が通過しないようにします。',
+            koh_final_phase_title: '最終フェーズ (最後の20分)',
+            koh_final_phase_text: '最後の20分間は、マップ上のすべての建物を巡って戦い、ポイントを集めます。最も多くのポイントを獲得した同盟が勝利します。',
+            koh_bug_note: '🚨 **重要事項:** ゲームには正確なイベント時間に関するバグがあります。準備のため、**UTC 12:00** にオンラインにしてください。',
+            koh_questions_pm: 'このイベントについてご質問がある場合は、プライベートメッセージでお尋ねください。'
         },
         el: { // Greek
             home_link: 'Αρχική',
             timers_link: 'Χρονοδιακόπτες Εκδηλώσεων',
             guides_link: 'Στρατηγικοί Οδηγοί',
+            general_guides_link: 'Γενικοί Οδηγοί',
+            koh_guide_link: 'Βασιλιάς του Λόφου (KoH)',
             characters_link: 'Χαρακτήρες',
             about_link: 'Σχετικά με εμάς',
             contact_link: 'Επικοινωνία',
@@ -894,7 +1144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timers_daily_event: 'Καθημερινή Εκδήλωση',
             timers_infected_hunt: 'Κυνήγι Μολυσμένων',
             timers_next_in: 'Επόμενο σε',
-            timers_weekly_event: 'Εβδομαδιαία Εκδήλεση',
+            timers_weekly_event: 'Εβδομαδιαία Εκδήλωση',
             timers_alliance_war: 'Πόλεμος Συμμαχιών',
             timers_start_in: 'Έναρξη σε',
             timers_special_event: 'Ειδική Εκδήλωση',
@@ -906,7 +1156,36 @@ document.addEventListener('DOMContentLoaded', () => {
             discord_invite_title: '🎉 Ελάτε στην Κοινότητα μας στο Discord!',
             discord_invite_text: 'Μην χάσετε καμία συζήτηση, συμβουλή ή ανακοίνωση! Ελάτε στον server μας στο Discord για να συνομιλήσετε με άλλους ενθουσιώδεις χρήστες και να λάβετε ζωντανή βοήθεια.',
             discord_join_button: 'Εγγραφή στο Discord',
-            timers_influencer_trap: 'Παγίδα επιρροής'
+            timers_influencer_trap: 'Παγίδα επιρροής',
+            koh_guide_title: '👑 Οδηγός Στρατηγικής: Βασιλιάς του Λόφου (KoH)',
+            koh_intro: 'Αυτός ο οδηγός περιγράφει τη στρατηγική για το γεγονός Βασιλιάς του Λόφου (KoH), ένα γεγονός 60 λεπτών χωρισμένο σε 3 στάδια των 20 λεπτών το καθένα.',
+            koh_plan_title: 'Αρχικό Σχέδιο: Βασιλιάς του Λόφου (Κυριακή 18.08)',
+            koh_plan_info: 'Το σχέδιο αναθέτει ομάδες σε συγκεκριμένες θέσεις με αρχηγούς και μέλη.',
+            koh_leader_a: 'Αρχηγός Α (Κέντρο)',
+            koh_leader_b: 'Αρχηγός Β (Αριστερά)',
+            koh_leader_c: 'Αρχηγός Γ (Δεξιά)',
+            koh_stage1_title: 'Στάδιο 1: Κατάληψη Εδάφους (20 λεπτά)',
+            koh_stage1_obj: 'Στόχος:',
+            koh_stage1_action: 'Ενέργεια:',
+            koh_stage1_key: 'Βασικό Σημείο:',
+            koh_stage1_note: 'Πρέπει να υπάρχουν πάντα πορείες σε όλα τα κτίρια που είναι σε επαφή με την περιοχή του αντιπάλου για να τους εμποδίσουμε να εισέλθουν και να καταλάβουν την περιοχή μας.',
+            koh_stage2_title: 'Στάδιο 2: Κατάληψη Βασικών Πόλεων (20 λεπτά)',
+            koh_stage2_obj: 'Στόχος:',
+            koh_stage2_action: 'Ενέργεια:',
+            koh_stage2_key: 'Βασικό Σημείο:',
+            koh_stage2_teamA: 'Ομάδα Α: καταλαμβάνει (Α31, Α32), (Β31, Β32), (C31, C32).',
+            koh_stage2_teamB: 'Ομάδα Β: καταλαμβάνει (Β31, Β32).',
+            koh_stage2_teamC: 'Ομάδα Γ: καταλαμβάνει (C31, C32).',
+            koh_stage2_result: 'Αυτός ο αποκλεισμός θα μας επιτρέψει να αποκλείσουμε το πέρασμα των αντιπάλων μας προς το κέντρο, και στο Στάδιο 3, δεν θα μπορούν να εισέλθουν εκεί.',
+            koh_stage3_title: 'Στάδιο 3: Μάχη για το Κέντρο / Αποκλεισμός (20 λεπτά)',
+            koh_stage3_obj: 'Στόχος:',
+            koh_stage3_action: 'Ενέργεια:',
+            koh_stage3_key: 'Βασικό Σημείο:',
+            koh_stage3_last_sentence: 'Αν μπορούμε να αποκλείσουμε τα πάντα γύρω από το κέντρο, τότε μόνο λίγοι άνθρωποι θα πάνε στο κέντρο, δεν χρειάζεται να τρέξουν όλοι μαζί, καθώς ο αντίπαλος δεν θα μπορεί να εισέλθει εκεί. Παρακολουθούμε τα κτίρια γύρω από το κέντρο και δεν αφήνουμε τον αντίπαλο να περάσει.',
+            koh_final_phase_title: 'Τελική Φάση (Τελευταία 20 λεπτά)',
+            koh_final_phase_text: 'Κατά τα τελευταία 20 λεπτά, θα πολεμήσουμε σε όλα τα κτίρια στον χάρτη και θα συλλέξουμε πόντους. Η ένωση που θα συγκεντρώσει τους περισσότερους πόντους θα κερδίσει.',
+            koh_bug_note: '🚨 **ΣΗΜΑΝΤΙΚΗ ΣΗΜΕΙΩΣΗ:** Υπάρχουν σφάλματα στο παιχνίδι σχετικά με την ακριβή ώρα του γεγονότος. Παρακαλούμε να είστε συνδεδεμένοι στις **12:00 UTC** για να είστε έτοιμοι.',
+            koh_questions_pm: 'Αν έχετε οποιεσδήποτε ερωτήσεις σχετικά με αυτό το γεγονός, μπορείτε να μου τις ρωτήσετε σε ιδιωτικό μήνυμα.'
         }
     };
 
@@ -1001,10 +1280,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const parentDropdown = link.closest('.dropdown');
             if (parentDropdown && parentDropdown.querySelector('.dropdown-menu').classList.contains('visible') && !link.classList.contains('dropdown-toggle')) {
                  parentDropdown.querySelector('.dropdown-menu').classList.remove('visible');
-                 parentDropdown.querySelector('.dropdown-toggle').classList.remove('active');
+                 // Only remove 'active' from the toggle itself if not the one clicked
+                 if(parentDropdown.querySelector('.dropdown-toggle').id !== link.id) {
+                     parentDropdown.querySelector('.dropdown-toggle').classList.remove('active');
+                 }
             }
         });
 
+        // Set active class for the current link
         const currentActiveLink = document.querySelector(`.sidebar-nav a[data-page="${pageName}"]${subPageName ? `[data-sub-page="${subPageName}"]` : ':not([data-sub-page])'}`);
         if (currentActiveLink) {
             currentActiveLink.classList.add('active');
@@ -1014,7 +1297,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const parentToggle = parentDropdown.querySelector('.dropdown-toggle');
                 if (parentToggle) {
                     parentToggle.classList.add('active');
-                    parentDropdown.querySelector('.dropdown-menu').classList.add('visible');
+                    parentDropdown.querySelector('.dropdown-menu').classList.add('visible'); // Ensure sub-menu is open
                 }
             }
         }
@@ -1051,7 +1334,13 @@ document.addEventListener('DOMContentLoaded', () => {
             loadTimersContent(); // Activate timer logic
         } else if (pageName === 'guides') {
             initGuideAccordions(); // Initialize accordion functionality
-        } else if (pageName === 'characters') {
+        } else if (pageName === 'guides-koh') { // Special handling for KoH guide page
+            // If KoH guide is loaded, it might have its own accordion-like sections
+            // Or specific elements needing JS initialization
+            // For now, no specific init needed beyond translation
+             // If there's content inside koh_guide, you might call initGuideAccordions();
+        }
+        else if (pageName === 'characters') {
             // Scroll to specific character if subPageName is provided
             if (subPageName) {
                 const targetCharacter = document.getElementById(`character-${subPageName}`);
@@ -1227,7 +1516,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadPage(initialPage, initialSubPage);
 
     // Sidebar navigation click handler for main pages
-    document.querySelectorAll('.sidebar-nav > ul > li > a[data-page]:not([data-sub-page])').forEach(link => {
+    document.querySelectorAll('.sidebar-nav > ul > li > a[data-page]:not([data-sub-page]):not(.dropdown-toggle)').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const page = e.currentTarget.dataset.page;
@@ -1235,15 +1524,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sidebar navigation click handler for character sub-pages
-    document.querySelectorAll('.sidebar-nav ul li ul.dropdown-menu li a[data-page][data-sub-page]').forEach(link => {
+    // Sidebar navigation click handler for character sub-pages AND KoH guide link
+    document.querySelectorAll('.sidebar-nav ul li ul.dropdown-menu li a[data-page]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const page = e.currentTarget.dataset.page;
-            const subPage = e.currentTarget.dataset.subPage;
+            const subPage = e.currentTarget.dataset.subPage || null; // Will be null for guides-koh link
             loadPage(page, subPage);
         });
     });
+
+    // Handle guides dropdown toggle click
+    const guidesDropdownToggle = document.getElementById('guides-dropdown-toggle');
+    const guidesDropdownMenu = document.getElementById('guides-dropdown-menu');
+
+    if (guidesDropdownToggle && guidesDropdownMenu) {
+        guidesDropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            guidesDropdownMenu.classList.toggle('visible');
+            guidesDropdownToggle.classList.toggle('active');
+            const isVisible = guidesDropdownMenu.classList.contains('visible');
+            guidesDropdownToggle.setAttribute('aria-expanded', isVisible);
+        });
+    }
 
 
     // Logo click handler (navigates to home page)
@@ -1320,30 +1623,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 charactersDropdownToggle.setAttribute('aria-expanded', 'false');
             }
         }
+        // Close guides dropdown if open
+        if (guidesDropdownMenu && guidesDropdownToggle && guidesDropdownMenu.classList.contains('visible')) {
+             if (!guidesDropdownMenu.contains(e.target) && !guidesDropdownToggle.contains(e.target)) {
+                guidesDropdownMenu.classList.remove('visible');
+                guidesDropdownToggle.classList.remove('active');
+                guidesDropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
     });
 
-    // START OF MODIFICATION: Explicit event listener for the characters dropdown toggle
-    const charactersDropdownToggle = document.getElementById('characters-dropdown-toggle');
-    const charactersDropdownMenu = document.getElementById('characters-dropdown-menu');
-
-    if (charactersDropdownToggle && charactersDropdownMenu) {
-        charactersDropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default link behavior (navigating to #)
-            e.stopPropagation(); // Prevent document click listener from immediately closing it
-
-            const isVisible = charactersDropdownMenu.classList.contains('visible');
-
-            // Toggle visibility of the characters dropdown
-            charactersDropdownMenu.classList.toggle('visible');
-            charactersDropdownToggle.classList.toggle('active'); // For icon rotation
-            charactersDropdownToggle.setAttribute('aria-expanded', !isVisible);
-        });
-    }
-    // END OF MODIFICATION
 
     // Back to top button (already in previous script, ensure it's still there)
     // Hamburger menu toggle (already in previous script)
-    // Characters dropdown toggle (already in previous script) - this is now handled above
+    // Characters dropdown toggle (already in previous script)
 
     // Handle browser history (back/forward buttons) for SPA behavior
     window.addEventListener('popstate', (event) => {
