@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Localization (i18n) Data with ALL Translations ---
+    // Cette section est identique à la version précédente avec toutes les traductions.
+    // Assurez-vous qu'elle est bien copiée en entier.
     const translations = {
         fr: {
             // General elements
@@ -1080,9 +1082,6 @@ document.addEventListener('DOMContentLoaded', () => {
             character_eva_name: 'エヴァ',
             character_eva_role: '回復＆サポート',
             character_eva_desc: '負傷した部隊を回復させ、戦闘での生存率を向上させることができる不可欠なサポートユニット。',
-            character_lucky_name: 'ラッキー',
-            character_lucky_role: '運＆収集',
-            character_lucky_desc: '運と資源収集に焦点を当てたヒーローで、マップでの利益を最大化するのに理想的です。',
             view_details_button: '詳細を見る',
             about_section_title: 'ℹ️ 私たちについて',
             about_paragraph1: 'ブラックハンドガイドへようこそ。このコミュニティは、ゲームの進行を最適化し、ゲームのあらゆる側面をマスターしようとしているプレイヤーに捧げられています。私たちの使命は、明確なガイド、最新のヒント、貴重な情報を提供し、あなたがエリートプレイヤーになるのを支援することです。',
@@ -1348,7 +1347,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (translation !== undefined) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translation;
-                } else {
+                } else if (element.tagName === 'BUTTON' && element.id && (element.id.startsWith('theme-') || element.id.startsWith('contact_send_button'))) {
+                    // Specific handling for buttons that have data-key
+                    element.textContent = translation;
+                }
+                 else {
                     element.textContent = translation;
                 }
             }
@@ -1392,7 +1395,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  // And only remove 'active' from the toggle if it's not the current active toggle
                  const currentToggleId = (parentDropdown.querySelector('.dropdown-toggle') && parentDropdown.querySelector('.dropdown-toggle').id) || '';
 
-                 if (!((pageName === 'guides' || pageName === 'guides-koh' || pageName === 'guides-joiner-bonus') && currentToggleId === 'guides-dropdown-toggle') &&
+                 if (!((pageName === 'guides' || pageName === 'guides-koh' || pageName === 'guides-joiner-bonus' || pageName === 'guides-beginner' || pageName === 'guides-heroes' || pageName === 'guides-resources') && currentToggleId === 'guides-dropdown-toggle') &&
                      !(pageName === 'characters' && currentToggleId === 'characters-dropdown-toggle')) {
                     parentDropdown.querySelector('.dropdown-menu').classList.remove('visible');
                     parentDropdown.querySelector('.dropdown-toggle').classList.remove('active');
@@ -1464,8 +1467,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // This is key for buttons like "Découvrir les guides" on home.html
         document.querySelectorAll('#main-content-area [data-page]').forEach(dynamicLink => {
             // Only attach if it's not a direct external link (like Discord button)
-            // AND if it doesn't already have an internal href for a different purpose (like anchor links for characters)
-            if (!dynamicLink.classList.contains('discord-button')) { // Exclude Discord button
+            // OR if it's a link to an anchor within the *same* dynamic page content (e.g., characters)
+            if (dynamicLink.target !== '_blank' && !dynamicLink.href.includes('#')) { // Corrected condition
                 dynamicLink.removeEventListener('click', handleDynamicPageLinkClick); // Prevent duplicates
                 dynamicLink.addEventListener('click', handleDynamicPageLinkClick);
             }
@@ -1643,7 +1646,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Sidebar navigation click handler for sub-pages (characters, KoH, Joiner Bonus)
+    // Sidebar navigation click handler for sub-pages (characters, KoH, Joiner Bonus, general guides, etc.)
     document.querySelectorAll('.sidebar-nav ul li ul.dropdown-menu li a[data-page]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -1664,6 +1667,20 @@ document.addEventListener('DOMContentLoaded', () => {
             guidesDropdownToggle.classList.toggle('active');
             const isVisible = guidesDropdownMenu.classList.contains('visible');
             guidesDropdownToggle.setAttribute('aria-expanded', isVisible);
+        });
+    }
+
+    // Handle characters dropdown toggle click
+    const charactersDropdownToggle = document.getElementById('characters-dropdown-toggle');
+    const charactersDropdownMenu = document.getElementById('characters-dropdown-menu');
+
+    if (charactersDropdownToggle && charactersDropdownMenu) {
+        charactersDropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            charactersDropdownMenu.classList.toggle('visible');
+            charactersDropdownToggle.classList.toggle('active');
+            const isVisible = charactersDropdownMenu.classList.contains('visible');
+            charactersDropdownToggle.setAttribute('aria-expanded', isVisible);
         });
     }
 
