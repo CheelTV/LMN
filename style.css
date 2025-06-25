@@ -856,3 +856,61 @@ a.social-link-discord:hover { color: #7289da; } /* Discord Purple */
         padding: 8px 12px;
     }
 }
+/* Styles pour la table Joiner Bonus */
+.joiner-bonus-table-container {
+    overflow-x: auto; /* Permet le défilement horizontal sur petits écrans */
+    margin-bottom: 20px;
+}
+.joiner-bonus-table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    text-align: center; /* Centrer le texte pour une meilleure lisibilité des bonus */
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-dark);
+}
+.joiner-bonus-table-container th,
+.joiner-bonus-table-container td {
+    padding: 12px 15px;
+    border: 1px solid var(--color-border-subtle);
+    transition: background-color 0.5s ease;
+}
+.joiner-bonus-table-container thead th {
+    background-color: var(--color-dark-purple);
+    color: var(--color-text-light);
+    text-align: center;
+    text-transform: uppercase;
+}
+.joiner-bonus-table-container tbody tr:nth-of-type(even) {
+    background-color: var(--color-bg-secondary);
+}
+.joiner-bonus-table-container tbody tr:hover {
+    background-color: var(--color-sidebar-link-hover);
+}
+
+/* Style spécifique pour les héros à 0% de bonus */
+.joiner-bonus-table-container tbody tr.no-bonus-hero {
+    background-color: rgba(255, 0, 0, 0.1); /* Fond légèrement rouge pour attirer l'attention */
+}
+.joiner-bonus-table-container tbody tr.no-bonus-hero td {
+    color: var(--color-text-light); /* Texte clair pour qu'il soit visible sur le fond rouge */
+}
+
+.warning-card {
+    background-color: rgba(255, 165, 0, 0.15); /* Orange clair pour l'avertissement */
+    border: 1px solid orange;
+    color: var(--color-text-light);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.warning-card .warning-icon {
+    margin-right: 10px;
+    font-size: 1.5em;
+    color: orange;
+}
